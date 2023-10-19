@@ -1,0 +1,118 @@
+.ges-single-post-banner-image {
+    margin-top: 0;
+}
+
+.ges-post-content-information {
+    margin-top: 0;
+    padding-top: 250px;
+    padding-bottom: 288px;
+
+    .taxonomy-category {
+        position: relative;
+        display: inline-block;
+        padding-right: 10px;
+        font-weight: 700;
+
+        a {
+            text-decoration: none;
+        }
+
+        &::before {
+            content: '|';
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    .wp-block-post-date {
+        margin-top: 0;
+        display: inline-block;
+        font-weight: 700;
+    }
+
+    .ges-post-title {
+        margin-bottom: 32px;
+        margin-top: 10px;
+    }
+
+    .wp-block-post-content {
+        margin-top: 0;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 28px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .wp-block-quote {
+            padding: 0;
+
+            p {
+                font-weight: 700;
+                margin-bottom: 6px;
+            }
+
+            cite {
+                font-size: var(--wp--preset--font-size--small);
+            }
+        }
+    }
+}
+
+.ges-author-details-block {
+    margin-top: 242px;
+    .wp-block-columns {
+        gap: 0;
+    }
+    .ges-author-content-wrap {
+        padding: 0 20px;
+
+        .ges-author-name {
+            margin-bottom: 4px;
+            font-weight: 700;
+            margin-top: 0;
+        }
+        .ges-auther-info {
+            margin: 0;
+            max-width: 440px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .ges-author-details-block {
+        margin-top: 200px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .ges-post-content-information {
+        padding-top: 200px;
+    }
+    .ges-author-details-block {
+        margin-top: 160px;
+    }
+
+}
+
+@media only screen and (max-width: 781px) {
+    .ges-post-content-information {
+        padding-top: 173px;
+        padding-bottom: 268px;
+
+        .ges-post-title {
+            margin-bottom: 48px;
+            margin-top: 20px;
+        }
+    }
+    .ges-author-details-block {
+        margin-top: 122px;
+        .ges-author-content-wrap {
+            padding: 32px 0 0 0;
+        }
+    }
+}

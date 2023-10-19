@@ -1,0 +1,29 @@
+.ges-contact-main-block  {
+    padding-top: 13.75rem;
+    padding-bottom: 17.5rem;
+    .ges-contact-heading-info {
+        margin-bottom: 4.875rem;
+        .wp-block-heading,
+        p {
+            max-width: 745px;
+        }
+    }
+    .gform_wrapper {
+        .gform_heading {
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 781px) {
+    .ges-contact-main-block {
+        padding-top: 18.125rem;
+        padding-bottom: 21.875rem;
+        .ges-contact-heading-info {
+            margin-bottom: 7.875rem;
+            p {
+                margin-top: 0.75rem;
+            }
+        }
+
+    }
+}

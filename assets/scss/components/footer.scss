@@ -1,0 +1,134 @@
+footer {
+    background-color: var(--wp--preset--color--light-pink);
+    padding: 3.5rem 0 5rem 0;
+    margin: 0;
+
+    .ges-footer-first-row {
+        margin-bottom: 3.75rem;
+
+        .ges-footer-heading {
+            .wp-block-heading {
+                line-height: 1;
+            }
+        }
+    }
+
+    .ges-footer-second-row {
+        .ges-footer-copyright-text {
+            p {
+                height: 100%;
+                display: flex;
+                align-items: end;
+                margin-top: 1.375rem;
+
+                a {
+                    text-decoration: none;
+                    margin-left: 0.313rem;
+                }
+            }
+        }
+
+        .ges-footer-social-column {
+            .wp-block-columns {
+                margin: 0;
+            }
+
+            .wp-block-heading {
+                margin-bottom: 1.375rem;
+            }
+
+            ul {
+                gap: 0.313rem;
+            }
+        }
+
+        .ges-footer-contact-column {
+            .wp-block-heading {
+                margin-bottom: 1.375rem;
+            }
+
+            p {
+                margin: 0.313rem 0 0 0;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    footer {
+        .ges-footer-first-row {
+            .wp-block-columns {
+                flex-direction: column;
+                gap: 3.125rem;
+            }
+        }
+
+        .ges-footer-second-row {
+            .wp-block-columns {
+                flex-direction: column;
+            }
+
+            .ges-footer-copyright-text {
+                order: 3;
+                margin-top: 2.875rem;
+
+                p {
+                    display: block;
+                    margin: 0px;
+
+                    a {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 781px) {
+    footer {
+        padding: 6.625rem 0 3.75rem 0;
+
+        .ges-footer-first-row {
+            margin-bottom: 5.625rem;
+
+            .wp-block-site-logo {
+                img {
+                    width: 236px;
+                }
+            }
+        }
+
+        .ges-footer-second-row {
+            .wp-block-columns {
+                gap: 4.75rem;
+            }
+
+            .ges-footer-social-column {
+                .wp-block-heading {
+                    margin-bottom: 1.5rem;
+                }
+
+                ul {
+                    gap: 1rem;
+                }
+            }
+
+            .ges-footer-contact-column {
+                .wp-block-heading {
+                    margin-bottom: 1.5rem;
+                }
+
+                p {
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

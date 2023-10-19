@@ -1,0 +1,176 @@
+.ges-about-title-block {
+    padding-top: 336px;
+    padding-bottom: 326px;
+}
+
+.ges-author-infomation {
+    margin-top: 0;
+    padding-top: 126px;
+    padding-bottom: 126px;
+
+    .ges-main-heading-block {
+        margin-bottom: 60px;
+    }
+
+    .ges-author-infoamtion-row {
+        margin-top: 0;
+        gap: 42px;
+    }
+
+    .ges-author-details {
+        margin-top: 0;
+
+        p {
+            margin-top: 0;
+        }
+
+        .ges-author-name {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .ges-bio-personal-info {
+            margin-bottom: 22px;
+        }
+    }
+}
+
+.ges-horizontal-media-content-block {
+    margin-top: 0;
+    padding-top: 124px;
+    padding-bottom: 374px;
+
+    .ges-main-title {
+        margin-bottom: 12px;
+    }
+
+    .ges-view-more {
+        margin-top: 0;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.ges-media-content-block-row {
+    margin-top: 0;
+    padding-top: 44px;
+    padding-bottom: 44px;
+
+    .wp-block-media-text__media {
+        img {
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+
+    .wp-block-media-text__content {
+        padding: 20px 0 0 20px;
+
+        .ges-block-content {
+            letter-spacing: -0.4px;
+        }
+
+        .wp-block-heading,
+        .ges-block-content {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .right-arrow {
+            margin: 0;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .ges-author-infomation {
+        .ges-author-infoamtion-row {
+            gap: 24px;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .ges-author-infomation {
+        .ges-author-infoamtion-row {
+            flex-wrap: wrap;
+        }
+
+        .ges-author-details {
+            width: 48%;
+        }
+    }
+
+    .ges-media-content-block-row {
+        .wp-block-media-text__media {
+            img {
+                height: 330px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 781px) {
+    .ges-about-title-block {
+        padding-top: 292px;
+        padding-bottom: 274px;
+    }
+
+    .ges-author-infomation {
+        .ges-main-heading-block {
+            margin-bottom: 66px;
+        }
+
+        .ges-author-infoamtion-row {
+            gap: 200px;
+        }
+
+        .ges-author-details {
+            width: 100%;
+
+            .ges-bio-personal-info {
+                margin-bottom: 56px;
+            }
+        }
+    }
+
+    .ges-horizontal-media-content-block {
+        padding-top: 224px;
+        padding-bottom: 110px;
+    }
+
+    .ges-media-content-block-row {
+        padding-top: 110px;
+        padding-bottom: 110px;
+
+        &:first-of-type {
+            padding-top: 60px;
+        }
+
+        .wp-block-media-text {
+            grid-template-columns: 100% !important;
+        }
+
+        .wp-block-media-text__media {
+            margin: 0 -19px;
+
+            img {
+                height: auto;
+            }
+        }
+
+        .wp-block-media-text__content {
+            padding: 70px 0 0 0px;
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
+}

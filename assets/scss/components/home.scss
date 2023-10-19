@@ -1,0 +1,253 @@
+// Content block
+.ges-content-block {
+    padding-top: 16.563rem;
+    padding-bottom: 16.563rem;
+
+    p {
+        max-width: 810px;
+    }
+}
+
+// Media And Content Block
+.ges-media-content-block {
+    padding: 9.375rem 0;
+    margin: 0;
+
+    figure {
+        margin-bottom: 4.688rem;
+    }
+
+    .ges-media-heading-block {
+        margin: 0 0 1rem 0;
+    }
+
+    .ges-media-content {
+        margin-bottom: 1.25rem;
+        margin-top: 0;
+
+        p {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+            max-width: 860px;
+        }
+    }
+
+    .ges-media-vcs-link {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+// Left image and right content block
+.ges-image-and-content-row-scream {
+    padding-top: 4.063rem;
+    padding-bottom: 3.875rem;
+    margin: 0;
+
+    &.ges-extra-space {
+        padding-bottom: 11.75rem;
+    }
+
+    .ges-second-column {
+        padding-left: 4.375rem;
+        padding-right: 1.25rem;
+
+        .ges-media-heading-block {
+            margin-bottom: 0.625rem;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+//Right Image and left content block.
+.ges-right-media-content-block {
+    padding-top: 3.875rem;
+    padding-bottom: 3.125rem;
+    margin-top: 0;
+
+    .wp-block-columns {
+        gap: 1.25rem;
+        justify-content: space-between;
+    }
+
+    .ges-media-heading-block {
+        margin-bottom: 0.625rem;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 1801px) {
+
+    //Right Image and left content block.
+    body .ges-right-media-content-block {
+        margin-left: calc((100% - 1640px)/2) !important;
+    }
+}
+
+@media only screen and (max-width: 1800px) {
+    .ges-right-media-content-block {
+        .ges-left-media-content-image {
+            padding: 0 5%;
+        }
+
+        .wp-block-columns {
+            gap: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+
+    // Left image and right content block
+    .ges-image-and-content-row-scream {
+        .ges-second-column {
+            padding-left: 2.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    // Left image and right content block
+    .ges-image-and-content-row-scream {
+        .ges-second-column {
+            padding-left: 1.25rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    // Left image and right content block
+    .ges-image-and-content-row-scream {
+        .ges-second-column {
+            padding-left: 0.313rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 781px) {
+
+    // Content block
+    .ges-content-block {
+        padding-top: 25.938rem;
+        padding-bottom: 13.438rem;
+
+        p {
+            max-width: 810px;
+        }
+    }
+
+    // Media And Content Block
+    .ges-media-content-block {
+        padding: 12.5rem 0;
+
+        figure {
+            margin-bottom: 5.625rem;
+        }
+
+        .ges-media-heading-block {
+            margin: 0;
+        }
+    }
+
+    // Left image and right content block
+    .ges-image-and-content-row-scream {
+        padding-top: 12rem;
+        padding-bottom: 14rem;
+
+        &.ges-extra-space {
+            padding-bottom: 14rem;
+        }
+
+        .ges-first-column {
+            figure {
+                margin-bottom: 4.125rem;
+            }
+        }
+
+        .ges-second-column {
+            padding: 0 5%;
+
+            .ges-media-heading-block {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    //Right Image and left content block.
+    .ges-right-media-content-block {
+        padding-top: 13.5rem;
+        padding-bottom: 14.75rem;
+
+        .wp-block-columns {
+            gap: 5.625rem;
+            flex-direction: column-reverse;
+        }
+
+        .ges-media-heading-block {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    // Left image and right content block
+    .ges-image-and-content-row-scream {
+        .ges-first-column {
+            figure {
+                &.ges-object-fit-none {
+                    img {
+                        height: auto;
+                    }
+                }
+                img {
+                    height: 300px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    //Right Image and left content block.
+    .ges-right-media-content-block {
+        figure {
+            &.ges-object-fit-right {
+                img {
+                    object-position: right;
+                }
+            }
+            img {
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+    }
+}

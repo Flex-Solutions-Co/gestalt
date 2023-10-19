@@ -1,0 +1,85 @@
+.ges-testimonials-section {
+    padding-top: 24.75rem;
+    padding-bottom: 17rem;
+}
+
+.ges-testimonial-main-block {
+    margin-top: 0;
+    padding-top: 6.25rem;
+    padding-bottom: 16.5rem;
+}
+
+.ges-testimonial-wrapper {
+    padding-top: 7.813rem;
+    padding-bottom: 7.813rem;
+    margin-top: 0;
+    .ges-testimonial-row {
+        gap: 3.75rem;
+    }
+
+    .ges-testimonial {
+
+        &-heading {
+            line-height: 1.1;
+        }
+
+        &-description {
+            margin-top: 1.25rem;
+        }
+
+        &-position {
+            margin-top: 1.25rem;
+        }
+
+        &-brand {
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .ges-testimonial-wrapper {
+        .ges-testimonial-row {
+            gap: 2.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .ges-testimonial-wrapper {
+        .ges-testimonial-row {
+            gap: 1.25rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 781px) {
+    .ges-testimonials-section {
+        padding-top: 21.25rem;
+        padding-bottom: 18.75rem;
+    }
+
+    .ges-testimonial-main-block {
+        padding-bottom: 8.875rem;
+    }
+
+    .ges-testimonial-wrapper {
+        padding-top: 8.875rem;
+        padding-bottom: 8.875rem;
+
+        .ges-testimonial-row {
+            flex-direction: column;
+            gap: 17.75rem;
+        }
+
+        .ges-testimonial {
+            &-description {
+                margin-top: 0.875rem;
+            }
+
+            &-position {
+                margin-top: 2.5rem;
+            }
+        }
+    }
+}

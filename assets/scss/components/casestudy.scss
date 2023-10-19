@@ -1,0 +1,25 @@
+.ges-case-study-content-block {
+    padding-top: 250px;
+    padding-bottom: 300px;
+
+    .wp-block-heading {
+        margin-bottom: 32px;
+        margin-top: 10px;
+    }
+
+    p {
+        margin: 0;
+
+        &.ges-question-text {
+            margin-bottom: 6px;
+        }
+
+        &.ges-answer-text {
+            margin-bottom: 28px;
+        }
+    }
+}
+
+.ges-case-study-media-block {
+    padding-bottom: 126px;
+}
