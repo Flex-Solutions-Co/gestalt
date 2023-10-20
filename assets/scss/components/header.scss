@@ -1,14 +1,68 @@
 header {
-    top: calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));
-    position: sticky;
+    position: fixed;
+    top: 0;
     z-index: 10;
-    background-color: var(--wp--preset--color--light-gray);
+    background-color: transparent;
     transition: all 0.5s linear;
+    width: 100%;
     &.has-scroll {
         background-color: var(--wp--preset--color--secondary);
+        box-shadow: 0 1px 6px rgba(0,0,0,0.23);
+        .has-second-header {
+            .ges-header-block {
+                .wp-block-site-logo {
+                    img {
+                        filter: brightness(1) invert(0);
+                    }
+                }
+            }
+            .wp-block-navigation {
+                .wp-block-navigation__container {
+                    li {
+                        a {
+                            color: var(--wp--preset--color--primary);
+                        }
+                    }
+                }
+            }
+            .ges-responsive-menu {
+                .ges-res-menu-btn {
+                    .line {
+                        background-color: var(--wp--preset--color--primary);
+                    }
+                }
+            }
+       
+        }
     }
     .ges-header-block {
         padding: 1.875rem 0;
+    }
+
+    .has-second-header {
+        .ges-header-block {
+            .wp-block-site-logo {
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+        .wp-block-navigation {
+            .wp-block-navigation__container {
+                li {
+                    a {
+                        color: var(--wp--preset--color--secondary);
+                    }
+                }
+            }
+        }
+        .ges-responsive-menu {
+            .ges-res-menu-btn {
+                .line {
+                    background-color: var(--wp--preset--color--secondary);
+                }
+            }
+        }
     }
 
     .ges-menu-block {
@@ -70,7 +124,11 @@ header {
 
                 .ges-responsive-menu {
                     align-items: center;
-
+                    li {
+                        .wp-block-navigation-item__content {
+                            color: var(--wp--preset--color--primary);
+                        }
+                    }
                     .has-child {
                         align-items: center;
 

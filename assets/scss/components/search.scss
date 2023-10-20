@@ -1,0 +1,107 @@
+.ges-search-block {
+    margin-top: 0;
+    padding-top: 132px;
+    padding-bottom: 30px;
+
+    .wp-block-search__inside-wrapper {
+        input {
+            outline: none;
+            padding: 10px 20px;
+            font-size: var(--wp--preset--font-size--small);
+            line-height: 1;
+            border: 1px solid var(--wp--preset--color--primary);
+        }
+
+        .wp-block-search__button {
+            background: transparent;
+            border: 1px solid var(--wp--preset--color--primary);
+            padding: 10px;
+            min-width: 80px;
+            min-height: 52px;
+
+            svg {
+                min-height: 36px;
+                min-width: 36px;
+            }
+        }
+    }
+}
+
+.ges-search-content-section {
+    margin-top: 0;
+    padding-top: 40px;
+    padding-bottom: 120px;
+
+    ul {
+        row-gap: 40px;
+
+        li {
+            .ges-search-item {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .wp-block-post-excerpt {
+                    margin-bottom: 32px;
+                    margin-top: 16px;
+                }
+
+                .wp-block-read-more {
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+
+    .wp-block-post-title {
+        font-size: var(--wp--preset--font-size--xl-large);
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.wp-block-query-no-results {
+    p {
+        margin: 0;
+        padding: 16px 24px;
+        color: var(--wp--preset--color--primary);
+        background-color: var(--wp--preset--color--light-pink);
+        border-color: var(--wp--preset--color--light-pink);
+        border-radius: 10px;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .ges-search-block {
+        .wp-block-search__inside-wrapper {
+            .wp-block-search__button {
+                min-width: 60px;
+                min-height: 40px;
+
+                svg {
+                    min-height: 26px;
+                    min-width: 26px;
+                }
+            }
+        }
+    }
+
+    .ges-search-content-section {
+        padding-bottom: 80px;
+
+        ul {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ges-search-content-section {
+        ul {
+            grid-template-columns: 1fr !important;
+        }
+    }
+}

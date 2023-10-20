@@ -25,6 +25,7 @@ if ( ! function_exists( 'gestalt_support' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 		add_editor_style( 'assets/css/style.css' );
+		add_editor_style( 'assets/css/editor-style.css' );
 	}
 
 endif;
