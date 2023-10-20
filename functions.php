@@ -108,3 +108,4 @@ function ew_add_custom_work_cpt() {
     register_post_type( 'work', $args );
 }
 add_action( 'init', 'ew_add_custom_work_cpt' );
+
