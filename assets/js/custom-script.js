@@ -10,7 +10,7 @@ addEventListener("DOMContentLoaded", (e) => {
     // }
 
     window.addEventListener('scroll', function () {
-        var element = document.querySelector('.ges-header');
+        var element = document.querySelector('header');
         var scrollPosition = window.scrollY;
 
         if (scrollPosition >= 20) { // Adjust 200 to your desired scroll position

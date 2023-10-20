@@ -95,7 +95,7 @@ a:active {
  * https://github.com/WordPress/gutenberg/issues/35884
  */
 
-.wp-site-blocks,
+/* .wp-site-blocks,
 body > .is-root-container,
 .edit-post-visual-editor__post-title-wrapper,
 .wp-block-group.alignfull,
@@ -105,7 +105,7 @@ body > .is-root-container,
 .is-root-container .wp-block[data-align="full"] > .wp-block-cover {
 	padding-left: var(--wp--custom--spacing--outer);
 	padding-right: var(--wp--custom--spacing--outer);
-}
+} */
 
 .wp-site-blocks .alignfull,
 .wp-site-blocks > .wp-block-group.has-background,

@@ -236,6 +236,11 @@
 			"area": "header"
 		},
 		{
+			"name": "white-header",
+			"title": "White Header",
+			"area": "header"
+		},
+		{
 			"name": "footer",
 			"title": "Footer",
 			"area": "footer"
