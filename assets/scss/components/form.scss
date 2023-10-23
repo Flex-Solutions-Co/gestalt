@@ -5,6 +5,10 @@
 }
 
 .gform_wrapper {
+    outline: none;
+    #gf_form_focus {
+        outline: none;
+    }
     .gform_heading {
         max-width: 675px;
         .gform_title {
@@ -36,6 +40,7 @@
             line-height: var(--wp--custom--typography--line-height--normal);
             line-height: var(--wp--custom--typography--line-height--normal) !important;
             min-height: auto !important;
+            border-radius: 0;
             &::placeholder {
                 color: var(--wp--preset--color--primary);
             }
@@ -78,6 +83,8 @@
                 line-height: var(--wp--custom--typography--line-height--normal) !important;
                 min-height: auto !important;
                 cursor: pointer;
+                color: var(--wp--preset--color--primary);
+                border-radius: 0;
             }
         }
 

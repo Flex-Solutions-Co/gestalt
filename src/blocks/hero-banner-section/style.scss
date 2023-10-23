@@ -1,0 +1,15 @@
+.wp-block-gestalt-hero-banner-section {
+    margin-top: 0;
+    .ges-media-slide {
+        picture {
+            display: block;
+    
+            img {
+                width: 100%;
+                height: 100vh;
+                object-fit: cover;
+            }
+        }
+    }
+}
+

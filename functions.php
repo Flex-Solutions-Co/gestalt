@@ -109,3 +109,6 @@ function ew_add_custom_work_cpt() {
 }
 add_action( 'init', 'ew_add_custom_work_cpt' );
 
+if ( file_exists( get_template_directory() . '/build/gestalt-blocks.php' ) ){
+	require get_template_directory() . '/build/gestalt-blocks.php';
+}

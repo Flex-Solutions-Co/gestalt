@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "gestalt/hero-slide",
+  "title": "Hero Slide",
+  "icon": "slides",
+  "parent": [
+    "gestalt/hero-slider"
+  ],
+  "description": "Shows Hero slides",
+  "category": "text",
+  "keywords": [
+    "slide",
+    "hero"
+  ],
+  "version": "1.0.0",
+  "supports": {
+    "align": true
+  },
+  "textdomain": "gestalt",
+  "attributes": {
+    "mediaId": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaSrc": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaAlt": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

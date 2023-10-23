@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gestalt/testimonials-slide",
+    "title": "Testimonials Slide",
+    "icon": "slides",
+    "parent": ["gestalt/testimonials-slider"],
+    "description": "The given block provide testimonial slider information",
+    "category": "gestalt-blocks",
+    "keywords": [
+        "slide",
+        "testimonials"
+    ],
+    "version": "1.0.0",
+    "supports": {
+        "align": true
+    },
+    "textdomain": "gestalt"
+}
