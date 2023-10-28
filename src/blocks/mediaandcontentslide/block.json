@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gestalt/mediaandcontentslide",
+    "title": "Media And Content Slide",
+    "icon": "slides",
+    "parent": ["gestalt/mediaandcontentslider"],
+    "description": "The gutenberg block to show media and contents slider view.",
+    "category": "gestalt-blocks",
+    "keywords": [
+        "slide",
+        "image slider",
+        "media"
+    ],
+    "version": "1.0.0",
+    "supports": {
+        "html": false,
+        "align": true
+    },
+    "textdomain": "gestalt"
+}

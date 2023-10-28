@@ -97,8 +97,8 @@ header {
   width: 100%; }
   header.has-scroll {
     background-color: var(--wp--preset--color--secondary);
-    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.23);
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.23); }
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); }
     header.has-scroll .has-second-header .ges-header-block .wp-block-site-logo img {
       -webkit-filter: brightness(1) invert(0);
               filter: brightness(1) invert(0); }
@@ -1061,9 +1061,13 @@ footer {
   -o-object-position: right;
      object-position: right; }
 
+.case-study-template-default .ges-case-study-single-page {
+  margin-top: 0; }
+
 .ges-case-study-content-block {
   padding-top: 250px;
-  padding-bottom: 300px; }
+  padding-bottom: 300px;
+  margin-top: 0; }
   .ges-case-study-content-block .wp-block-heading {
     margin-bottom: 32px;
     margin-top: 10px; }
@@ -1077,6 +1081,10 @@ footer {
 .ges-case-study-media-block {
   padding-bottom: 126px; }
 
+@media only screen and (max-width: 781px) {
+  .ges-case-study-content-block {
+    padding-top: 300px;
+    padding-bottom: 280px; } }
 .ges-category-heading-section {
   padding-top: 355px;
   padding-bottom: 278px; }
@@ -1185,5 +1193,8 @@ footer {
 @media only screen and (max-width: 600px) {
   .ges-search-content-section ul {
     grid-template-columns: 1fr !important; } }
+.ges-video-section.ges-video-padding-block {
+  padding-top: 45px;
+  padding-bottom: 182px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -42,7 +42,8 @@ const MY_TEMPLATE = [
 const Edit = (props) => {
 
 	const blockProps = useBlockProps({
-		className: "ges-testimonials-slide-wrapper"
+		className: "ges-testimonials-slide-wrapper",
+		renderAppender: false,
 	});
 
 	return (

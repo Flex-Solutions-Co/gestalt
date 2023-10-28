@@ -5,10 +5,15 @@
         object-position: right;
     }
 }
+.case-study-template-default {
+    .ges-case-study-single-page {
+        margin-top: 0;
+    }
+}
 .ges-case-study-content-block {
     padding-top: 250px;
     padding-bottom: 300px;
-
+    margin-top: 0;
     .wp-block-heading {
         margin-bottom: 32px;
         margin-top: 10px;
@@ -29,4 +34,11 @@
 
 .ges-case-study-media-block {
     padding-bottom: 126px;
+}
+
+@media only screen and (max-width: 781px) {
+    .ges-case-study-content-block {
+        padding-top: 300px;
+        padding-bottom: 280px;
+    }
 }

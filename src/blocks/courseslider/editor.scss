@@ -1,0 +1,9 @@
+
+.splide__list {
+    .ges-dummy-text {
+        display: none;
+        &:first-child {
+            display: block;
+        }
+    }
+}

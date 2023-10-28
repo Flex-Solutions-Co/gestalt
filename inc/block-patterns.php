@@ -21,6 +21,7 @@ function gestalt_register_block_patterns() {
 		'mediaandcontent' => array( 'label' => __( 'Media & Content', 'gestalt' ) ),
 		'testimonial' => array( 'label' => __( 'Testimonial', 'gestalt' ) ),
 		'query-loop' => array( 'label' => __( 'Query Loop', 'gestalt' ) ),
+		'video' => array( 'label' => __( 'Video', 'gestalt' ) ),
 	);
 
 	/**
@@ -52,7 +53,8 @@ function gestalt_register_block_patterns() {
 		'horizontal-right-image-and-left-content',
 		'testimonial',
 		'media-and-content',
-		'query-loop'
+		'query-loop',
+		'videoplayer'
 	);
 
 	/**

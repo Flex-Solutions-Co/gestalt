@@ -47,9 +47,11 @@ if ( ! function_exists( 'gestalt_styles' ) ) :
 		wp_register_style( 'gestalt-style', get_template_directory_uri() . '/style.css', array(), $version_string );
 		// Enqueue theme stylesheet.
 		wp_enqueue_style( 'gestalt-style' );
-		//wp_enqueue_style( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', array(), $version_string);
+
+		wp_register_style( 'glightbox-style', get_stylesheet_directory_uri(). '/assets/css/glightbox.min.css', array(), $version_string);
 		wp_enqueue_style( 'custom', get_stylesheet_directory_uri(). '/assets/css/style.css', array(), $version_string);
-		//wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', array(), '', true );
+
+		//wp_enqueue_script( 'glightbox-script', get_stylesheet_directory_uri(). '/assets/js/glightbox.min.js', array(), '', true );
 		wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri(). '/assets/js/custom-script.js', array(), '', true );
 	}
 
@@ -73,22 +75,22 @@ add_filter( 'render_block', 'custom_render_block_core_navigation', null, 2 );
 /**
  * Create Custom Work Cpt.
  */
-function ew_add_custom_work_cpt() {
+function ew_add_custom_case_study_cpt() {
     $labels = array(
-        'name'               => _x( 'Work', 'post type general name', 'gestalt' ),
-        'singular_name'      => _x( 'Work', 'post type singular name', 'gestalt' ),
-        'menu_name'          => _x( 'Work', 'admin menu', 'gestalt' ),
-        'name_admin_bar'     => _x( 'Work', 'add new on admin bar', 'gestalt' ),
-        'add_new'            => _x( 'Add New Work', 'gestalt' ),
-        'add_new_item'       => __( 'Add New Work', 'gestalt' ),
-        'new_item'           => __( 'New Work', 'gestalt' ),
-        'edit_item'          => __( 'Edit Work', 'gestalt' ),
-        'view_item'          => __( 'View Work', 'gestalt' ),
-        'all_items'          => __( 'All Work', 'gestalt' ),
-        'search_items'       => __( 'Search Work', 'gestalt' ),
-        'parent_item_colon'  => __( 'Parent Work:', 'gestalt' ),
-        'not_found'          => __( 'No Work found.', 'gestalt' ),
-        'not_found_in_trash' => __( 'No Work found in Trash.', 'gestalt' )
+        'name'               => _x( 'Case Study', 'post type general name', 'gestalt' ),
+        'singular_name'      => _x( 'Case Study', 'post type singular name', 'gestalt' ),
+        'menu_name'          => _x( 'Case Study', 'admin menu', 'gestalt' ),
+        'name_admin_bar'     => _x( 'Case Study', 'add new on admin bar', 'gestalt' ),
+        'add_new'            => _x( 'Add New Case Study', 'gestalt' ),
+        'add_new_item'       => __( 'Add New Case Study', 'gestalt' ),
+        'new_item'           => __( 'New Case Study', 'gestalt' ),
+        'edit_item'          => __( 'Edit Case Study', 'gestalt' ),
+        'view_item'          => __( 'View Case Study', 'gestalt' ),
+        'all_items'          => __( 'All Case Study', 'gestalt' ),
+        'search_items'       => __( 'Search Case Study', 'gestalt' ),
+        'parent_item_colon'  => __( 'Parent Case Study:', 'gestalt' ),
+        'not_found'          => __( 'No Case Study found.', 'gestalt' ),
+        'not_found_in_trash' => __( 'No Case Study found in Trash.', 'gestalt' )
     );
 
     $args = array(
@@ -105,9 +107,9 @@ function ew_add_custom_work_cpt() {
 		'show_in_rest'       => true,
     );
 
-    register_post_type( 'work', $args );
+    register_post_type( 'case-study', $args );
 }
-add_action( 'init', 'ew_add_custom_work_cpt' );
+add_action( 'init', 'ew_add_custom_case_study_cpt' );
 
 if ( file_exists( get_template_directory() . '/build/gestalt-blocks.php' ) ){
 	require get_template_directory() . '/build/gestalt-blocks.php';

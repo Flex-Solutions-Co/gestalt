@@ -1,0 +1,61 @@
+:root {
+    --plyr-video-control-background-hover : #fde8e5;
+    --plyr-video-control-color-hover : #000;
+    --plyr-range-fill-background : #fde8e5;
+}
+
+.plyr__control--overlaid {
+    color: var(--plyr-video-control-color,#000);
+}
+.media-setting-wrapper {
+    padding: 16px;
+    background: #404349;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+
+    .media-heading {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: #fff;
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+
+    .slider-inner-wrapper {
+        background-color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 6px;
+        aspect-ratio: 16/9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slider-trash-icn {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        cursor: pointer;
+
+        .dashicons-trash {
+            color: #fff;
+        }
+    }
+    .slider-wrapper {
+        .dashicons-plus-alt {
+            display: none;
+        }
+        img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+    }
+    .slider-main-wrapper {
+        video {
+            object-fit: cover;
+        }
+    }
+}

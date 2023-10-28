@@ -1,0 +1,223 @@
+.wp-block-gestalt-mediaandcontentslider {
+    margin-top: 0;
+}
+
+.ges--spacing-block {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+.ges-slider-spacing-block {
+    .ges-media-and-content-wrapper {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.ges--slider-section-small-image {
+    .ges-media-and-content-wrapper {
+        .ges-media-wrapper {
+            width: 960px;
+        }
+    }
+}
+
+.ges-media-content-slider-2 {
+    .ges-media-and-content-wrapper {
+        padding-top: 174px;
+        padding-bottom: 160px;
+    }
+}
+
+.ges-media-content-slider-3 {
+    .ges-media-and-content-wrapper {
+        padding-bottom: 178px;
+
+        .ges-media-wrapper {
+            width: 950px;
+        }
+    }
+}
+
+.ges-media-content-slider-4 {
+    .ges-media-and-content-wrapper {
+        padding-bottom: 120px;
+    }
+}
+
+.ges-media-content-slider-5 {
+    .ges-media-and-content-wrapper {
+        padding-top: 120px;
+    }
+}
+
+.ges-media-and-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding-top: 82px;
+    padding-bottom: 82px;
+
+    .ges-media-wrapper {
+        max-width: 100%;
+        width: 1230px;
+
+        figure {
+            margin-bottom: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .ges-content-details {
+        max-width: 100%;
+        width: 540px;
+        padding: 20px;
+        position: relative;
+
+        .ges-heading {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: var(--wp--preset--font-size--small);
+        }
+
+        .ges-description {
+            margin: 0;
+        }
+    }
+
+    .splide__pagination {
+        display: none;
+    }
+
+    .ges-custom-arrow {
+        position: absolute;
+        bottom: 0;
+        right: -222px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        z-index: 1;
+
+        .paginate--arrow {
+            padding: 0;
+            background-color: var(--wp--preset--color--secondary);
+            outline: none;
+            border: none;
+            cursor: pointer;
+
+            svg {
+                display: block;
+            }
+            &.disabled {
+                opacity: 0.4;
+            }
+        }
+
+        .pagination {
+            .current-page {
+                padding-right: 4px;
+            }
+
+            .last-page {
+                padding-left: 4px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .ges-media-and-content-wrapper {
+        gap: 40px;
+
+        .ges-custom-arrow {
+            right: -180px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .ges-media-and-content-wrapper {
+        gap: 20px;
+
+        .ges-custom-arrow {
+            right: -150px;
+        }
+    }
+}
+
+@media only screen and (max-width: 781px) {
+    .ges-media-content-slider-1 {
+        .ges-media-and-content-wrapper {
+            padding-bottom: 216px;
+        }
+    }
+
+    .ges-media-content-slider-2 {
+        .ges-media-and-content-wrapper {
+            padding-bottom: 240px;
+        }
+    }
+
+    .ges-media-content-slider-3 {
+        .ges-media-and-content-wrapper {
+            padding-bottom: 208px;
+        }
+    }
+
+    .ges-case-study-media-block {
+        padding-bottom: 200px;
+    }
+
+    .ges--slider-section-small-image {
+        .ges-media-and-content-wrapper {
+            .ges-media-wrapper {
+                width: 100%;
+            }
+        }
+    }
+
+    .ges-media-and-content-wrapper {
+        flex-direction: column;
+        gap: 0;
+
+        .ges-media-wrapper {
+            width: 100%;
+        }
+
+        .ges-content-details {
+            width: 100%;
+            padding: 90px 5% 0 5%;
+
+            .ges-custom-arrow {
+                bottom: auto;
+                left: auto;
+                top: 18px;
+                right: 40px;
+            }
+        }
+
+        .ges-custom-arrow {
+            bottom: -56px;
+            right: 20px;
+        }
+    }
+    .ges-category-heading-section {
+        &.ges-sub-page-section {
+            padding-bottom: 240px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ges-media-and-content-wrapper {
+        .ges-content-details {
+            .ges-custom-arrow {
+                right: 20px;
+            }
+        }
+    }
+}
