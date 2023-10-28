@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "expertsinwp/hero-slider",
+    "title": "Hero Slider",
+    "icon": "slides",
+    "description": "Shows Hero Banner Slider",
+    "category": "expertsinwp-blocks",
+    "keywords": [
+        "slider",
+        "hero"
+    ],
+    "version": "1.0.0",
+    "supports": {
+        "align": true
+    },
+    "textdomain": "expertsinwp",
+    "attributes": {},
+    "viewScript": [ "splidejs" ]
+}

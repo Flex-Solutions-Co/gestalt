@@ -1,0 +1,20 @@
+.ges-testimonials-slide-wrapper {
+    .ges-main-heading {
+        margin-top: 0;
+        margin-bottom: 16px;
+        line-height: 1.06;
+    }
+
+    p {
+        margin: 0;
+
+        &.ges-testimonial-details {
+            margin-bottom: 24px;
+        }
+
+        &.ges-testimonial-name {
+            margin-bottom: 4px;
+        }
+    }
+
+}

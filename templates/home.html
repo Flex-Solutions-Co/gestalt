@@ -1,37 +1,41 @@
-<!-- wp:template-part {"slug":"header-small-dark","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header","area":"header","className":"ges-header"} /-->
 
-<!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"inherit":true},"tagName":"main"} -->
-<main class="wp-block-query"><!-- wp:post-template {"align":"wide"} -->
-<!-- wp:group {"layout":{"inherit":true}} -->
-<div class="wp-block-group"><!-- wp:post-title {"isLink":true,"align":"wide","fontSize":"var(--wp--custom--typography--font-size--huge, clamp(2.25rem, 4vw, 2.75rem))"} /-->
+<!-- wp:group {"tagName":"section","className":"container ges-blog-heading-section","layout":{"type":"constrained"}} -->
+<section class="wp-block-group container ges-blog-heading-section"><!-- wp:group {"layout":{"type":"constrained","contentSize":"850px","justifyContent":"left"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Gestalt Blog</h1>
+<!-- /wp:heading -->
 
-<!-- wp:post-featured-image {"isLink":true,"align":"wide","style":{"spacing":{"margin":{"top":"calc(1.75 * var(--wp--style--block-gap))"}}}} /-->
+<!-- wp:paragraph {"className":"ges-block-description"} -->
+<p class="ges-block-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
 
-<!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"650px"} -->
-<div class="wp-block-column" style="flex-basis:650px"><!-- wp:post-excerpt /-->
+<!-- wp:group {"tagName":"section","className":"container ges-post-data-information","layout":{"type":"constrained"}} -->
+<section class="wp-block-group container ges-post-data-information"><!-- wp:query {"queryId":0,"query":{"perPage":"6","pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"tagName":"main","className":"ges-post-data-list","layout":{"contentSize":null,"type":"constrained"}} -->
+<main class="wp-block-query ges-post-data-list"><!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":2}} -->
+<!-- wp:group {"layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","align":"wide"} /-->
 
-<!-- wp:post-date {"isLink":true,"format":"F j, Y","style":{"typography":{"fontStyle":"italic","fontWeight":"400"}},"fontSize":"small"} /--></div>
-<!-- /wp:column -->
+<!-- wp:post-title {"isLink":true,"align":"wide","fontSize":"small"} /-->
 
-<!-- wp:column {"width":""} -->
-<div class="wp-block-column"></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
+<!-- wp:post-excerpt /-->
 
-<!-- wp:spacer {"height":112} -->
-<div style="height:112px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></div>
+<!-- wp:group {"className":"ges-read-more","layout":{"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-group ges-read-more"><!-- wp:read-more {"content":"View Blog","className":"right-arrow"} /--></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->
 
-<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:query-pagination {"paginationArrow":"arrow","showLabel":false,"align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
 <!-- wp:query-pagination-previous {"fontSize":"small"} /-->
 
 <!-- wp:query-pagination-numbers /-->
 
 <!-- wp:query-pagination-next {"fontSize":"small"} /-->
 <!-- /wp:query-pagination --></main>
-<!-- /wp:query -->
+<!-- /wp:query --></section>
+<!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

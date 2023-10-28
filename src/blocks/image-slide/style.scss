@@ -1,0 +1,43 @@
+.ges-media-slide {
+    picture {
+        display: block;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.wp-block-gestalt-image-slider {
+    .splide__pagination {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0;
+        gap: 8px;
+
+        li {
+            line-height: 0;
+
+            .splide__pagination__page {
+                padding: 4px;
+                background: transparent;
+                border: 1px solid var(--wp--preset--color--light-gray);
+                border-radius: 12px;
+
+                &.is-active {
+                    background-color: var(--wp--preset--color--secondary);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 781px) {
+    .wp-block-gestalt-image-slider {
+        .splide__pagination {
+            bottom: 20px;
+        }
+    }
+}
