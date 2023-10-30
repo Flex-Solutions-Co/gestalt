@@ -31,7 +31,8 @@ const Edit = (props) => {
 	const { desktopMediaId, desktopMediaSrc, mobileMediaId, mobileMediaSrc } = attributes;
 
 	const blockProps = useBlockProps({
-		className: "ges-media-slide-section"
+		className: "ges-media-slide-section",
+		renderAppender: false,
 	});
 
 	const imageRemoveHandler = () => {
@@ -72,7 +73,8 @@ const Edit = (props) => {
 	const ImagePlaceholder = ({ mediaOpenHandle }) => {
 		return (
 			<div className='slider-main-wrapper'>
-				<div className='slider-wrapper' onClick={mediaOpenHandle}>
+
+				<div className={`${desktopMediaSrc ? 'slider-wrapper' : 'slider-inner-wrapper'}`} onClick={mediaOpenHandle}>
 					{desktopMediaSrc && <img src={desktopMediaSrc} />}
 					<Icon icon="plus-alt" />
 				</div>
@@ -88,7 +90,7 @@ const Edit = (props) => {
 	const MbImagePlaceholder = ({ mediaMbOpenHandle }) => {
 		return (
 			<div className='slider-main-wrapper'>
-				<div className='slider-wrapper' onClick={mediaMbOpenHandle}>
+				<div className={`${mobileMediaSrc ? 'slider-wrapper' : 'slider-inner-wrapper'}`} onClick={mediaMbOpenHandle}>
 					{mobileMediaSrc && <img src={mobileMediaSrc} />}
 					<Icon icon="plus-alt" />
 				</div>
@@ -105,45 +107,49 @@ const Edit = (props) => {
 		<>
 			<InspectorControls>
 				<PanelBody title="Media Settings" initialOpen={true}>
-					<h4 style={{ marginBottom: "10px" }}>Upload desktop Media</h4>
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={(newMedia) => {
-								setAttributes({ desktopMediaId: newMedia?.id })
-							}}
-							value={desktopMediaId}
-							allowedTypes={ALLOWED_MEDIA_TYPES}
-							multiple={false}
-							render={({ open }) => (
+				<div className='media-setting-wrapper'>
+						<h4 className='media-heading'>Upload desktop Media</h4>
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={(newMedia) => {
+									setAttributes({ desktopMediaId: newMedia?.id })
+								}}
+								value={desktopMediaId}
+								allowedTypes={ALLOWED_MEDIA_TYPES}
+								multiple={false}
+								render={({ open }) => (
+									<ImagePlaceholder mediaOpenHandle={open} />
+								)}
+							/>
+						</MediaUploadCheck>
+					</div>
 
-								<ImagePlaceholder mediaOpenHandle={open} />
-							)}
-						/>
-					</MediaUploadCheck>
-					<h4 style={{ marginBottom: "10px" }}>Upload Mobile Media</h4>
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={(newMbMedia) => {
-								setAttributes({ mobileMediaId: newMbMedia?.id })
-							}}
-							value={mobileMediaId}
-							allowedTypes={ALLOWED_MEDIA_TYPES}
-							multiple={false}
-							render={({ open }) => (
+					<div className='media-setting-wrapper'>
+						<h4 className='media-heading'>Upload Mobile Media</h4>
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={(newMbMedia) => {
+									setAttributes({ mobileMediaId: newMbMedia?.id })
+								}}
+								value={mobileMediaId}
+								allowedTypes={ALLOWED_MEDIA_TYPES}
+								multiple={false}
+								render={({ open }) => (
 
-								<MbImagePlaceholder mediaMbOpenHandle={open} />
-							)}
-						/>
-					</MediaUploadCheck>
-				</PanelBody>
-			</InspectorControls>
+									<MbImagePlaceholder mediaMbOpenHandle={open} />
+								)}
+							/>
+						</MediaUploadCheck>
+					</div>
+			</PanelBody>
+		</InspectorControls >
 
 			<div {...blockProps}>
 				<div class="ges-media-slide">
 					<picture>
 						{mobileMediaSrc &&
 							<source media="(max-width:781px)" srcset={mobileMediaSrc} />}
-							<img src={desktopMediaSrc} alt="Hero Banner Image" />
+						<img src={desktopMediaSrc} alt="Hero Banner Image" />
 					</picture>
 				</div>
 			</div>

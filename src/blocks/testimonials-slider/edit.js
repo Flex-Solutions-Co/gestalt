@@ -9,6 +9,7 @@ import {
     InspectorControls
 } from '@wordpress/block-editor';
 import { useSelect, useDispatch } from '@wordpress/data';
+import { useRef, useEffect } from '@wordpress/element';
 import {
     TextControl,
     PanelBody,
@@ -62,6 +63,7 @@ const Edit = (props) => {
     const { attributes, setAttributes, clientId } = props;
 
     const { heading, linkText, viewMoreLink } = attributes;
+    const sliderRef = useRef();
 
     const blockProps = useBlockProps({
         className: classnames('ges-testimonials--slider-section')
@@ -91,6 +93,18 @@ const Edit = (props) => {
         innerBlocks.push(createBlock('gestalt/testimonials-slide', {}));
         replaceInnerBlocks(clientId, innerBlocks, false);
     }
+
+    const addStyleinProgress = () => {
+        var bar = document.querySelector('.my-slider-progress-bar');
+        const splidePagiantionItems = sliderRef?.current?.splide;
+        const end = splidePagiantionItems?.length;
+        var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
+        bar.style.width = String(100 * rate) + '%';
+    };
+
+    useEffect(() => {
+        addStyleinProgress();
+    }, []);
 
     return (
         <>
@@ -127,7 +141,11 @@ const Edit = (props) => {
                     <Splide className="ges-testimonials__slider"
                         hasTrack={false}
                         options={sliderSetting}
+                        ref={sliderRef}
                         data-settings={JSON.stringify(sliderSetting)}
+                        onMoved={() => {
+                            addStyleinProgress();
+                        }}
                     >
                         <SplideTrack {...innerBlocksProps}>
                             {innerBlocksProps.children}

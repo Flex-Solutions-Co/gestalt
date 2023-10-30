@@ -1,0 +1,120 @@
+.ges-verticle-container {
+    padding-top: 185px;
+    padding-bottom: 195px;
+    padding-left: 5%;
+
+    .ges-verticle--slider-section {
+        // &.splide__track {
+        //     &.alignfull {
+        //         margin-left: 7% !important;
+        //     }
+        // }
+
+        .splide__list {
+            padding-bottom: 90px !important;
+
+            li {
+                .ges-verticle-slide {
+                    figure {
+                        margin-bottom: 54px;
+                    }
+
+                    .ges-heading-block,
+                    .ges-content-information {
+                        margin-top: 0;
+                        margin-bottom: 6px;
+                    }
+
+                    .ges-read-more {
+                        margin-top: 0;
+
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .case-study-progress {
+        background: #ccc;
+        max-width: 1640px;
+        margin-right: 5%;
+    }
+
+    .case-study-progress-bar {
+        background: var(--wp--preset--color--primary);
+        height: 4px;
+        transition: width 400ms ease;
+        width: 0;
+    }
+
+    .ges-casestudy-main-heading-block {
+        max-width: 540px;
+        margin-bottom: 72px;
+        .ges-casestudy-heading {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: var(--wp--preset--font-size--small);
+        }
+
+        .ges-description {
+            margin-top: 0;
+        }
+    }
+}
+.wp-block-gestalt-casestudyslider {
+    margin-top: 0;
+}
+
+@media only screen and (min-width: 1830px) {
+    .ges-verticle-container {
+        margin-left: calc((100% - 1840px)/2);
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .ges-verticle-container {
+        padding-top: 150px;
+        padding-bottom: 160px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .ges-verticle-container {
+        padding-top: 100px;
+        padding-bottom: 140px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .ges-verticle-container {
+        padding-top: 70px;
+        padding-bottom: 120px;
+    }
+}
+@media only screen and (max-width: 781px) {
+    .ges-verticle-container {
+        padding-top: 50px;
+        padding-bottom: 112px;
+        .ges-verticle--slider-section {
+            .splide__list {
+                li {
+                    .ges-verticle-slide {
+                        figure {
+                            margin-bottom: 46px;
+                        }
+                        .ges-content-information  {
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .ges-casestudy-main-heading-block {
+            max-width: 100%;
+            margin-bottom: 56px;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gestalt/videoplayer",
+    "title": "Video Player",
+    "icon": "format-video",
+    "description": "The gutenberg block to show video view.",
+    "category": "gestalt-blocks",
+    "keywords": [
+        "video"
+    ],
+    "version": "1.0.0",
+    "supports": {
+        "align": true
+    },
+    "textdomain": "gestalt",
+    "attributes": {
+        "addVideoUrl": {
+            "type": "string",
+            "default": ""
+        },
+         "isSelfHosted": {
+            "type": "boolean",
+            "default": false
+        },
+        "poster": {
+             "type": "object",
+             "default": {}
+        },
+         "posterMediaId": {
+            "type": "string"
+        },
+        "lightBoxVideoMediaId": {
+            "type": "string"
+        },
+        "lightBoxVideo": {
+             "type": "object",
+              "default": {}
+        }
+    },
+    "style": [ "file:./glightbox.min.css", "glightbox-style" ],
+    "viewScript": [ "lightbox-script", "glightbox-style" ]
+}

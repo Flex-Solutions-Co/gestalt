@@ -2,9 +2,9 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "gestalt/hero-banner-section",
-    "title": "Displaying page/post banner image.",
+    "title": "Hero Banner Section",
     "icon": "format-image",
-    "description": "The given ",
+    "description": "Displaying page/post banner image.",
     "category": "gestalt-blocks",
     "keywords": [
         "herosection",

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "gestalt/casestudyslide",
+  "title": "Case Study Slide",
+  "icon": "slides",
+  "parent": [
+    "gestalt/casestudyslider"
+  ],
+  "description": "The gutenberg block to show case study slider view.",
+  "category": "gestalt-blocks",
+  "keywords": [
+    "slide",
+    "image slider",
+    "case study"
+  ],
+  "version": "1.0.0",
+  "supports": {
+    "html": false,
+    "align": true
+  },
+  "textdomain": "gestalt"
+}

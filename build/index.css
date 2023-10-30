@@ -5,6 +5,13 @@
   margin-bottom: 24px;
 }
 
+.splide__list .ges-dummy-text {
+  display: none;
+}
+.splide__list .ges-dummy-text:first-child {
+  display: block;
+}
+
 .bg-wrapper {
   position: relative;
   width: 100%;
@@ -51,6 +58,23 @@
 }
 .e-hero-banner-slide-inner .e-hero-banner-row .block-editor-block-list__layout {
   height: 100%;
+}
+
+.btn-add-new-slider {
+  margin-bottom: 24px;
+}
+
+.block-editor-block-list__block .ges-verticle-container {
+  margin-left: auto;
+}
+
+.btn-add-new-slider {
+  margin-bottom: 24px;
+}
+
+.ges-custom-arrow .pagination {
+  padding-left: 6px;
+  padding-right: 2px;
 }
 
 /*# sourceMappingURL=index.css.map*/
