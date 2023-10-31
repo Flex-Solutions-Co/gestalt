@@ -131,16 +131,19 @@
 
             &::-webkit-scrollbar {
                 height: 4px;
+                width: 100%;
             }
 
             &::-webkit-scrollbar-track {
-                background: #cccccc;
-                border-radius: 1rem;
+                background-color: #cccccc;
+                border-radius: 16px;
+                -webkit-border-radius: 16px;
             }
 
             &::-webkit-scrollbar-thumb {
                 background: var(--wp--preset--color--primary);
-                border-radius: 2rem;
+                border-radius: 32px;
+                -webkit-border-radius: 32px;
             }
 
             &::-webkit-scrollbar-thumb {

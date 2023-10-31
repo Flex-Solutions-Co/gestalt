@@ -1,19 +1,11 @@
-<!-- wp:template-part {"slug":"header","area":"header"} /-->
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"ges-header"} /-->
 
-<!-- wp:group {"tagName":"section","className":"container ges-blog-heading-section","layout":{"type":"constrained"}} -->
-<section class="wp-block-group container ges-blog-heading-section"><!-- wp:group {"layout":{"type":"constrained","contentSize":"850px","justifyContent":"left"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Gestalt Blog</h1>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"className":"ges-block-description"} -->
-<p class="ges-block-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></section>
+<!-- wp:group {"tagName":"section","align":"wide","className":"container ges-category-heading-section","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignwide container ges-category-heading-section"><!-- wp:query-title {"type":"archive","showPrefix":false,"fontSize":"huge"} /--></section>
 <!-- /wp:group -->
 
 <!-- wp:group {"tagName":"section","className":"container ges-post-data-information","layout":{"type":"constrained"}} -->
-<section class="wp-block-group container ges-post-data-information"><!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"tagName":"main","className":"ges-post-data-list","layout":{"contentSize":null,"type":"constrained"}} -->
+<section class="wp-block-group container ges-post-data-information"><!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"tagName":"main","className":"ges-post-data-list","layout":{"contentSize":null,"type":"constrained"}} -->
 <main class="wp-block-query ges-post-data-list"><!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":2}} -->
 <!-- wp:group {"layout":{"inherit":true,"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","align":"wide"} /-->
