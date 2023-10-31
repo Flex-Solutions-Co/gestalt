@@ -1039,13 +1039,16 @@ footer {
         .ges-expertise-wrapper .ges-expertise-inner-wrapper .ges-expertise-row:first-of-type {
           padding-top: 88px; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar {
-        height: 4px; }
+        height: 4px;
+        width: 100%; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar-track {
-        background: #cccccc;
-        border-radius: 1rem; }
+        background-color: #cccccc;
+        border-radius: 16px;
+        -webkit-border-radius: 16px; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar-thumb {
         background: var(--wp--preset--color--primary);
-        border-radius: 2rem; }
+        border-radius: 32px;
+        -webkit-border-radius: 32px; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar-thumb:hover {
         background: var(--wp--preset--color--primary); } }
 @media only screen and (max-width: 600px) {
@@ -1086,12 +1089,24 @@ footer {
     padding-top: 300px;
     padding-bottom: 280px; } }
 .ges-category-heading-section {
+  margin-top: 0;
   padding-top: 355px;
   padding-bottom: 278px; }
 
+.category .ges-category-heading-section {
+  padding-top: 460px;
+  padding-bottom: 276px; }
+
+@media only screen and (max-width: 1200px) {
+  .category .ges-category-heading-section {
+    padding-top: 400px;
+    padding-bottom: 226px; } }
 @media only screen and (max-width: 781px) {
   .ges-category-heading-section {
-    padding-top: 300px; } }
+    padding-top: 300px; }
+
+  .category .ges-category-heading-section {
+    padding-top: 346px; } }
 .page-error-seection {
   padding-top: 200px;
   padding-bottom: 120px; }

@@ -114,3 +114,18 @@ add_action( 'init', 'ew_add_custom_case_study_cpt' );
 if ( file_exists( get_template_directory() . '/build/gestalt-blocks.php' ) ){
 	require get_template_directory() . '/build/gestalt-blocks.php';
 }
+
+function add_userback_script() {
+	?>
+	<script>
+    window.Userback = window.Userback || {};
+    Userback.access_token = '6142|85985|U5YIs6NiIMIeVZRX56YT0wgaF7anHOX8N5pI9p3jt0aK0doiQ2';
+    (function(d) {
+        var s = d.createElement('script');s.async = true;
+        s.src = 'https://static.userback.io/widget/v1.js';
+        (d.head || d.body).appendChild(s);
+    })(document);
+</script>
+	<?php
+}
+add_action( 'wp_footer', 'add_userback_script' );
