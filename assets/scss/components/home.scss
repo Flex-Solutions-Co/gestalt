@@ -104,7 +104,10 @@
 @media only screen and (min-width: 1801px) {
 
     //Right Image and left content block.
-    body .ges-right-media-content-block {
+    // body .ges-right-media-content-block {
+    //     margin-left: calc((100% - 1640px)/2) !important;
+    // }
+    .wp-block-group.ges-right-media-content-block {
         margin-left: calc((100% - 1640px)/2) !important;
     }
 }
@@ -192,7 +195,7 @@
         }
 
         .ges-second-column {
-            padding: 0 5%;
+            padding: 0 40px;
 
             .ges-media-heading-block {
                 margin-bottom: 0;
@@ -212,6 +215,9 @@
 
         .ges-media-heading-block {
             margin-bottom: 0;
+        }
+        .ges-left-media-content-image {
+            padding: 0 40px;
         }
     }
 

@@ -9,7 +9,7 @@ return array(
                     <div class="wp-block-group alignwide ges-image-and-content-row-scream"><!-- wp:columns {"verticalAlignment":"center"} -->
                     <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"1230px","className":"ges-first-column"} -->
                     <div class="wp-block-column is-vertically-aligned-center ges-first-column" style="flex-basis:1230px"><!-- wp:image {"id":192,"sizeSlug":"full","linkDestination":"none"} -->
-                    <figure class="wp-block-image size-full"><img src="http://localhost:10035/wp-content/uploads/2023/10/packaging-design.jpg" alt="Packaging Design" class="wp-image-192"/></figure>
+                    <figure class="wp-block-image size-full"><img src="https://djx35fh9.modx.dev/wp-content/uploads/2023/10/packaging-design.jpg" alt="Packaging Design" class="wp-image-192"/></figure>
                     <!-- /wp:image --></div>
                     <!-- /wp:column -->
                     

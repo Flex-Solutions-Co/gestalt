@@ -30,7 +30,7 @@ const MY_TEMPLATE = [
 ]
 
 export const sliderSetting = {
-    type: 'loop',
+    // type: 'loop',
     perPage: 3,
     autoplay: false,
     gap: '76px',
@@ -47,6 +47,7 @@ export const sliderSetting = {
         781: {
             gap: '50px',
             perPage: 1,
+            padding: { left: '40px', right: '40px' },
         },
         1366: {
             gap: '40px',
@@ -97,7 +98,7 @@ const Edit = (props) => {
     const addStyleinProgress = () => {
         var bar = document.querySelector('.my-slider-progress-bar');
         const splidePagiantionItems = sliderRef?.current?.splide;
-        const end = splidePagiantionItems?.length;
+        const end = splidePagiantionItems.Components.Controller.getEnd() + 1;
         var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
         bar.style.width = String(100 * rate) + '%';
     };

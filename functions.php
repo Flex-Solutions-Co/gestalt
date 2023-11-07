@@ -71,7 +71,6 @@ function custom_render_block_core_navigation (string $block_content, array $bloc
 }
 add_filter( 'render_block', 'custom_render_block_core_navigation', null, 2 );
 
-
 /**
  * Create Custom Work Cpt.
  */
@@ -117,7 +116,7 @@ if ( file_exists( get_template_directory() . '/build/gestalt-blocks.php' ) ){
 
 function add_userback_script() {
 	?>
-	<script>
+	<script defer>
     window.Userback = window.Userback || {};
     Userback.access_token = '6142|85985|U5YIs6NiIMIeVZRX56YT0wgaF7anHOX8N5pI9p3jt0aK0doiQ2';
     (function(d) {
@@ -128,4 +127,5 @@ function add_userback_script() {
 </script>
 	<?php
 }
-add_action( 'wp_footer', 'add_userback_script' );
+add_action( 'wp_footer', 'add_userback_script', 20 );
+

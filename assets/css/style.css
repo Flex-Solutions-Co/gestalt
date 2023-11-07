@@ -87,6 +87,10 @@
     -webkit-transform: translateY(-50%) rotate(140deg);
     transform: translateY(-50%) rotate(140deg); }
 
+@media only screen and (max-width: 781px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px; } }
 header {
   position: fixed;
   top: 0;
@@ -457,7 +461,7 @@ footer {
       text-decoration: none; }
 
 @media only screen and (min-width: 1801px) {
-  body .ges-right-media-content-block {
+  .wp-block-group.ges-right-media-content-block {
     margin-left: calc((100% - 1640px)/2) !important; } }
 @media only screen and (max-width: 1800px) {
   .ges-right-media-content-block .ges-left-media-content-image {
@@ -495,7 +499,7 @@ footer {
     .ges-image-and-content-row-scream .ges-first-column figure {
       margin-bottom: 4.125rem; }
     .ges-image-and-content-row-scream .ges-second-column {
-      padding: 0 5%; }
+      padding: 0 40px; }
       .ges-image-and-content-row-scream .ges-second-column .ges-media-heading-block {
         margin-bottom: 0; }
 
@@ -509,7 +513,9 @@ footer {
           -ms-flex-direction: column-reverse;
               flex-direction: column-reverse; }
     .ges-right-media-content-block .ges-media-heading-block {
-      margin-bottom: 0; } }
+      margin-bottom: 0; }
+    .ges-right-media-content-block .ges-left-media-content-image {
+      padding: 0 40px; } }
 @media only screen and (max-width: 480px) {
   .ges-image-and-content-row-scream .ges-first-column figure.ges-object-fit-none img {
     height: auto; }
@@ -752,7 +758,7 @@ footer {
     .ges-media-content-block-row .wp-block-media-text {
       grid-template-columns: 100% !important; }
     .ges-media-content-block-row .wp-block-media-text__media {
-      margin: 0 -19px; }
+      margin: 0 -40px; }
       .ges-media-content-block-row .wp-block-media-text__media img {
         height: auto; }
     .ges-media-content-block-row .wp-block-media-text__content {
@@ -837,15 +843,42 @@ footer {
     -webkit-column-gap: 20px;
             column-gap: 20px;
     row-gap: 36px; }
-    .ges-post-data-list ul li .wp-block-post-featured-image,
-    .ges-post-data-list ul li .wp-block-post-excerpt,
-    .ges-post-data-list ul li .wp-block-post-title {
-      margin-bottom: 10px;
-      margin-top: 0; }
-    .ges-post-data-list ul li .wp-block-post-title a {
-      text-decoration: none; }
-    .ges-post-data-list ul li .ges-read-more {
-      margin: 0; }
+    .ges-post-data-list ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      height: 100%; }
+      .ges-post-data-list ul li .ges-single-post-data {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        height: 100%; }
+      .ges-post-data-list ul li .wp-block-post-featured-image,
+      .ges-post-data-list ul li .wp-block-post-excerpt,
+      .ges-post-data-list ul li .wp-block-post-title {
+        margin-bottom: 10px;
+        margin-top: 0;
+        margin-left: 0 !important; }
+      .ges-post-data-list ul li .wp-block-post-title a {
+        text-decoration: none; }
+      .ges-post-data-list ul li .ges-read-more {
+        margin-top: auto;
+        margin-bottom: 0;
+        margin-left: 0 !important; }
 
 @media only screen and (max-width: 1200px) {
   .ges-blog-heading-section {
@@ -869,7 +902,8 @@ footer {
     .ges-post-data-list ul li .wp-block-post-featured-image {
       margin-bottom: 60px; }
     .ges-post-data-list ul li figure a {
-      margin: 0 -19px; }
+      margin: 0 -40px;
+      height: auto; }
     .ges-post-data-list ul li .wp-block-post-title {
       margin-bottom: 6px; } }
 .ges-single-post-banner-image {
@@ -1028,7 +1062,9 @@ footer {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between;
-      overflow-x: auto; }
+      overflow: auto;
+      margin: 0 -40px !important;
+      padding: 0 40px; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper .ges-expertise-row {
         padding-top: 88px;
         padding-bottom: 88px;
@@ -1039,17 +1075,26 @@ footer {
         .ges-expertise-wrapper .ges-expertise-inner-wrapper .ges-expertise-row:first-of-type {
           padding-top: 88px; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar {
-        height: 4px;
-        width: 100%; }
+        height: 4px; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar-track {
-        background-color: #cccccc;
-        border-radius: 16px;
-        -webkit-border-radius: 16px; }
+        background: #cccccc;
+        border-radius: 1rem;
+        margin: 0 40px; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar-thumb {
         background: var(--wp--preset--color--primary);
-        border-radius: 32px;
-        -webkit-border-radius: 32px; }
+        border-radius: 2rem; }
       .ges-expertise-wrapper .ges-expertise-inner-wrapper::-webkit-scrollbar-thumb:hover {
+        background: var(--wp--preset--color--primary); }
+      .ges-expertise-wrapper .ges-expertise-inner-wrapper:-webkit-scrollbar {
+        height: 4px; }
+      .ges-expertise-wrapper .ges-expertise-inner-wrapper:-webkit-scrollbar-track {
+        background: #cccccc;
+        border-radius: 1rem;
+        margin: 0 40px; }
+      .ges-expertise-wrapper .ges-expertise-inner-wrapper:-webkit-scrollbar-thumb {
+        background: var(--wp--preset--color--primary);
+        border-radius: 2rem; }
+      .ges-expertise-wrapper .ges-expertise-inner-wrapper:-webkit-scrollbar-thumb:hover {
         background: var(--wp--preset--color--primary); } }
 @media only screen and (max-width: 600px) {
   .ges-expertise-wrapper .ges-expertise-inner-wrapper .ges-expertise-row {

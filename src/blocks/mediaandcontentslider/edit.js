@@ -30,6 +30,7 @@ const MY_TEMPLATE = [
     ['gestalt/mediaandcontentslide', {}]
 ]
 
+
 export const sliderSetting = {
     // type: 'loop',
     perPage: 1,
@@ -85,9 +86,7 @@ const Edit = (props) => {
         return select('core/block-editor').getBlock(clientId);
     }, []); //Get Block by ID
 
-    const {
-        replaceInnerBlocks, updateBlockAttributes
-    } = useDispatch('core/block-editor'); //Dispatch for inner blocks
+    const { replaceInnerBlocks, updateBlockAttributes } = useDispatch('core/block-editor'); //Dispatch for inner blocks
 
     function sliderMove(action) {
         const sliderInstance = sliderRef.current;

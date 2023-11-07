@@ -208,14 +208,23 @@
   }
 }
 @media only screen and (max-width: 781px) {
+  .wp-block-gestalt-testimonials-slider .ges-testimonials-container {
+    padding: 0;
+  }
   .ges-testimonials--slider-section .ges-testimonials__slider .ges-testimonials--slider {
     padding-bottom: 100px;
   }
   .ges-testimonials--slider-section .ges-testimonials__slider .splide__list {
     padding-right: 15% !important;
   }
+  .ges-testimonials--slider-section .ges-testimonials__slider .my-slider-progress {
+    max-width: 1640px;
+    margin: 0 40px;
+  }
   .ges-testimonials--slider-section .ges-testimonials-main-heading-block {
     padding-top: 152px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .ges-testimonials--slider-section .ges-testimonials-main-heading-block .ges-testimonials-heading {
     margin-bottom: 10px;
@@ -223,7 +232,7 @@
 }
 @media only screen and (max-width: 600px) {
   .ges-testimonials--slider-section .ges-testimonials__slider .splide__list {
-    padding-right: 20% !important;
+    padding-right: 21% !important;
   }
 }
 .ges-media-slide picture {
@@ -235,6 +244,8 @@
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .wp-block-gestalt-courseslider .splide__pagination {
@@ -381,7 +392,6 @@
 .ges-verticle-container {
   padding-top: 185px;
   padding-bottom: 195px;
-  padding-left: 5%;
 }
 .ges-verticle-container .ges-verticle--slider-section .splide__list {
   padding-bottom: 90px !important;
@@ -403,7 +413,7 @@
 .ges-verticle-container .case-study-progress {
   background: #ccc;
   max-width: 1640px;
-  margin-right: 5%;
+  margin: 0 7% 0 7%;
 }
 .ges-verticle-container .case-study-progress-bar {
   background: var(--wp--preset--color--primary);
@@ -412,8 +422,9 @@
   width: 0;
 }
 .ges-verticle-container .ges-casestudy-main-heading-block {
-  max-width: 540px;
+  max-width: 670px;
   margin-bottom: 72px;
+  padding-left: 7%;
 }
 .ges-verticle-container .ges-casestudy-main-heading-block .ges-casestudy-heading {
   margin-top: 0;
@@ -427,10 +438,16 @@
 .wp-block-gestalt-casestudyslider {
   margin-top: 0;
 }
+.wp-block-gestalt-casestudyslider .splide__list {
+  padding-right: 10% !important;
+}
 
-@media only screen and (min-width: 1830px) {
-  .ges-verticle-container {
-    margin-left: calc((100% - 1840px) / 2);
+@media only screen and (max-width: 1860px) {
+  .ges-verticle-container .case-study-progress {
+    margin: 0 40px 0 40px;
+  }
+  .ges-verticle-container .ges-casestudy-main-heading-block {
+    padding-left: 40px;
   }
 }
 @media only screen and (max-width: 1440px) {
@@ -610,7 +627,7 @@
   }
   .ges-media-and-content-wrapper .ges-content-details {
     width: 100%;
-    padding: 90px 5% 0 5%;
+    padding: 90px 40px 0 40px;
   }
   .ges-media-and-content-wrapper .ges-content-details .ges-custom-arrow {
     bottom: auto;

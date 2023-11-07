@@ -145,13 +145,14 @@ const Edit = (props) => {
 		</InspectorControls >
 
 			<div {...blockProps}>
+				{desktopMediaSrc ?
 				<div class="ges-media-slide">
 					<picture>
 						{mobileMediaSrc &&
 							<source media="(max-width:781px)" srcset={mobileMediaSrc} />}
 						<img src={desktopMediaSrc} alt="Hero Banner Image" />
 					</picture>
-				</div>
+				</div> : <p>Please select banner image.</p>}
 			</div>
 		</>
 	);

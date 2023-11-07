@@ -7,7 +7,7 @@ return array(
 	'categories' => array( 'mediaandcontent' ),
 	'content'    => '<!-- wp:group {"align":"wide","className":"ges-media-content-block","layout":{"type":"constrained"}} -->
                     <div class="wp-block-group alignwide ges-media-content-block"><!-- wp:image {"align":"full","id":163,"sizeSlug":"large","linkDestination":"none","className":"ges-full-image-block"} -->
-                    <figure class="wp-block-image alignfull size-large ges-full-image-block"><img src="http://localhost:10035/wp-content/uploads/2023/10/brand-developm-nt-case-studies-1024x576.jpg" alt="Brand Development Case Studies" class="wp-image-163"/></figure>
+                    <figure class="wp-block-image alignfull size-large ges-full-image-block"><img src="https://djx35fh9.modx.dev/wp-content/uploads/2023/10/brand-developm-nt-case-studies-1024x576.jpg" alt="Brand Development Case Studies" class="wp-image-163"/></figure>
                     <!-- /wp:image -->
                     
                     <!-- wp:group {"align":"wide","className":"ges-media-content-wrap container","layout":{"type":"constrained"}} -->

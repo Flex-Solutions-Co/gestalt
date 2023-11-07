@@ -54,7 +54,8 @@ function gestalt_register_block_patterns() {
 		'testimonial',
 		'media-and-content',
 		'query-loop',
-		'videoplayer'
+		'videoplayer',
+		'horizontal-image-and-text'
 	);
 
 	/**

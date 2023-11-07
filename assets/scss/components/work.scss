@@ -113,7 +113,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            overflow-x: auto;
+            overflow: auto;
+            // scrollbar-width: auto;
+            // scrollbar-color: #000000 #cccccc;
+            margin: 0 -40px !important;
+            padding: 0 40px;
 
             .ges-expertise-row {
                 padding-top: 88px;
@@ -131,22 +135,40 @@
 
             &::-webkit-scrollbar {
                 height: 4px;
-                width: 100%;
             }
 
             &::-webkit-scrollbar-track {
-                background-color: #cccccc;
-                border-radius: 16px;
-                -webkit-border-radius: 16px;
+                background: #cccccc;
+                border-radius: 1rem;
+                margin: 0 40px;
             }
 
             &::-webkit-scrollbar-thumb {
                 background: var(--wp--preset--color--primary);
-                border-radius: 32px;
-                -webkit-border-radius: 32px;
+                border-radius: 2rem;
             }
 
             &::-webkit-scrollbar-thumb {
+                &:hover {
+                    background: var(--wp--preset--color--primary);
+                }
+            }
+
+            &:-webkit-scrollbar {
+                height: 4px;
+            }
+
+            &:-webkit-scrollbar-track {
+                background: #cccccc;
+                border-radius: 1rem;
+                margin: 0 40px;
+            }
+
+            &:-webkit-scrollbar-thumb {
+                background: var(--wp--preset--color--primary);
+                border-radius: 2rem;
+            }
+            &:-webkit-scrollbar-thumb {
                 &:hover {
                     background: var(--wp--preset--color--primary);
                 }

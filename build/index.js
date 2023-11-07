@@ -2841,24 +2841,25 @@ const MY_TEMPLATE = [['core/group', {
   className: 'ges-heading-block'
 }], ['core/paragraph', {
   className: 'ges-content-information',
-  content: 'Lorem Ipsum is simply dummy text.'
+  placeholder: 'Lorem Ipsum is simply dummy text.'
 }], ['core/paragraph', {
   className: 'ges-read-more right-arrow',
-  content: 'View Work'
+  placeholder: 'View Work'
 }]]]];
 const Edit = props => {
   // const { attributes, setAttributes, isSelected } = props;
   // const { mediaId, mediaSrc, mediaAlt } = attributes;
 
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: "ges-verticle-slide",
-    renderAppender: false
+    className: "ges-verticle-slide"
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_6__.SplideSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS,
-    template: MY_TEMPLATE
+    template: MY_TEMPLATE,
+    renderAppender: false,
+    templateLock: "all"
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
@@ -2989,18 +2990,18 @@ __webpack_require__.r(__webpack_exports__);
 const ALLOWED_BLOCKS = ['gestalt/casestudyslide'];
 const MY_TEMPLATE = [['gestalt/casestudyslide', {}], ['gestalt/casestudyslide', {}]];
 const sliderSetting = {
-  type: 'loop',
+  // type: 'loop',
   perPage: 2,
+  perMove: 1,
   autoplay: false,
   gap: '12px',
-  perMove: 1,
   arrows: false,
   pagination: false,
   drag: true,
   slideFocus: false,
   padding: {
-    left: '0px',
-    right: '20%'
+    left: '7%',
+    right: '7%'
   },
   breakpoints: {
     600: {
@@ -3010,8 +3011,14 @@ const sliderSetting = {
       gap: '50px',
       perPage: 1,
       padding: {
-        left: '0px',
-        right: '12%'
+        left: '40px',
+        right: '40px'
+      }
+    },
+    1860: {
+      padding: {
+        left: '5%',
+        right: '5%'
       }
     }
   }
@@ -3054,7 +3061,7 @@ const Edit = props => {
   const addStyleinProgress = () => {
     var bar = document.querySelector('.case-study-progress-bar');
     const splidePagiantionItems = sliderRef?.current?.splide;
-    const end = splidePagiantionItems?.length;
+    const end = splidePagiantionItems.Components.Controller.getEnd() + 1;
     var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
     bar.style.width = String(100 * rate) + '%';
   };
@@ -3862,7 +3869,7 @@ const Edit = props => {
     })
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, desktopMediaSrc ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "ges-media-slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("picture", null, mobileMediaSrc && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("source", {
     media: "(max-width:781px)",
@@ -3870,7 +3877,7 @@ const Edit = props => {
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: desktopMediaSrc,
     alt: "Hero Banner Image"
-  })))));
+  }))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Please select banner image.")));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
 
@@ -3979,13 +3986,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/core-data */ "@wordpress/core-data");
-/* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
+/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
 
 /**
  * WordPress dependencies
@@ -3993,27 +3994,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-const ALLOWED_MEDIA_TYPES = ['image'];
 const ALLOWED_BLOCKS = ['core/image', 'core/group'];
 const MY_TEMPLATE = [['core/image', {
   className: 'ges-image-wrapper'
 }]];
 const Edit = props => {
-  // const { attributes, setAttributes, isSelected } = props;
-  // const { mediaId, mediaSrc, mediaAlt } = attributes;
-
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: "ges-verticle-slide",
     renderAppender: false
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_6__.SplideSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.SplideSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS,
-    template: MY_TEMPLATE
+    template: MY_TEMPLATE,
+    templateLock: "all"
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
@@ -4466,7 +4461,8 @@ const Edit = props => {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS,
-    template: MY_TEMPLATE
+    template: MY_TEMPLATE,
+    templateLock: "all"
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
@@ -4595,7 +4591,7 @@ __webpack_require__.r(__webpack_exports__);
 const ALLOWED_BLOCKS = ['gestalt/testimonials-slide'];
 const MY_TEMPLATE = [['gestalt/testimonials-slide', {}], ['gestalt/testimonials-slide', {}]];
 const sliderSetting = {
-  type: 'loop',
+  // type: 'loop',
   perPage: 3,
   autoplay: false,
   gap: '76px',
@@ -4611,7 +4607,11 @@ const sliderSetting = {
     },
     781: {
       gap: '50px',
-      perPage: 1
+      perPage: 1,
+      padding: {
+        left: '40px',
+        right: '40px'
+      }
     },
     1366: {
       gap: '40px',
@@ -4661,7 +4661,7 @@ const Edit = props => {
   const addStyleinProgress = () => {
     var bar = document.querySelector('.my-slider-progress-bar');
     const splidePagiantionItems = sliderRef?.current?.splide;
-    const end = splidePagiantionItems?.length;
+    const end = splidePagiantionItems.Components.Controller.getEnd() + 1;
     var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
     bar.style.width = String(100 * rate) + '%';
   };
