@@ -25,7 +25,7 @@ return array(
                     
                     <!-- wp:column {"verticalAlignment":"center","width":"1200px"} -->
                     <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:1200px"><!-- wp:image {"id":212,"sizeSlug":"full","linkDestination":"none"} -->
-                    <figure class="wp-block-image size-full"><img src="http://localhost:10035/wp-content/uploads/2023/10/website-design.jpg" alt="Website Design" class="wp-image-212"/></figure>
+                    <figure class="wp-block-image size-full"><img src="https://djx35fh9.modx.dev/wp-content/uploads/2023/10/website-design.jpg" alt="Website Design" class="wp-image-212"/></figure>
                     <!-- /wp:image --></div>
                     <!-- /wp:column --></div>
                     <!-- /wp:columns --></div>

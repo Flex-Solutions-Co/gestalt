@@ -53,6 +53,7 @@ const Edit = (props) => {
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={MY_TEMPLATE}
+						templateLock="all" 
 					/>
 				</div>
 			</SplideSlide>

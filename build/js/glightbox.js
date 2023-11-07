@@ -93,7 +93,8 @@ __webpack_require__.r(__webpack_exports__);
 
 if (document.querySelector(".glightbox")) {
   var lightboxDescription = glightbox__WEBPACK_IMPORTED_MODULE_0___default()({
-    selector: ".glightbox"
+    selector: ".glightbox",
+    autoplayVideos: true
   });
 }
 }();

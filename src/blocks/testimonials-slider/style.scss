@@ -58,6 +58,11 @@
     }
 }
 @media only screen and (max-width: 781px) {
+    .wp-block-gestalt-testimonials-slider {
+        .ges-testimonials-container {
+            padding: 0;
+        }
+    }
     .ges-testimonials--slider-section {
         .ges-testimonials__slider {
             .ges-testimonials--slider {
@@ -66,9 +71,15 @@
             .splide__list {
                 padding-right: 15% !important;
             }
+            .my-slider-progress {
+                max-width: 1640px;
+                margin: 0 40px;
+            }
         }
         .ges-testimonials-main-heading-block {
             padding-top: 152px;
+            padding-left: 40px;
+            padding-right: 40px;
             .ges-testimonials-heading {
                 margin-bottom: 10px;
             }
@@ -80,7 +91,7 @@
     .ges-testimonials--slider-section {
         .ges-testimonials__slider {
             .splide__list {
-                padding-right: 20% !important;
+                padding-right: 21% !important;
             }
         }
     }

@@ -60,6 +60,7 @@
 			"wideSize": "1920px"
 		},
 		"spacing": {
+			"padding": true,
 			"units": [
 				"%",
 				"px",

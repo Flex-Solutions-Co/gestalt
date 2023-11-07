@@ -29,21 +29,21 @@ const MY_TEMPLATE = [
 		'core/group',
 		{
 			className: "ges-vertical-image-slider-wrapper",
-			align: "full"
+			align: "full",
+
 		},
 		[
-
 			[
 				'core/image',
 				{
-					className: 'ges-image-wrapper'
+					className: 'ges-image-wrapper',
 				},
 
 			],
 			[
 				'core/heading',
 				{
-					className: 'ges-heading-block'
+					className: 'ges-heading-block',
 				},
 
 			],
@@ -51,7 +51,7 @@ const MY_TEMPLATE = [
 				'core/paragraph',
 				{
 					className: 'ges-content-information',
-					content: 'Lorem Ipsum is simply dummy text.',
+					placeholder: 'Lorem Ipsum is simply dummy text.',
 				},
 
 			],
@@ -59,12 +59,13 @@ const MY_TEMPLATE = [
 				'core/paragraph',
 				{
 					className: 'ges-read-more right-arrow',
-					content: 'View Work',
+					placeholder: 'View Work',
 				}
 			]
 		]
 	]
 ];
+
 
 const Edit = (props) => {
 
@@ -73,7 +74,6 @@ const Edit = (props) => {
 
 	const blockProps = useBlockProps({
 		className: "ges-verticle-slide",
-		renderAppender: false,
 	});
 
 	return (
@@ -83,6 +83,8 @@ const Edit = (props) => {
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={MY_TEMPLATE}
+						renderAppender={false}
+						templateLock="all" 
 					/>
 				</div>
 			</SplideSlide>

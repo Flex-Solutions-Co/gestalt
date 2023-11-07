@@ -20,7 +20,6 @@ const Save = ({ attributes }) => {
 	const { heading, description } = attributes;
 
 	const innerBlocksProps = useInnerBlocksProps.save(blockProps);
-
 	return (
 		<div {...blockProps}>
 			<div className='ges-media-and-content-wrapper'>

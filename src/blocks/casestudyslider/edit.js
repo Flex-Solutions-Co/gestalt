@@ -31,16 +31,16 @@ const MY_TEMPLATE = [
 ]
 
 export const sliderSetting = {
-    type: 'loop',
-    perPage: 2,
+    // type: 'loop',
+    perPage : 2,
+    perMove : 1,
     autoplay: false,
     gap: '12px',
-    perMove: 1,
     arrows: false,
     pagination: false,
     drag: true,
     slideFocus: false,
-    padding: { left: '0px', right: '20%' },
+    padding: { left: '7%', right: '7%' },
     breakpoints: {
         600: {
             gap: '18px',
@@ -48,15 +48,15 @@ export const sliderSetting = {
         781: {
             gap: '50px',
             perPage: 1,
-            padding: { left: '0px', right: '12%' },
+            padding: { left: '40px', right: '40px' },
+        },
+        1860: {
+            padding: { left: '5%', right: '5%' },
         }
     }
 }
 
-
-
 const Edit = (props) => {
-
     const { attributes, setAttributes, clientId } = props;
     const { heading, description } = attributes;
     const sliderRef = useRef();
@@ -92,7 +92,7 @@ const Edit = (props) => {
     const addStyleinProgress = () => {
         var bar = document.querySelector('.case-study-progress-bar');
         const splidePagiantionItems = sliderRef?.current?.splide;
-        const end = splidePagiantionItems?.length;
+        const end = splidePagiantionItems.Components.Controller.getEnd() + 1;
         var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
         bar.style.width = String(100 * rate) + '%';
     };

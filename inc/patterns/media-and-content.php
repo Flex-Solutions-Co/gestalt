@@ -6,8 +6,8 @@ return array(
 	'title'      => __( 'Media and content block', 'gestalt' ),
 	'categories' => array( 'mediaandcontent' ),
     'content'    => '<!-- wp:group {"className":"ges-media-content-block-row","layout":{"type":"constrained","contentSize":"1230px","justifyContent":"left"}} -->
-                    <div class="wp-block-group ges-media-content-block-row"><!-- wp:media-text {"align":"","mediaId":392,"mediaLink":"http://localhost:10035/about/chosen-foods-celebrates-roots-with-new-brand-identity/","mediaType":"image","mediaWidth":55,"isStackedOnMobile":false,"verticalAlignment":"top","imageFill":false} -->
-                    <div class="wp-block-media-text is-vertically-aligned-top" style="grid-template-columns:55% auto"><figure class="wp-block-media-text__media"><img src="http://localhost:10035/wp-content/uploads/2023/10/chosen-foods-celebrates-roots-with-new-brand-identity-1024x654.jpg" alt="Chosen Foods Celebrates Roots With New Brand Identity" class="wp-image-392 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3,"fontSize":"small"} -->
+                    <div class="wp-block-group ges-media-content-block-row"><!-- wp:media-text {"align":"","mediaId":392,"mediaLink":"https://djx35fh9.modx.dev/about/chosen-foods-celebrates-roots-with-new-brand-identity/","mediaType":"image","mediaWidth":55,"isStackedOnMobile":false,"verticalAlignment":"top","imageFill":false} -->
+                    <div class="wp-block-media-text is-vertically-aligned-top" style="grid-template-columns:55% auto"><figure class="wp-block-media-text__media"><img src="https://djx35fh9.modx.dev/wp-content/uploads/2023/10/chosen-foods-celebrates-roots-with-new-brand-identity-1024x654.jpg" alt="Chosen Foods Celebrates Roots With New Brand Identity" class="wp-image-392 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3,"fontSize":"small"} -->
                     <h3 class="wp-block-heading has-small-font-size">Chosen Foods Celebrates Roots With New Brand Identity</h3>
                     <!-- /wp:heading -->
                     
