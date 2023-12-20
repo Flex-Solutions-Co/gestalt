@@ -28,12 +28,18 @@ const Edit = (props) => {
 
 	const { attributes, setAttributes, isSelected } = props;
 
-	const { desktopMediaId, desktopMediaSrc, mobileMediaId, mobileMediaSrc } = attributes;
+	const { desktopMediaId, desktopMediaSrc, mobileMediaId, mobileMediaSrc, cover } = attributes;
 
 	const blockProps = useBlockProps({
 		className: "ges-media-slide-section",
 		renderAppender: false,
 	});
+
+	if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
+		)
+	}
 
 	const imageRemoveHandler = () => {
 		setAttributes({ desktopMediaId: undefined, desktopMediaSrc: undefined });

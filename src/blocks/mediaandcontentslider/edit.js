@@ -46,9 +46,15 @@ export const sliderSetting = {
 const Edit = (props) => {
 
     const { attributes, setAttributes, clientId } = props;
-    const { heading, description } = attributes;
+    const { heading, description, cover } = attributes;
     const sliderRef = useRef();
     const [page, setPage] = useState("");
+
+    if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
+		)
+	}
 
     const addNewSlideHandler = () => {
         let innerBlocks = JSON.parse(JSON.stringify(block.innerBlocks));

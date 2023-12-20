@@ -107,11 +107,12 @@ function enqueue_scripts_frontend() {
 		$frontendcssuri = get_stylesheet_directory_uri() . '/build/style-index.css';
 		$mainjsuri = get_stylesheet_directory_uri() . '/build/js/main.js';
 		$splidejsuri = get_stylesheet_directory_uri() . '/build/js/splide.js';
+		$swiperjs = get_stylesheet_directory_uri() . '/build/js/swiper.js';
 		$glightbox = get_stylesheet_directory_uri() . '/build/js/glightbox.js';
-		
+	
 		wp_enqueue_style( 'wp-experts-fronteds', $frontendcssuri );
-
 		wp_register_script( 'splidejs', $splidejsuri, array(), false, true);
+		wp_register_script( 'swiper-script', $swiperjs, array(), false, true);
 		wp_enqueue_script( 'main-script', $mainjsuri, array(), false, true);
 		wp_register_script( 'lightbox-script', $glightbox, array(), false, true);
 	}

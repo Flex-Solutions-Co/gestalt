@@ -1,25 +1,25 @@
 .ges-awards-accolades-section {
-    padding-top: 486px;
-    padding-bottom: 374px;
+    padding-top: 30.375rem;
+    padding-bottom: 23.375rem;
     margin-top: 0;
 }
 
 .ges-awards-and-accolades-list {
-    padding-top: 25px;
-    padding-bottom: 325px;
+    padding-top: 1.563rem;
+    padding-bottom: 20.313rem;
     margin-top: 0;
 
     .ges-sub-block-heading {
-        padding-top: 75px;
+        padding-top: 4.688rem;
     }
 }
 
 .ges-aw-media-content-block-row {
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: 4.688rem;
+    padding-bottom: 4.688rem;
 
     &.ges-pt-small {
-        padding-top: 24px;
+        padding-top: 1.5rem;
     }
 
     .wp-block-media-text__media {
@@ -29,14 +29,14 @@
     }
 
     .wp-block-media-text__content {
-        padding: 25px 0 0 50px;
+        padding: 1.563rem 0 0 3.125rem;
 
         .wp-block-heading {
             line-height: 1.08;
         }
 
         .ges-block-content {
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
     }
 }
@@ -44,7 +44,7 @@
 @media only screen and (max-width: 1400px) {
     .ges-aw-media-content-block-row {
         .wp-block-media-text__content {
-            padding: 20px 0 0 32px;
+            padding: 1.25rem 0 0 2rem;
         }
         .wp-block-media-text__media {
             img {
@@ -57,7 +57,7 @@
 @media only screen and (max-width: 1024px) {
     .ges-aw-media-content-block-row {
         .wp-block-media-text__content {
-            padding: 20px 0 0 24px;
+            padding: 1.25rem 0 0 1.5rem;
         }
         .wp-block-media-text__media {
             img {
@@ -69,26 +69,33 @@
 
 @media only screen and (max-width: 781px) {
     .ges-awards-accolades-section {
-        padding-top: 416px;
-        padding-bottom: 320px;
+        padding-top: 26rem;
+        padding-bottom: 20rem;
         margin-top: 0;
     }
 
+    .ges-blog-heading-section {
+        &.ges-awards-heading-section  {
+            padding-top: 21.875rem;
+            padding-bottom: 21.875rem;
+        }
+    }
+
     .ges-awards-and-accolades-list {
-        padding-bottom: 244px;
-        padding-top: 4px;
+        padding-bottom: 15.25rem;
+        padding-top: 0.25rem;
 
         .ges-sub-block-heading {
-            padding-top: 96px;
+            padding-top: 6rem;
         }
     }
 
     .ges-aw-media-content-block-row {
-        padding-top: 96px;
-        padding-bottom: 96px;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
 
         .wp-block-media-text {
-            gap: 46px;
+            gap: 2.875rem;
         }
 
         .wp-block-media-text__media {
@@ -98,14 +105,14 @@
         }
 
         &.ges-pt-small {
-            padding-top: 18px;
+            padding-top: 1.125rem;
         }
 
         .wp-block-media-text__content {
             padding: 0;
 
             .ges-block-content {
-                margin-bottom: 20px;
+                margin-bottom: 1.25rem;
             }
         }
     }

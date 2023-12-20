@@ -1,28 +1,22 @@
 .ges-verticle-container {
-    padding-top: 185px;
-    padding-bottom: 195px;
-    // padding-left: 5%;
+    padding-top: 11.563rem;
+    padding-bottom: 12.188rem;
 
     .ges-verticle--slider-section {
-        // &.splide__track {
-        //     &.alignfull {
-        //         margin-left: 7% !important;
-        //     }
-        // }
 
         .splide__list {
-            padding-bottom: 90px !important;
+            padding-bottom: 5.625rem !important;
 
             li {
                 .ges-verticle-slide {
                     figure {
-                        margin-bottom: 54px;
+                        margin-bottom: 3.375rem;
                     }
 
                     .ges-heading-block,
                     .ges-content-information {
                         margin-top: 0;
-                        margin-bottom: 6px;
+                        margin-bottom: 0.375rem;
                     }
 
                     .ges-read-more {
@@ -52,11 +46,11 @@
 
     .ges-casestudy-main-heading-block {
         max-width: 670px;
-        margin-bottom: 72px;
+        margin-bottom: 4.5rem;
         padding-left: 7%;
         .ges-casestudy-heading {
             margin-top: 0;
-            margin-bottom: 6px;
+            margin-bottom: 0.375rem;
             font-size: var(--wp--preset--font-size--small);
         }
 
@@ -75,47 +69,47 @@
 @media only screen and (max-width: 1860px) {
     .ges-verticle-container {
         .case-study-progress {
-            margin: 0 40px 0 40px;
+            margin: 0 2.188rem 0 2.188rem;
         }
         .ges-casestudy-main-heading-block {
-            padding-left: 40px;
+            padding-left: 2.188rem;
         }
     }
 }
 
 @media only screen and (max-width: 1440px) {
     .ges-verticle-container {
-        padding-top: 150px;
-        padding-bottom: 160px;
+        padding-top: 9.375rem;
+        padding-bottom: 10rem;
     }
 }
 
 @media only screen and (max-width: 1200px) {
     .ges-verticle-container {
-        padding-top: 100px;
-        padding-bottom: 140px;
+        padding-top: 6.25rem;
+        padding-bottom: 8.75rem;
     }
 }
 
 @media only screen and (max-width: 1024px) {
     .ges-verticle-container {
-        padding-top: 70px;
-        padding-bottom: 120px;
+        padding-top: 4.375rem;
+        padding-bottom: 7.5rem;
     }
 }
 @media only screen and (max-width: 781px) {
     .ges-verticle-container {
-        padding-top: 50px;
-        padding-bottom: 112px;
+        padding-top: 3.125rem;
+        padding-bottom: 7rem;
         .ges-verticle--slider-section {
             .splide__list {
                 li {
                     .ges-verticle-slide {
                         figure {
-                            margin-bottom: 46px;
+                            margin-bottom: 2.875rem;
                         }
                         .ges-content-information  {
-                            margin-bottom: 30px;
+                            margin-bottom: 1.875rem;
                         }
                     }
                 }
@@ -123,7 +117,7 @@
         }
         .ges-casestudy-main-heading-block {
             max-width: 100%;
-            margin-bottom: 56px;
+            margin-bottom: 3.5rem;
         }
     }
 }

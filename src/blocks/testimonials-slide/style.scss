@@ -1,19 +1,20 @@
 .ges-testimonials-slide-wrapper {
     .ges-main-heading {
         margin-top: 0;
-        margin-bottom: 16px;
-        line-height: 1.06;
+        margin-bottom: 1rem;
+        line-height: 0.95;
+        letter-spacing: -0.1rem;
     }
 
     p {
         margin: 0;
 
         &.ges-testimonial-details {
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
         }
 
         &.ges-testimonial-name {
-            margin-bottom: 4px;
+            margin-bottom: 0.25rem;
         }
     }
 

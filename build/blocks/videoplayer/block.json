@@ -36,6 +36,10 @@
     "lightBoxVideo": {
       "type": "object",
       "default": {}
+    },
+    "cover": {
+      "type": "string",
+      "default": ""
     }
   },
   "style": [

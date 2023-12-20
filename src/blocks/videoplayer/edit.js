@@ -26,7 +26,14 @@ const Edit = (props) => {
         lightBoxVideo,
         lightBoxVideoMediaId,
         posterMediaId,
+        cover
     } = attributes;
+
+    if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
+		)
+	}
 
     const blockProps = useBlockProps({
         className: "video-player-section",

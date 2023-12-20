@@ -5,40 +5,47 @@
         object-position: right;
     }
 }
+
 .case-study-template-default {
     .ges-case-study-single-page {
         margin-top: 0;
     }
 }
+
 .ges-case-study-content-block {
-    padding-top: 250px;
-    padding-bottom: 300px;
+    padding-top: 15.625rem;
+    padding-bottom: 18.75rem;
     margin-top: 0;
+
     .wp-block-heading {
-        margin-bottom: 32px;
-        margin-top: 10px;
+        margin-bottom: 2rem;
+        margin-top: 0.625rem;
     }
 
     p {
         margin: 0;
 
         &.ges-question-text {
-            margin-bottom: 6px;
+            margin-bottom: 0.375rem;
         }
 
         &.ges-answer-text {
-            margin-bottom: 28px;
+            margin-bottom: 1.75rem;
         }
     }
 }
 
 .ges-case-study-media-block {
-    padding-bottom: 126px;
+    padding-bottom: 7.875rem;
 }
 
 @media only screen and (max-width: 781px) {
     .ges-case-study-content-block {
-        padding-top: 300px;
-        padding-bottom: 280px;
+        padding-top: 18.75rem;
+        padding-bottom: 15.625rem;
+
+        .wp-block-heading {
+            margin-top: 0.313rem;
+        }
     }
 }

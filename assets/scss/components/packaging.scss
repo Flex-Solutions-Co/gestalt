@@ -1,29 +1,29 @@
 .ges-category-heading-section {
     margin-top: 0;
-    padding-top: 355px;
-    padding-bottom: 278px;
+    padding-top: 22.188rem;
+    padding-bottom: 17.375rem;
 }
 .category {
     .ges-category-heading-section {
-        padding-top: 460px;
-        padding-bottom: 276px;
+        padding-top: 28.75rem;
+        padding-bottom: 17.25rem;
     }
 }
 @media only screen and (max-width: 1200px) {
     .category {
         .ges-category-heading-section {
-            padding-top: 400px;
-            padding-bottom: 226px;
+            padding-top: 25rem;
+            padding-bottom: 14.125rem;
         }
     }
 }
 @media only screen and (max-width: 781px) {
     .ges-category-heading-section {
-        padding-top: 300px;
+        padding-top: 18.75rem;
     }
     .category {
         .ges-category-heading-section {
-            padding-top: 346px;
+            padding-top: 21.625rem;
         }
     }
 }

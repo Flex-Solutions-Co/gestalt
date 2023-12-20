@@ -10,8 +10,13 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
             let slideEle = sliderSelector[i];
             let dataSettings = slideEle.getAttribute("data-settings");
-            let dataSettingsObj = JSON.parse(dataSettings);         
-           
+            let dataSettingsObj = JSON.parse(dataSettings);
+
+            dataSettingsObj.autoplay = true;
+            dataSettingsObj.type = 'loop';
+            dataSettingsObj.interval = 4000;
+            dataSettingsObj.speed = 1200;
+
             if(Splide){
                 new Splide(slideEle, dataSettingsObj).mount();
             }

@@ -32,7 +32,7 @@ const MY_TEMPLATE = [
 export const sliderSetting = {
     // type: 'loop',
     perPage: 3,
-    autoplay: false,
+    // autoplay: false,
     gap: '76px',
     perMove: 1,
     arrows: false,
@@ -47,7 +47,7 @@ export const sliderSetting = {
         781: {
             gap: '50px',
             perPage: 1,
-            padding: { left: '40px', right: '40px' },
+            padding: { left: '35px', right: '35px' },
         },
         1366: {
             gap: '40px',
@@ -63,12 +63,18 @@ const Edit = (props) => {
 
     const { attributes, setAttributes, clientId } = props;
 
-    const { heading, linkText, viewMoreLink } = attributes;
+    const { heading, linkText, viewMoreLink, cover } = attributes;
     const sliderRef = useRef();
 
     const blockProps = useBlockProps({
         className: classnames('ges-testimonials--slider-section')
     });
+
+    if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
+		)
+	}
 
     const innerBlocksProps = useInnerBlocksProps(
         blockProps,

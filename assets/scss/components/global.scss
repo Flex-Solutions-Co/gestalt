@@ -37,12 +37,28 @@
             right: 0;
             top: 50%;
         }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -0.125rem;
+            width: 0;
+            height: 0.063rem;
+            background-color: var(--wp--preset--color--primary);
+            transition: all 0.5s linear;
+        }
+
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
     }
 }
 
 .wp-block-query-pagination {
-    margin-top: 52px;
-    gap: 10px;
+    margin-top: 3.25rem;
+    gap: 0.625rem;
 
     .wp-block-query-pagination-numbers,
     .wp-block-query-pagination-next,
@@ -53,14 +69,14 @@
     .wp-block-query-pagination-numbers {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 0.625rem;
 
         .page-numbers {
-            font-size: 18px;
-            line-height: 22px;
+            font-size: 1.125rem;
+            line-height: 1.375rem;
             display: inline-block;
             text-decoration: none;
-            padding: 0 8px;
+            padding: 0 0.5rem;
 
             &.current {
                 color: var(--wp--preset--color--gray);
@@ -71,8 +87,8 @@
     .wp-block-query-pagination-next,
     .wp-block-query-pagination-previous {
         position: relative;
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -116,9 +132,24 @@
     }
 
 }
+
 @media only screen and (max-width: 781px) {
     .container {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .right-arrow {
+
+        a,
+        &.wp-block-read-more {
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    body {
+        font-size: 0.875rem !important;
     }
 }

@@ -137,12 +137,12 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
  * the Block Editor in the future.
  */
 
-.wp-block-navigation__responsive-container.is-menu-open {
+/* .wp-block-navigation__responsive-container.is-menu-open {
 	padding-top: var(--wp--custom--spacing--outer);
 	padding-bottom: var(--wp--custom--spacing--large);
 	padding-right: var(--wp--custom--spacing--outer);
 	padding-left: var(--wp--custom--spacing--outer);
-}
+} */
 
 /*
  * Improves spacing for the legacy Post Comments block.

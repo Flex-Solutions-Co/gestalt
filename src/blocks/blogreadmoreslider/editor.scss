@@ -1,0 +1,14 @@
+.gestalt-read-more_header {
+
+    .wp-block-read-more,
+    .pointer-none {
+        pointer-events: none;
+        text-decoration: none;
+    }
+}
+
+.read-more {
+    .wp-block-read-more {
+        pointer-events: none;
+    }
+}

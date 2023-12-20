@@ -4,17 +4,34 @@
 
 .ges-post-content-information {
     margin-top: 0;
-    padding-top: 250px;
-    padding-bottom: 288px;
+    padding-top: 15.625rem;
+    padding-bottom: 18rem;
 
     .taxonomy-category {
         position: relative;
         display: inline-block;
-        padding-right: 10px;
+        padding-right: 0.625rem;
         font-weight: 700;
 
         a {
             text-decoration: none;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -0.125rem;
+                width: 0;
+                height: 0.063rem;
+                background-color: var(--wp--preset--color--primary);
+                transition: all 0.5s linear;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
         }
 
         &::before {
@@ -32,8 +49,8 @@
     }
 
     .ges-post-title {
-        margin-bottom: 32px;
-        margin-top: 10px;
+        margin-bottom: 2rem;
+        margin-top: 0.313rem;
     }
 
     .wp-block-post-content {
@@ -41,7 +58,7 @@
 
         p {
             margin-top: 0;
-            margin-bottom: 28px;
+            margin-bottom: 1.75rem;
 
             &:last-child {
                 margin-bottom: 0;
@@ -53,7 +70,7 @@
 
             p {
                 font-weight: 700;
-                margin-bottom: 6px;
+                margin-bottom: 0.375rem;
             }
 
             cite {
@@ -64,18 +81,21 @@
 }
 
 .ges-author-details-block {
-    margin-top: 242px;
+    margin-top: 15.125rem;
+
     .wp-block-columns {
         gap: 0;
     }
+
     .ges-author-content-wrap {
-        padding: 0 20px;
+        padding: 0 1.25rem;
 
         .ges-author-name {
-            margin-bottom: 4px;
+            margin-bottom: 0.25rem;
             font-weight: 700;
             margin-top: 0;
         }
+
         .ges-auther-info {
             margin: 0;
             max-width: 440px;
@@ -85,40 +105,53 @@
 
 @media only screen and (max-width: 1400px) {
     .ges-author-details-block {
-        margin-top: 200px;
+        margin-top: 12.5rem;
     }
 }
 
 @media only screen and (max-width: 1200px) {
     .ges-post-content-information {
-        padding-top: 200px;
+        padding-top: 12.5rem;
     }
+
     .ges-author-details-block {
-        margin-top: 160px;
+        margin-top: 10rem;
     }
 
 }
 
 @media only screen and (max-width: 781px) {
     .ges-post-content-information {
-        padding-top: 173px;
-        padding-bottom: 268px;
+        padding-top: 10.813rem;
+        padding-bottom: 16.75rem;
 
         .ges-post-title {
-            margin-bottom: 48px;
-            margin-top: 20px;
+            margin-bottom: 3rem;
+            margin-top: 1.25rem;
+        }
+
+        .taxonomy-category {
+            a {
+                &::before {
+                    display: none;
+                }
+            }
         }
     }
+
     .ges-author-details-block {
-        margin-top: 122px;
+        margin-top: 7.625rem;
+
         .ges-author-content-wrap {
-            padding: 32px 0 0 0;
+            padding: 2rem 0 0 0;
         }
     }
 }
+
 @media only screen and (max-width: 600px) {
     .ges-single-post-banner-image {
         margin-top: 0;
+
         img {
             height: 464px;
             object-position: right;

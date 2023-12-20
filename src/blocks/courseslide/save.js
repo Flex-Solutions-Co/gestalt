@@ -22,7 +22,7 @@ const Save = ({ attributes }) => {
 							<picture>
 								{mobileMediaSrc &&
 									<source media="(max-width:781px)" srcset={mobileMediaSrc} />}
-								<img src={desktopMediaSrc} alt="Flowers" />
+								<img src={desktopMediaSrc} alt="Hero Banner Image" />
 							</picture>
 						</div>
 					</div>

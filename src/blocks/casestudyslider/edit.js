@@ -31,10 +31,8 @@ const MY_TEMPLATE = [
 ]
 
 export const sliderSetting = {
-    // type: 'loop',
-    perPage : 2,
-    perMove : 1,
-    autoplay: false,
+    perPage: 2,
+    perMove: 1,
     gap: '12px',
     arrows: false,
     pagination: false,
@@ -48,7 +46,7 @@ export const sliderSetting = {
         781: {
             gap: '50px',
             perPage: 1,
-            padding: { left: '40px', right: '40px' },
+            padding: { left: '35px', right: '35px' },
         },
         1860: {
             padding: { left: '5%', right: '5%' },
@@ -58,11 +56,17 @@ export const sliderSetting = {
 
 const Edit = (props) => {
     const { attributes, setAttributes, clientId } = props;
-    const { heading, description } = attributes;
+    const { heading, description, cover } = attributes;
     const sliderRef = useRef();
     const blockProps = useBlockProps({
         className: classnames('ges-verticle--slider-section')
     });
+
+    if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
+		)
+	}
 
     const innerBlocksProps = useInnerBlocksProps(
         blockProps,
@@ -88,6 +92,7 @@ const Edit = (props) => {
         innerBlocks.push(createBlock('gestalt/casestudyslide', {}));
         replaceInnerBlocks(clientId, innerBlocks, false);
     }
+
 
     const addStyleinProgress = () => {
         var bar = document.querySelector('.case-study-progress-bar');

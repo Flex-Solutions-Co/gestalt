@@ -1,0 +1,41 @@
+.ges-thanks-page {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    .ges-main-thanks-title {
+        font-size: 10.75rem;
+        line-height: 1;
+        margin-bottom: 2rem;
+    }
+    .ges-thanks-sub-title {
+        margin-bottom: 3.75rem;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .ges-thanks-page {
+        .ges-main-thanks-title {
+            font-size: 8.75rem;
+        }
+    }
+}
+@media only screen and (max-width: 781px) {
+    .ges-thanks-page {
+        .ges-main-thanks-title {
+            font-size: 6.25rem;
+        }
+    }
+}
+@media only screen and (max-width: 781px) {
+    .ges-thanks-page {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+        .ges-main-thanks-title {
+            font-size: 3.25rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+        .ges-thanks-sub-title {
+            margin-bottom: 2.5rem;
+        }
+    }
+}

@@ -34,17 +34,23 @@ export const sliderSetting = {
     pagination: true,
     drag: true,
     slideFocus: false,
-    autoplay: false,
 }
 
 const Edit = ( props ) => {
 
     const { attributes, setAttributes, clientId } = props;
+    const { cover } = attributes;
 
     const blockProps = useBlockProps({
         className: "media--slider"
     });
     
+    if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
+		)
+	}
+
     const innerBlocksProps = useInnerBlocksProps(
         blockProps,
         {

@@ -1,9 +1,9 @@
 .ges-service-banner-content-block {
-    padding-top: 464px;
+    padding-top: 29rem;
     padding-bottom: 27.75rem;
     p {
         margin-top: 1.75rem;
-        line-height: 1.5rem;
+        // line-height: 1.5rem;
         &:first-child {
             margin: 0;
         }
@@ -51,7 +51,7 @@
 
 @media only screen and (max-width: 781px) {
     .ges-service-banner-content-block {
-        padding-top: 376px;
+        padding-top: 23.5rem;
         padding-bottom: 24.375rem;
         p {
             margin-top: 2rem;
@@ -72,14 +72,14 @@
             }
             .ges-services-strategy-wrap {
                 li {
-                    margin-top: 0.625rem;
+                    margin-top: 0.5rem;
                 }
             }
             &.ges-more-spacing {
                 padding-bottom: 11.875rem;
             }
             .ges-content {
-                padding-bottom: 0.625rem;
+                padding-bottom: 0.5rem;
             }
             .right-arrow {
                 margin-top: 2.5rem;

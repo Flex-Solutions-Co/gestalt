@@ -3767,6 +3767,48 @@ var SplideRenderer = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/blogreadmoreslider/view.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/blogreadmoreslider/view.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @splidejs/splide */ "./node_modules/@splidejs/splide/dist/js/splide.esm.js");
+
+document.addEventListener('DOMContentLoaded', function () {
+  /**
+       * Testmonial Slider.
+       */
+  var splideElem = document.getElementById('gestalt-read-more_slider');
+  if (splideElem !== null) {
+    const splideSlider = new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](splideElem, {
+      perPage: 3,
+      perMove: 1,
+      arrows: false,
+      pagination: true,
+      gap: "1.25rem",
+      speed: 1200,
+      drag: true,
+      slideFocus: false,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      breakpoints: {
+        768: {
+          perPage: 1
+        },
+        1024: {
+          perPage: 2,
+          gap: "0.875rem"
+        }
+      }
+    });
+    splideSlider.mount();
+  }
+});
+
+/***/ }),
+
 /***/ "./src/blocks/casestudyslider/view.js":
 /*!********************************************!*\
   !*** ./src/blocks/casestudyslider/view.js ***!
@@ -3784,6 +3826,11 @@ document.addEventListener('DOMContentLoaded', function () {
       let slideEle = sliderSelector[i];
       let dataSettings = slideEle.getAttribute("data-settings");
       let dataSettingsObj = JSON.parse(dataSettings);
+      dataSettingsObj.autoplay = true;
+      // dataSettingsObj.type = 'loop';
+      dataSettingsObj.rewind = true;
+      dataSettingsObj.interval = 4000;
+      dataSettingsObj.speed = 1200;
       if (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"]) {
         let caseStudySlider = new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](slideEle, dataSettingsObj);
         caseStudySlider.on('mounted move', function () {
@@ -3793,42 +3840,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         caseStudySlider.mount();
       }
-
-      // splideInstance.on( 'move', function ( newIndex, prevIndex, destIndex) {
-
-      //     const targetID = 'splide02-slide0'+(newIndex+1)+'';
-      //     const currentID ='splide02-slide0'+(prevIndex+1)+'';
-
-      //     const currentSlide = document.getElementById(currentID);
-      //     currentSlide.querySelector('.ew-main-heading').classList.remove('wow', 'fadeInUp');
-
-      //     const targetSlide = document.getElementById(targetID);
-      //     targetSlide.querySelector('.ew-main-heading').classList.add('wow', 'fadeInUp');
-
-      //     new WOW({ scrollContainer: splideInstance});
-      //     wow.init();
-      //     // do something
-      // } );
-
-      // splideInstance.on('moved', function(newIndex) {
-      //    // console.log('Slide changed to index:', newIndex);
-      //     let currentSlide = splideInstance.Components.Elements.slides[newIndex];
-      //     let previousSlide = splideInstance.Components.Elements.slides[newIndex - 1];
-
-      //      // Get all slides in the current slider.
-      //      let slides = splideInstance.Components.Elements.slides;
-      //   // console.log("slides", slides);
-
-      //      // Loop through all slides and remove the class.
-      //      for (let j = 0; j < slides.length; j++) {
-      //          slides[j].querySelector('.ew-main-heading').classList.remove('wow', 'fadeInUp');
-      //         // console.log("remove--");
-      //      }
-
-      //      // Add the class to the current slide's heading element.
-      //      slides[newIndex].querySelector('.ew-main-heading').classList.add('wow', 'fadeInUp');
-
-      // });
     }
   }
 });
@@ -3851,6 +3862,10 @@ document.addEventListener('DOMContentLoaded', function () {
       let slideEle = sliderSelector[i];
       let dataSettings = slideEle.getAttribute("data-settings");
       let dataSettingsObj = JSON.parse(dataSettings);
+      dataSettingsObj.autoplay = true;
+      dataSettingsObj.type = 'loop';
+      dataSettingsObj.interval = 4000;
+      dataSettingsObj.speed = 1200;
       if (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"]) {
         new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](slideEle, dataSettingsObj).mount();
       }
@@ -3937,6 +3952,11 @@ document.addEventListener('DOMContentLoaded', function () {
       let slideEle = sliderSelector[i];
       let dataSettings = slideEle.getAttribute("data-settings");
       let dataSettingsObj = JSON.parse(dataSettings);
+      dataSettingsObj.autoplay = true;
+      dataSettingsObj.rewind = true;
+      dataSettingsObj.interval = 4000;
+      dataSettingsObj.speed = 1200;
+      console.log(dataSettingsObj);
       if (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"]) {
         let splideInstance = new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](slideEle, dataSettingsObj);
         splideInstance.on('mounted move', function () {
@@ -4019,6 +4039,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_testimonials_slider_view__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/testimonials-slider/view */ "./src/blocks/testimonials-slider/view.js");
 /* harmony import */ var _blocks_courseslider_view__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/courseslider/view */ "./src/blocks/courseslider/view.js");
 /* harmony import */ var _blocks_mediaandcontentslider_view__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/mediaandcontentslider/view */ "./src/blocks/mediaandcontentslider/view.js");
+/* harmony import */ var _blocks_blogreadmoreslider_view__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/blogreadmoreslider/view */ "./src/blocks/blogreadmoreslider/view.js");
+
 
 
 

@@ -18,3 +18,5 @@ import './blocks/mediaandcontentslide';
 import './blocks/mediaandcontentslider';
 
 import './blocks/videoplayer';
+
+import './blocks/blogreadmoreslider';

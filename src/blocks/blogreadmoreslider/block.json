@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "gestalt/blogreadmoreslider",
+	"version": "0.1.0",
+	"title": "Blog Read More Slider",
+	"category": "gestalt-blocks",
+	"icon": "slides",
+	"description": "A Gutenberg block to show Blog read more in slider view.",
+	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"perPage": {
+			"type": "number",
+			"default": 5
+		},
+		"blogMainHeading":{
+			"type": "string",
+			"default": ""
+		},
+		"allBlogText":{
+			"type": "string",
+			"default": ""
+		},
+		"allBlogUrl":{
+			"type": "string",
+			"default": ""
+		},
+		"cover":{
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"align": true
+	},
+	"viewScript": [ "splidejs" ],
+	"textdomain": "gestalt",
+	"render": "file:./render.php"
+}

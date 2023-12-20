@@ -27,6 +27,10 @@
     },
     "mobileMediaSrc": {
       "type": "string"
+    },
+    "cover": {
+      "type": "string",
+      "default": ""
     }
   },
   "example": {
