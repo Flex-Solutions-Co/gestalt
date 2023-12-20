@@ -1,6 +1,14 @@
 .ges-video-section {
     &.ges-video-padding-block {
-        padding-top: 45px;
-        padding-bottom: 182px;
+        padding-top: 2.813rem;
+        padding-bottom: 11.375rem;
+    }
+}
+@media only screen and (max-width: 781px) {
+    .ges-video-section {
+        &.ges-video-padding-block {
+            padding-top: 12rem;
+            padding-bottom: 12.5rem;
+        }
     }
 }

@@ -36,7 +36,11 @@
         "lightBoxVideo": {
              "type": "object",
               "default": {}
-        }
+        },
+        "cover":{
+			"type": "string",
+			"default": ""
+		}
     },
     "style": [ "file:./glightbox.min.css", "glightbox-style" ],
     "viewScript": [ "lightbox-script", "glightbox-style" ]

@@ -5,6 +5,7 @@ module.exports = {
   ...{
       entry: {
         index: "./src/index.js",
+        "js/swiper": "./src/js/swiper.js",
         "js/main": "./src/js/main.js",
         "js/splide": "./src/js/splide.js",
         "js/glightbox": "./src/js/glightbox.js",

@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@splidejs/react-splide": "^0.7.12",
 		"classnames": "^2.3.2",
-		"glightbox": "^3.2.0"
+		"glightbox": "^3.2.0",
+		"swiper": "^11.0.5"
 	}
 }

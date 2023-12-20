@@ -2,6 +2,7 @@
 .ges-content-block {
     padding-top: 16.563rem;
     padding-bottom: 16.563rem;
+    margin: 0;
 
     p {
         max-width: 810px;
@@ -158,12 +159,8 @@
 
     // Content block
     .ges-content-block {
-        padding-top: 25.938rem;
-        padding-bottom: 13.438rem;
-
-        p {
-            max-width: 810px;
-        }
+        padding-top: 25.625rem;
+        padding-bottom: 13.125rem;
     }
 
     // Media And Content Block
@@ -182,10 +179,10 @@
     // Left image and right content block
     .ges-image-and-content-row-scream {
         padding-top: 12rem;
-        padding-bottom: 14rem;
+        padding-bottom: 12rem;
 
         &.ges-extra-space {
-            padding-bottom: 14rem;
+            padding-bottom: 12rem;
         }
 
         .ges-first-column {
@@ -195,7 +192,7 @@
         }
 
         .ges-second-column {
-            padding: 0 40px;
+            padding: 0 35px;
 
             .ges-media-heading-block {
                 margin-bottom: 0;
@@ -205,8 +202,8 @@
 
     //Right Image and left content block.
     .ges-right-media-content-block {
-        padding-top: 13.5rem;
-        padding-bottom: 14.75rem;
+        padding-top: 12.5rem;
+        padding-bottom: 12.5rem;
 
         .wp-block-columns {
             gap: 5.625rem;
@@ -217,7 +214,7 @@
             margin-bottom: 0;
         }
         .ges-left-media-content-image {
-            padding: 0 40px;
+            padding: 0 35px;
         }
     }
 

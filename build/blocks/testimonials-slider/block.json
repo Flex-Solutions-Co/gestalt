@@ -24,6 +24,10 @@
     },
     "viewMoreLink": {
       "type": "string"
+    },
+    "cover": {
+      "type": "string",
+      "default": ""
     }
   },
   "viewScript": [

@@ -5,13 +5,12 @@
         margin: 0 auto !important;
     }
     .ges-testimonials__slider {
-        // padding-top: 200px;
-        padding-bottom: 100px;
+        padding-bottom: 6.25rem;
         max-width: 1640px;
         margin: 0 auto;
 
         .ges-testimonials--slider-section  {
-            padding-bottom: 164px;
+            padding-bottom: 10.25rem;
         }
 
         .my-slider-progress {
@@ -20,7 +19,7 @@
 
         .my-slider-progress-bar {
             background: var(--wp--preset--color--primary);
-            height: 4px;
+            height: 0.25rem;
             transition: width 400ms ease;
             width: 0;
         }
@@ -32,11 +31,11 @@
     .ges-testimonials-main-heading-block {
         max-width: 1640px;
         margin: 0 auto;
-        padding-bottom: 56px;
-        padding-top: 200px;
+        padding-bottom: 3.5rem;
+        padding-top: 12.5rem;
         .ges-testimonials-heading {
             margin-top: 0;
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
             font-weight: 700;
             font-size: var(--wp--preset--font-size--small);
         }
@@ -49,11 +48,11 @@
     .ges-testimonials--slider-section {
         .ges-testimonials__slider {
             .ges-testimonials--slider {
-                padding-bottom: 130px;
+                padding-bottom: 8.125rem;
             }
         }
         .ges-testimonials-main-heading-block {
-            padding-top: 170px;
+            padding-top: 10.625rem;
         }
     }
 }
@@ -66,22 +65,22 @@
     .ges-testimonials--slider-section {
         .ges-testimonials__slider {
             .ges-testimonials--slider {
-                padding-bottom: 100px;
+                padding-bottom: 6.25rem;
             }
             .splide__list {
                 padding-right: 15% !important;
             }
             .my-slider-progress {
                 max-width: 1640px;
-                margin: 0 40px;
+                margin: 0 35px;
             }
         }
         .ges-testimonials-main-heading-block {
-            padding-top: 152px;
-            padding-left: 40px;
-            padding-right: 40px;
+            padding-top: 9.5rem;
+            padding-left: 35px;
+            padding-right: 35px;
             .ges-testimonials-heading {
-                margin-bottom: 10px;
+                margin-bottom: 0.625rem;
             }
         }
     }

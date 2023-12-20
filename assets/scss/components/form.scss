@@ -59,7 +59,7 @@
 
         textarea {
             padding: 0.875rem 1rem !important;
-            border: 1px solid var(--wp--preset--color--primary) !important;
+            border: 0.063rem solid var(--wp--preset--color--primary) !important;
             height: 7.75rem !important;
             resize: none;
             margin-top: 1rem !important;
@@ -75,7 +75,7 @@
             .gform_button {
                 margin: 0;
                 background: transparent;
-                border: 1px solid var(--wp--preset--color--primary);
+                border: 0.063rem solid var(--wp--preset--color--primary);
                 padding: 0.75rem 1.5rem;
                 min-width: 155px;
                 font-size: var(--wp--preset--font-size--small) !important;
@@ -95,7 +95,7 @@
 
     .gfield_error [aria-invalid=true]:not(textarea) {
         border: none;
-        border-bottom: 1px solid var(--wp--preset--color--primary);
+        border-bottom: 0.063rem solid var(--wp--preset--color--primary);
     }
 }
 

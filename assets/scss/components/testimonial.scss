@@ -1,5 +1,5 @@
 .ges-testimonials-section {
-    padding-top: 486px;
+    padding-top: 30.375rem;
     padding-bottom: 17rem;
 }
 
@@ -13,6 +13,7 @@
     padding-top: 7.813rem;
     padding-bottom: 7.813rem;
     margin-top: 0;
+
     .ges-testimonial-row {
         gap: 3.75rem;
     }
@@ -20,7 +21,8 @@
     .ges-testimonial {
 
         &-heading {
-            line-height: 1.1;
+            line-height: 0.95;
+            letter-spacing: -0.1rem;
         }
 
         &-description {
@@ -55,7 +57,7 @@
 
 @media only screen and (max-width: 781px) {
     .ges-testimonials-section {
-        padding-top: 410px;
+        padding-top: 25.625rem;
         padding-bottom: 18.75rem;
     }
 

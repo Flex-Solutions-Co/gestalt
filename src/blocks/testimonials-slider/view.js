@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
             let slideEle = sliderSelector[i];
             let dataSettings = slideEle.getAttribute("data-settings");
             let dataSettingsObj = JSON.parse(dataSettings);
+
+            dataSettingsObj.autoplay = true;
+            dataSettingsObj.rewind = true;
+            dataSettingsObj.interval = 4000;
+            dataSettingsObj.speed = 1200;   
+
+            console.log(dataSettingsObj);
+
             if (Splide) {
                 let splideInstance = new Splide(slideEle, dataSettingsObj);
 

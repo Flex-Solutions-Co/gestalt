@@ -1,10 +1,10 @@
 .ges-video-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     margin-top: 0;
 }
 .wp-block-gestalt-videoplayer {
-    margin-bottom: 74px;
+    margin-bottom: 4.625rem;
     .video_wrapper {
         position: relative;
         img {
@@ -26,11 +26,11 @@
 }
 .video-block-information-wrapper {
     .wp-block-heading {
-        margin-bottom: 12px;
+        margin-bottom: 0.75rem;
     }
     .ges-video-details {
         margin-top: 0;
-        margin-bottom: 16px;
+        margin-bottom: 0.375rem;
     }
     .right-arrow {
         margin-top: 0;
@@ -42,15 +42,15 @@
 
 @media only screen and (max-width: 781px) {
     .ges-video-section {
-        padding-top: 214px;
-        padding-bottom: 170px;
+        padding-top: 13.375rem;
+        padding-bottom: 10.625rem;
     }
     .wp-block-gestalt-videoplayer {
-        margin-bottom: 80px;
+        margin-bottom: 5.625rem;
     }
     .video-block-information-wrapper {
         .wp-block-heading {
-            margin-bottom: 4px;
+            margin-bottom: 0.25rem;
         }
     }
 }

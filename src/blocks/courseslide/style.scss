@@ -15,20 +15,20 @@
 .wp-block-gestalt-courseslider {
     .splide__pagination {
         position: absolute;
-        bottom: 28px;
+        bottom: 1.75rem;
         left: 50%;
         transform: translateX(-50%);
         padding: 0;
-        gap: 8px;
+        gap: 0.5rem;
 
         li {
             line-height: 0;
 
             .splide__pagination__page {
-                padding: 4px;
+                padding: 0.25rem;
                 background: transparent;
-                border: 1px solid var(--wp--preset--color--light-gray);
-                border-radius: 12px;
+                border: 0.063rem solid var(--wp--preset--color--light-gray);
+                border-radius: 0.75rem;
 
                 &.is-active {
                     background-color: var(--wp--preset--color--secondary);
@@ -41,7 +41,7 @@
 @media only screen and (max-width: 781px) {
     .wp-block-gestalt-image-slider {
         .splide__pagination {
-            bottom: 20px;
+            bottom: 1.25rem;
         }
     }
 }

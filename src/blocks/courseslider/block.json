@@ -16,7 +16,11 @@
         "block_id": {
             "type": "string",
             "default": ""
-        }
+        },
+        "cover":{
+			"type": "string",
+			"default": ""
+		}
     },
     "viewScript": [ "splidejs" ],
     "example": {
