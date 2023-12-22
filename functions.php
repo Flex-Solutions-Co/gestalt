@@ -50,7 +50,6 @@ if ( ! function_exists( 'gestalt_styles' ) ) :
 		wp_register_style( 'glightbox-style', get_stylesheet_directory_uri(). '/assets/css/glightbox.min.css', array(), $version_string);
 		wp_enqueue_style( 'custom', get_stylesheet_directory_uri(). '/assets/css/style.css', array(), $version_string);
 
-		// wp_enqueue_script( 'swiper-custom-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '', true );
 		wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri(). '/assets/js/custom-script.js', array(), '', true );
 	}
 

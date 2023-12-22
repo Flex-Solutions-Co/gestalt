@@ -30,10 +30,10 @@
 			"default": ""
 		}
     },
-    "viewScript": [ "splidejs" ],
-    "example": {
-        "attributes": {
-            "preview" : true
-        }
-    }
+    "viewScript": [
+        "swiper-script"
+    ],
+    "style": [
+        "swiper-css"
+    ]
 }

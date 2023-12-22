@@ -3063,7 +3063,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/core-data */ "@wordpress/core-data");
 /* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
 
 /**
  * WordPress dependencies
@@ -3073,6 +3072,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import { SplideSlide } from '@splidejs/react-splide';
 
 const ALLOWED_MEDIA_TYPES = ['image'];
 const ALLOWED_BLOCKS = ['core/heading', 'core/paragraph', 'core/image', 'core/group', 'core/read-more'];
@@ -3095,16 +3095,16 @@ const Edit = props => {
   // const { mediaId, mediaSrc, mediaAlt } = attributes;
 
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: "ges-verticle-slide"
+    className: "ges-verticle-slide swiper-slide"
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_6__.SplideSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS,
     template: MY_TEMPLATE,
     renderAppender: false,
     templateLock: "all"
-  }))));
+  })));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
 
@@ -3163,13 +3163,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
 
 /**
  * WordPress dependencies
  */
 
 
+// import { SplideSlide } from '@splidejs/react-splide';
 
 const Save = ({
   attributes
@@ -3177,11 +3177,11 @@ const Save = ({
   // const { mediaSrc, mediaAlt } = attributes;
 
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: "ges-verticle-slide"
+    className: "ges-verticle-slide swiper-slide"
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.SplideSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null)));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Save);
 
@@ -3212,9 +3212,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_7__);
 
 /**
  * WordPress dependencies
@@ -3225,7 +3224,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+// import { Splide, SplideTrack } from '@splidejs/react-splide';
 
 /**
  * external dependencies
@@ -3234,36 +3233,8 @@ __webpack_require__.r(__webpack_exports__);
 const ALLOWED_BLOCKS = ['gestalt/casestudyslide'];
 const MY_TEMPLATE = [['gestalt/casestudyslide', {}], ['gestalt/casestudyslide', {}]];
 const sliderSetting = {
-  perPage: 2,
-  perMove: 1,
-  gap: '12px',
-  arrows: false,
-  pagination: false,
-  drag: true,
-  slideFocus: false,
-  padding: {
-    left: '7%',
-    right: '7%'
-  },
-  breakpoints: {
-    600: {
-      gap: '18px'
-    },
-    781: {
-      gap: '50px',
-      perPage: 1,
-      padding: {
-        left: '35px',
-        right: '35px'
-      }
-    },
-    1860: {
-      padding: {
-        left: '5%',
-        right: '5%'
-      }
-    }
-  }
+  slidesPerView: 2.5,
+  spaceBetween: 12
 };
 const Edit = props => {
   const {
@@ -3278,15 +3249,8 @@ const Edit = props => {
   } = attributes;
   const sliderRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useRef)();
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: classnames__WEBPACK_IMPORTED_MODULE_8___default()('ges-verticle--slider-section')
+    className: classnames__WEBPACK_IMPORTED_MODULE_7___default()('ges-verticle--slider-section')
   });
-  if (cover !== '') {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: cover,
-      width: "1728",
-      height: "826"
-    });
-  }
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
     template: MY_TEMPLATE,
     allowedBlocks: ALLOWED_BLOCKS,
@@ -3308,24 +3272,20 @@ const Edit = props => {
     innerBlocks.push((0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__.createBlock)('gestalt/casestudyslide', {}));
     replaceInnerBlocks(clientId, innerBlocks, false);
   };
-  const addStyleinProgress = () => {
-    var bar = document.querySelector('.case-study-progress-bar');
-    const splidePagiantionItems = sliderRef?.current?.splide;
-    const end = splidePagiantionItems.Components.Controller.getEnd() + 1;
-    var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
-    bar.style.width = String(100 * rate) + '%';
+  const slideNavBlock = clientId => {
+    (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)("core/block-editor").selectBlock(clientId);
   };
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
-    addStyleinProgress();
-  }, []);
+  if (cover !== '') {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: cover,
+      width: "1728",
+      height: "826"
+    });
+  }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     title: "Slide Settings",
     initialOpen: true
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
-    variant: "secondary",
-    className: "btn-add-new-slider",
-    onClick: addNewSlideHandler
-  }, "Add New Slide"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
     label: "Case Study Heading",
     value: heading,
     onChange: newHeading => setAttributes({
@@ -3338,8 +3298,24 @@ const Edit = props => {
       description: newDescription
     })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...blockProps
+    ...blockProps,
+    "data-settings": JSON.stringify(sliderSetting)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "navigation-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "navigation-scroll"
+  }, block.innerBlocks.map((innerBlock, index) => {
+    let activeBtn = index === 0 ? "active-btn" : "";
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      className: "slide-index-btn",
+      onClick: () => slideNavBlock(innerBlock.clientId)
+    }, `Slide ${index + 1}`);
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "add-new-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "add-slide-btn",
+    onClick: () => addNewSlideHandler()
+  }, "Add Slide"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-verticle-container"
   }, (heading !== '' || linkText !== '') && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-casestudy-main-heading-block"
@@ -3347,22 +3323,17 @@ const Edit = props => {
     className: "ges-casestudy-heading"
   }, heading), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "ges-description"
-  }, description)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_7__.Splide, {
-    className: "ges-verticle__slider",
-    hasTrack: false,
-    options: sliderSetting,
-    ref: sliderRef,
-    "data-settings": JSON.stringify(sliderSetting),
-    onMoved: () => {
-      addStyleinProgress();
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_7__.SplideTrack, {
-    ...innerBlocksProps
-  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "case-study-progress"
+  }, description)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "case-study-progress-bar"
-  }))))));
+    className: "swiper ges-verticle__slider"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-wrapper"
+  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrol-top"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrollbar"
+  })))))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
 
@@ -3390,7 +3361,6 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies
  */
-
 
 
 
@@ -3429,17 +3399,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/blocks/casestudyslider/edit.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/blocks/casestudyslider/edit.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
 
 /**
  * WordPress dependencies
  */
 
 
-
+// import { Splide, SplideTrack } from '@splidejs/react-splide';
 
 
 /**
@@ -3450,7 +3419,7 @@ const Save = ({
   attributes
 }) => {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: classnames__WEBPACK_IMPORTED_MODULE_5___default()('ges-verticle--slider-section')
+    className: classnames__WEBPACK_IMPORTED_MODULE_4___default()('ges-verticle--slider-section')
   });
   const {
     heading,
@@ -3467,18 +3436,17 @@ const Save = ({
     className: "ges-casestudy-heading"
   }, heading), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "ges-description"
-  }, description)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.Splide, {
-    className: "ges-verticle__slider",
-    hasTrack: false,
-    options: _edit__WEBPACK_IMPORTED_MODULE_4__.sliderSetting,
-    "data-settings": JSON.stringify(_edit__WEBPACK_IMPORTED_MODULE_4__.sliderSetting)
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.SplideTrack, {
-    ...innerBlocksProps
-  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "case-study-progress"
+  }, description)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "case-study-progress-bar"
-  })))));
+    className: "swiper ges-verticle__slider"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-wrapper"
+  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrol-top"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrollbar"
+  }))))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Save);
 
@@ -4743,33 +4711,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const ALLOWED_BLOCKS = ['core/heading', 'core/paragraph'];
-const MY_TEMPLATE = [['core/heading', {
-  level: 1,
-  content: 'Lorem Ipsum is simply dummy text.',
-  className: 'ges-main-heading'
-}], ['core/paragraph', {
-  content: 'Lorem Ipsum is simply dummy text of the printing and typesetting.',
-  className: 'ges-testimonial-details'
-}], ['core/paragraph', {
-  content: 'Lorem Ipsum is simply dummy text of the printing and typesetting.',
-  className: 'ges-testimonial-name'
-}], ['core/paragraph', {
-  content: 'Lorem Ipsum is simply dummy text of the printing and typesetting.',
-  className: 'ges-testimonial-position'
+const ALLOWED_BLOCKS = ["core/heading", "core/paragraph"];
+const MY_TEMPLATE = [["core/heading", {
+  level: 3,
+  content: "Lorem Ipsum is simply dummy text.",
+  className: "ges-main-heading"
+}], ["core/paragraph", {
+  content: "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+  className: "ges-testimonial-details"
+}], ["core/paragraph", {
+  content: "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+  className: "ges-testimonial-name"
+}], ["core/paragraph", {
+  content: "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+  className: "ges-testimonial-position"
 }]];
 const Edit = props => {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: "ges-testimonials-slide-wrapper",
+    className: "ges-testimonials-slide-wrapper swiper-slide",
     renderAppender: false
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.SplideSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS,
     template: MY_TEMPLATE,
     templateLock: "all"
-  }))));
+  }));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
 
@@ -4840,11 +4808,11 @@ const Save = ({
   attributes
 }) => {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: "ges-testimonials-slide-wrapper"
+    className: "ges-testimonials-slide-wrapper swiper-slide"
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.SplideSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null)));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Save);
 
@@ -4869,15 +4837,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_6__);
 
 /**
  * WordPress dependencies
@@ -4888,45 +4853,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 /**
  * external dependencies
  */
 
-const ALLOWED_BLOCKS = ['gestalt/testimonials-slide'];
-const MY_TEMPLATE = [['gestalt/testimonials-slide', {}], ['gestalt/testimonials-slide', {}]];
+const ALLOWED_BLOCKS = ["gestalt/testimonials-slide"];
+const MY_TEMPLATE = [["gestalt/testimonials-slide", {}], ["gestalt/testimonials-slide", {}]];
 const sliderSetting = {
-  // type: 'loop',
-  perPage: 3,
-  // autoplay: false,
-  gap: '76px',
-  perMove: 1,
-  arrows: false,
-  pagination: false,
-  drag: true,
-  slideFocus: false,
-  // padding: '5rem',
-  breakpoints: {
-    600: {
-      gap: '18px'
-    },
-    781: {
-      gap: '50px',
-      perPage: 1,
-      padding: {
-        left: '35px',
-        right: '35px'
-      }
-    },
-    1366: {
-      gap: '40px',
-      perPage: 2
-    },
-    1600: {
-      gap: '60px'
-    }
-  }
+  slidesPerView: 3,
+  spaceBetween: 30
 };
 const Edit = props => {
   const {
@@ -4940,17 +4875,9 @@ const Edit = props => {
     viewMoreLink,
     cover
   } = attributes;
-  const sliderRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useRef)();
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: classnames__WEBPACK_IMPORTED_MODULE_8___default()('ges-testimonials--slider-section')
+    className: classnames__WEBPACK_IMPORTED_MODULE_6___default()("ges-testimonials--slider-section")
   });
-  if (cover !== '') {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: cover,
-      width: "1728",
-      height: "826"
-    });
-  }
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
     template: MY_TEMPLATE,
     allowedBlocks: ALLOWED_BLOCKS,
@@ -4959,81 +4886,87 @@ const Edit = props => {
     orientation: "horizontal"
   });
   const block = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => {
-    return select('core/block-editor').getBlock(clientId);
+    return select("core/block-editor").getBlock(clientId);
   }, []); //Get Block by ID
 
   const {
     replaceInnerBlocks,
     updateBlockAttributes
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)('core/block-editor'); //Dispatch for inner blocks
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)("core/block-editor"); //Dispatch for inner blocks
 
   const addNewSlideHandler = () => {
     let innerBlocks = JSON.parse(JSON.stringify(block.innerBlocks));
-    innerBlocks.push((0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__.createBlock)('gestalt/testimonials-slide', {}));
+    innerBlocks.push((0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__.createBlock)("gestalt/testimonials-slide", {}));
     replaceInnerBlocks(clientId, innerBlocks, false);
   };
-  const addStyleinProgress = () => {
-    var bar = document.querySelector('.my-slider-progress-bar');
-    const splidePagiantionItems = sliderRef?.current?.splide;
-    const end = splidePagiantionItems.Components.Controller.getEnd() + 1;
-    var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
-    bar.style.width = String(100 * rate) + '%';
+  const slideNavBlock = clientId => {
+    (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)("core/block-editor").selectBlock(clientId);
   };
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
-    addStyleinProgress();
-  }, []);
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
+  if (cover !== '') {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: cover,
+      width: "1728",
+      height: "826"
+    });
+  }
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: "Slide Settings",
     initialOpen: true
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
-    variant: "secondary",
-    className: "btn-add-slider",
-    onClick: addNewSlideHandler
-  }, "Add New Slide"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: "Testimonials Heading",
     value: heading,
     onChange: newHeading => setAttributes({
       heading: newHeading
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: "View More Text",
     value: linkText,
     onChange: newLinkText => setAttributes({
       linkText: newLinkText
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: "View More Link",
     value: viewMoreLink,
     onChange: newViewMoreLink => setAttributes({
       viewMoreLink: newViewMoreLink
     })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...blockProps
+    ...blockProps,
+    "data-settings": JSON.stringify(sliderSetting)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "navigation-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "navigation-scroll"
+  }, block.innerBlocks.map((innerBlock, index) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      className: "slide-index-btn",
+      onClick: () => slideNavBlock(innerBlock.clientId)
+    }, `Slide ${index + 1}`);
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "add-new-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "add-slide-btn",
+    onClick: () => addNewSlideHandler()
+  }, "Add Slide"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-testimonials-container container"
-  }, (heading !== '' || linkText !== '') && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (heading !== "" || linkText !== "") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-testimonials-main-heading-block"
   }, heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "ges-testimonials-heading"
   }, heading), linkText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "ges-view-more wp-block-read-more right-arrow",
     href: viewMoreLink
-  }, linkText)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_7__.Splide, {
-    className: "ges-testimonials__slider",
-    hasTrack: false,
-    options: sliderSetting,
-    ref: sliderRef,
-    "data-settings": JSON.stringify(sliderSetting),
-    onMoved: () => {
-      addStyleinProgress();
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_7__.SplideTrack, {
-    ...innerBlocksProps
-  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "my-slider-progress"
+  }, linkText)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "my-slider-progress-bar"
-  }))))));
+    className: "swiper testiSwiper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-wrapper"
+  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrol-top"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrollbar"
+  })))))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Edit);
 
@@ -5081,7 +5014,7 @@ const {
     viewportWidth: 1728
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"] // Object shorthand property - same as writing: save: save,
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),
@@ -5100,15 +5033,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/blocks/testimonials-slider/edit.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/blocks/testimonials-slider/edit.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
 
 /**
  * WordPress dependencies
  */
-
 
 
 
@@ -5121,7 +5052,7 @@ const Save = ({
   attributes
 }) => {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: classnames__WEBPACK_IMPORTED_MODULE_5___default()('ges-testimonials--slider-section')
+    className: classnames__WEBPACK_IMPORTED_MODULE_4___default()("ges-testimonials--slider-section")
   });
   const {
     heading,
@@ -5130,28 +5061,28 @@ const Save = ({
   } = attributes;
   const innerBlocksProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps.save(blockProps);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...blockProps
+    ...blockProps,
+    "data-settings": JSON.stringify(_edit__WEBPACK_IMPORTED_MODULE_3__.sliderSetting)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-testimonials-container container"
-  }, (heading !== '' || linkText !== '') && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (heading !== "" || linkText !== "") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-testimonials-main-heading-block"
   }, heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "ges-testimonials-heading"
   }, heading), linkText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "ges-view-more wp-block-read-more right-arrow",
     href: viewMoreLink
-  }, linkText)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.Splide, {
-    className: "ges-testimonials__slider",
-    hasTrack: false,
-    options: _edit__WEBPACK_IMPORTED_MODULE_4__.sliderSetting,
-    "data-settings": JSON.stringify(_edit__WEBPACK_IMPORTED_MODULE_4__.sliderSetting)
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__.SplideTrack, {
-    ...innerBlocksProps
-  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "my-slider-progress"
+  }, linkText)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "my-slider-progress-bar"
-  })))));
+    className: "swiper testiSwiper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-wrapper"
+  }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrol-top"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-scrollbar"
+  }))))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Save);
 
@@ -5603,28 +5534,37 @@ const VideoIcon = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wo
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_editor_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/editor.scss */ "./src/styles/editor.scss");
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
-/* harmony import */ var _blocks_casestudyslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/casestudyslider */ "./src/blocks/casestudyslider/index.js");
-/* harmony import */ var _blocks_casestudyslide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/casestudyslide */ "./src/blocks/casestudyslide/index.js");
-/* harmony import */ var _blocks_testimonials_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/testimonials-slider */ "./src/blocks/testimonials-slider/index.js");
-/* harmony import */ var _blocks_testimonials_slide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/testimonials-slide */ "./src/blocks/testimonials-slide/index.js");
-/* harmony import */ var _blocks_courseslider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/courseslider */ "./src/blocks/courseslider/index.js");
-/* harmony import */ var _blocks_courseslide__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/courseslide */ "./src/blocks/courseslide/index.js");
-/* harmony import */ var _blocks_hero_banner_section__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/hero-banner-section */ "./src/blocks/hero-banner-section/index.js");
-/* harmony import */ var _blocks_mediaandcontentslide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/mediaandcontentslide */ "./src/blocks/mediaandcontentslide/index.js");
-/* harmony import */ var _blocks_mediaandcontentslider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/mediaandcontentslider */ "./src/blocks/mediaandcontentslider/index.js");
-/* harmony import */ var _blocks_videoplayer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/videoplayer */ "./src/blocks/videoplayer/index.js");
-/* harmony import */ var _blocks_blogreadmoreslider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/blogreadmoreslider */ "./src/blocks/blogreadmoreslider/index.js");
+/* harmony import */ var _blocks_courseslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/courseslider */ "./src/blocks/courseslider/index.js");
+/* harmony import */ var _blocks_courseslide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/courseslide */ "./src/blocks/courseslide/index.js");
+/* harmony import */ var _blocks_hero_banner_section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/hero-banner-section */ "./src/blocks/hero-banner-section/index.js");
+/* harmony import */ var _blocks_mediaandcontentslide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/mediaandcontentslide */ "./src/blocks/mediaandcontentslide/index.js");
+/* harmony import */ var _blocks_mediaandcontentslider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/mediaandcontentslider */ "./src/blocks/mediaandcontentslider/index.js");
+/* harmony import */ var _blocks_videoplayer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/videoplayer */ "./src/blocks/videoplayer/index.js");
+/* harmony import */ var _blocks_blogreadmoreslider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/blogreadmoreslider */ "./src/blocks/blogreadmoreslider/index.js");
+/* harmony import */ var _blocks_testimonials_slide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/testimonials-slide */ "./src/blocks/testimonials-slide/index.js");
+/* harmony import */ var _blocks_testimonials_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/testimonials-slider */ "./src/blocks/testimonials-slider/index.js");
+/* harmony import */ var _blocks_casestudyslide__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/casestudyslide */ "./src/blocks/casestudyslide/index.js");
+/* harmony import */ var _blocks_casestudyslider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/casestudyslider */ "./src/blocks/casestudyslider/index.js");
 //stylesheets
 
 
 
 //blocks
+// import './blocks/casestudyslider';
+// import './blocks/casestudyslide';
+
+// import './blocks/testimonials-slider';
+// import './blocks/testimonials-slide';
 
 
 
 
 
 
+
+
+
+// --------------------------
 
 
 
@@ -5922,7 +5862,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslide","title":"Case Study Slide","icon":"slides","parent":["gestalt/casestudyslider"],"description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slide","image slider","case study"],"version":"1.0.0","supports":{"html":false,"align":true},"textdomain":"gestalt"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslide","title":"Casestudy slide","icon":"slides","parent":["gestalt/casestudyslider"],"description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slide","image slider","case study"],"version":"1.0.0","supports":{"html":false,"align":true},"textdomain":"gestalt"}');
 
 /***/ }),
 
@@ -5933,7 +5873,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslider","title":"Case study slider","icon":"slides","description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slider","vertical image slider","case study slide"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"description":{"type":"string"},"cover":{"type":"string","default":""}},"viewScript":["splidejs"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslider","title":"Casestudyslider","icon":"slides","description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slider","vertical image slider","case study slide"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"description":{"type":"string"},"cover":{"type":"string","default":""}},"viewScript":["swiper-script"],"style":["swiper-css"]}');
 
 /***/ }),
 
@@ -5999,7 +5939,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slide","title":"Testimonials Slide","icon":"slides","parent":["gestalt/testimonials-slider"],"description":"The given block provide testimonial slider information","category":"gestalt-blocks","keywords":["slide","testimonials"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slide","title":"Testimonials slide","icon":"slides","parent":["gestalt/testimonials-slider"],"description":"The given block provide testimonial slider information","category":"gestalt-blocks","keywords":["slide","testimonials"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt"}');
 
 /***/ }),
 
@@ -6010,7 +5950,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slider","title":"Testimonials Slider","icon":"slides","description":"The given block provide testimonial slider information.","category":"gestalt-blocks","keywords":["slider","testimonials"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"linkText":{"type":"string"},"viewMoreLink":{"type":"string"},"cover":{"type":"string","default":""}},"viewScript":["splidejs"],"example":{"attributes":{"preview":true}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slider","title":"Testimonials Slider","icon":"slides","description":"The given block provide testimonial slider information.","category":"gestalt-blocks","keywords":["slider","testimonials"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"linkText":{"type":"string"},"viewMoreLink":{"type":"string"},"cover":{"type":"string","default":""}},"viewScript":["swiper-script"],"style":["swiper-css"]}');
 
 /***/ }),
 

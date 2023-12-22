@@ -1,3 +1,39 @@
+.ges-testimonials-slide-wrapper {
+    max-width: 500px;
+    margin: auto;
+}
 .btn-add-slider {
     margin-bottom: 1.5rem;
+}
+.navigation-scroll {
+    overflow: auto;
+    white-space: nowrap;
+}
+.swiper-slide{
+    display: none;
+    &.has-child-selected{
+        display: block;
+    }
+    &.is-selected{
+        display: block;
+    }
+}
+.slide-index-btn {
+    background: #fde8e5;
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 10px 6px;
+}
+
+.add-new-slide {
+    margin-top: 10px;
+    .add-slide-btn {
+        background: #007cba;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+    }
+}
+.ges-testimonials-main-heading-block{
+    padding: 0px !important;
 }

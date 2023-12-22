@@ -1,22 +1,15 @@
 @import '@splidejs/react-splide/css/core';
 
-// @import 'swiper/scss';
-// @import 'swiper/scss/navigation';
-// @import 'swiper/scss/pagination';
-// @import 'swiper/css/scrollbar';
-
-@import 'swiper/swiper-bundle.css';
-
-@import '../blocks/testimonials-slide/style.scss';
-@import '../blocks/testimonials-slider/style.scss';
+// @import '../blocks/testimonials-slide/style.scss';
+// @import '../blocks/testimonials-slider/style.scss';
 
 @import '../blocks/courseslide/style.scss';
 @import '../blocks/courseslider/style.scss';
 
 @import '../blocks/hero-banner-section/style.scss';
 
-@import '../blocks/casestudyslide/style.scss';
-@import '../blocks/casestudyslider/style.scss';
+// @import '../blocks/casestudyslide/style.scss';
+// @import '../blocks/casestudyslider/style.scss';
 
 @import '../blocks/mediaandcontentslide/style.scss';
 @import '../blocks/mediaandcontentslider/style.scss';
@@ -26,3 +19,9 @@
 @import './custom-media.scss';
 
 @import '../blocks/blogreadmoreslider/style.scss';
+
+@import '../blocks/testimonials-slide/style.scss';
+@import '../blocks/testimonials-slider/style.scss';
+
+
+@import '../blocks/casestudyslider/style.scss';

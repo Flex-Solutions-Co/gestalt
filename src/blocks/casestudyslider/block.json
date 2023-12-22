@@ -2,7 +2,7 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "gestalt/casestudyslider",
-    "title": "Case study slider",
+    "title": "Casestudyslider",
     "icon": "slides",
     "description": "The gutenberg block to show case study slider view.",
     "category": "gestalt-blocks",
@@ -28,5 +28,6 @@
 			"default": ""
 		}
     },
-    "viewScript": [ "splidejs" ]
+    "viewScript": ["swiper-script"],
+    "style": ["swiper-css"]
 }

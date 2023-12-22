@@ -31,11 +31,9 @@
     }
   },
   "viewScript": [
-    "splidejs"
+    "swiper-script"
   ],
-  "example": {
-    "attributes": {
-      "preview": true
-    }
-  }
+  "style": [
+    "swiper-css"
+  ]
 }

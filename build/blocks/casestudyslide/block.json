@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "gestalt/casestudyslide",
-  "title": "Case Study Slide",
+  "title": "Casestudy slide",
   "icon": "slides",
   "parent": [
     "gestalt/casestudyslider"

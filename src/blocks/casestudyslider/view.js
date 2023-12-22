@@ -1,37 +1,18 @@
-import Splide from '@splidejs/splide';
+import { initSliderCase } from "../../js/swiper";
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    if (document.querySelector('.ges-verticle__slider')) {
-
-        let sliderSelector = document.querySelectorAll(".ges-verticle__slider");
-        var bar = document.querySelector('.case-study-progress-bar');
-        for (var i = 0; i < sliderSelector.length; i++) {
-
-            let slideEle = sliderSelector[i];
-            let dataSettings = slideEle.getAttribute("data-settings");
-            let dataSettingsObj = JSON.parse(dataSettings);
-
-            dataSettingsObj.autoplay = true;
-            // dataSettingsObj.type = 'loop';
-            dataSettingsObj.rewind = true;
-            dataSettingsObj.interval = 4000;
-            dataSettingsObj.speed = 1200;
-
-            if (Splide) {
-                let caseStudySlider = new Splide(slideEle, dataSettingsObj);
-
-                caseStudySlider.on('mounted move', function () {
-                    var end = caseStudySlider.Components.Controller.getEnd() + 1;
-                    var rate = Math.min((caseStudySlider.index + 1) / end, 1);
-                    bar.style.width = String(100 * rate) + '%';
-                });
-
-
-                caseStudySlider.mount();
-            }
-
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.querySelector(".swiper")) {
+        let sliderSelector = document.querySelectorAll(".swiper");
+        let sliderSettingEle = document.querySelector(".ges-verticle--slider-section");
+        if ( sliderSettingEle ) {
+            let dataSettings = sliderSettingEle.getAttribute("data-settings");
+            const sliderSettings = dataSettings ? JSON.parse(dataSettings) : {};
+    
+            sliderSelector.forEach(function (sliderEle) {
+                var scrollBar = sliderEle.querySelector(".swiper-scrollbar");
+                initSliderCase(sliderEle, scrollBar, sliderSettings);
+            });
         }
-    }
 
+    }
 });
