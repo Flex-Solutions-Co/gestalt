@@ -2,52 +2,60 @@
     padding-top: 11.563rem;
     padding-bottom: 12.188rem;
 
-    .ges-verticle--slider-section {
+    .swiper-container {
+        .ges-verticle__slider {
+            padding-left: 7%;
+            padding-right: 7%;
+        }
 
-        .splide__list {
+        .swiper-wrapper {
             padding-bottom: 5.625rem !important;
 
-            li {
-                .ges-verticle-slide {
-                    figure {
-                        margin-bottom: 3.375rem;
-                    }
+            .ges-verticle-slide {
+                figure {
+                    margin-bottom: 3.375rem;
+                }
 
-                    .ges-heading-block,
-                    .ges-content-information {
-                        margin-top: 0;
-                        margin-bottom: 0.375rem;
-                    }
+                .ges-heading-block,
+                .ges-content-information {
+                    margin-top: 0;
+                    margin-bottom: 0.375rem;
+                }
 
-                    .ges-read-more {
-                        margin-top: 0;
+                .ges-read-more {
+                    margin-top: 0;
 
-                        a {
-                            text-decoration: none;
-                        }
+                    a {
+                        text-decoration: none;
                     }
                 }
             }
+
         }
     }
 
-    .case-study-progress {
+    .swiper-scrol-top {
+        position: relative;
+    }
+
+    .swiper-scrollbar {
         background: #ccc;
-        max-width: 1640px;
-        margin: 0 7% 0 7%;
     }
 
-    .case-study-progress-bar {
+    .swiper-scrollbar-drag {
         background: var(--wp--preset--color--primary);
-        height: 4px;
-        transition: width 400ms ease;
-        width: 0;
+        cursor: pointer;
     }
 
+
+}
+
+.ges-verticle--slider-section {
     .ges-casestudy-main-heading-block {
         max-width: 670px;
         margin-bottom: 4.5rem;
         padding-left: 7%;
+
         .ges-casestudy-heading {
             margin-top: 0;
             margin-bottom: 0.375rem;
@@ -59,20 +67,21 @@
         }
     }
 }
-.wp-block-gestalt-casestudyslider {
-    margin-top: 0;
-    .splide__list {
-        padding-right: 10% !important;
-    }
-}
 
-@media only screen and (max-width: 1860px) {
-    .ges-verticle-container {
-        .case-study-progress {
-            margin: 0 2.188rem 0 2.188rem;
-        }
+
+@media only screen and (max-width: 1800px) {
+    .ges-verticle--slider-section {
         .ges-casestudy-main-heading-block {
-            padding-left: 2.188rem;
+            padding-left: 5%;
+        }
+    }
+
+    .ges-verticle-container {
+        .swiper-container {
+            .ges-verticle__slider {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
         }
     }
 }
@@ -97,27 +106,40 @@
         padding-bottom: 7.5rem;
     }
 }
+
 @media only screen and (max-width: 781px) {
     .ges-verticle-container {
         padding-top: 3.125rem;
         padding-bottom: 7rem;
-        .ges-verticle--slider-section {
-            .splide__list {
-                li {
-                    .ges-verticle-slide {
-                        figure {
-                            margin-bottom: 2.875rem;
-                        }
-                        .ges-content-information  {
-                            margin-bottom: 1.875rem;
-                        }
+
+        .swiper-container {
+            .ges-verticle__slider {
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+
+            .swiper-wrapper {
+
+                .ges-verticle-slide {
+                    figure {
+                        margin-bottom: 2.875rem;
+                    }
+
+                    .ges-content-information {
+                        margin-bottom: 1.875rem;
                     }
                 }
+
             }
         }
+    }
+
+    .ges-verticle--slider-section {
         .ges-casestudy-main-heading-block {
             max-width: 100%;
             margin-bottom: 3.5rem;
+            padding-left: 35px;
+            padding-right: 35px;
         }
     }
 }

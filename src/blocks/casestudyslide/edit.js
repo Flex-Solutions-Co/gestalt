@@ -18,7 +18,7 @@ import {
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { store as coreStore } from '@wordpress/core-data';
-import { SplideSlide } from '@splidejs/react-splide';
+// import { SplideSlide } from '@splidejs/react-splide';
 
 
 const ALLOWED_MEDIA_TYPES = ['image'];
@@ -73,21 +73,19 @@ const Edit = (props) => {
 	// const { mediaId, mediaSrc, mediaAlt } = attributes;
 
 	const blockProps = useBlockProps({
-		className: "ges-verticle-slide",
+		className: "ges-verticle-slide swiper-slide",
 	});
 
 	return (
 		<>
-			<SplideSlide>
-				<div {...blockProps}>
-					<InnerBlocks
-						allowedBlocks={ALLOWED_BLOCKS}
-						template={MY_TEMPLATE}
-						renderAppender={false}
-						templateLock="all" 
-					/>
-				</div>
-			</SplideSlide>
+			<div {...blockProps}>
+				<InnerBlocks
+					allowedBlocks={ALLOWED_BLOCKS}
+					template={MY_TEMPLATE}
+					renderAppender={false}
+					templateLock="all"
+				/>
+			</div>
 		</>
 	);
 };

@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
-import { Splide, SplideTrack } from '@splidejs/react-splide';
+// import { Splide, SplideTrack } from '@splidejs/react-splide';
 import { sliderSetting } from './edit';
 
 /**
@@ -32,18 +32,15 @@ const Save = ({ attributes }) => {
 							<p className='ges-description'>{description}</p>}
 					</div>
 				}
-				<Splide className="ges-verticle__slider"
-					hasTrack={false}
-					options={sliderSetting}
-					data-settings={JSON.stringify(sliderSetting)}
-				>
-					<SplideTrack {...innerBlocksProps}>
-						{innerBlocksProps.children}
-					</SplideTrack>
-					<div class="case-study-progress">
-						<div class="case-study-progress-bar"></div>
+				<div className="swiper-container">
+					<div className="swiper ges-verticle__slider">
+						<div className="swiper-wrapper">{innerBlocksProps.children}</div>
+						<div className="swiper-scrol-top">
+							<div className="swiper-scrollbar"></div>
+						</div>
 					</div>
-				</Splide>
+				</div>
+
 			</div>
 		</div>
 	);

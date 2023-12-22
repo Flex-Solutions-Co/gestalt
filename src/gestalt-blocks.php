@@ -109,12 +109,15 @@ function enqueue_scripts_frontend() {
 		$splidejsuri = get_stylesheet_directory_uri() . '/build/js/splide.js';
 		$swiperjs = get_stylesheet_directory_uri() . '/build/js/swiper.js';
 		$glightbox = get_stylesheet_directory_uri() . '/build/js/glightbox.js';
-	
+		$swipercssuri = get_stylesheet_directory_uri(). '/assets/css/swiper-bundle.min.css';
+		$swiperjsuri = get_stylesheet_directory_uri(). '/assets/js/swiper-bundle.min.js';
+		
 		wp_enqueue_style( 'wp-experts-fronteds', $frontendcssuri );
 		wp_register_script( 'splidejs', $splidejsuri, array(), false, true);
-		wp_register_script( 'swiper-script', $swiperjs, array(), false, true);
 		wp_enqueue_script( 'main-script', $mainjsuri, array(), false, true);
 		wp_register_script( 'lightbox-script', $glightbox, array(), false, true);
+		wp_register_style( 'swiper-css', $swipercssuri );
+		wp_register_script( 'swiper-script', $swiperjsuri, array(), false, true);
 	}
 }
 

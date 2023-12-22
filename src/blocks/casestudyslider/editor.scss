@@ -1,8 +1,34 @@
-.btn-add-new-slider {
-    margin-bottom: 1.5rem;
-}
 .block-editor-block-list__block {
     .ges-verticle-container {
         margin-left: auto;
     }
 }
+
+.ges-verticle--slider-section {
+    .navigation-slide {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .ges-verticle-container {
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        .swiper-container {
+            .ges-verticle__slider {
+                padding: 0;
+            }
+
+            .swiper-wrapper {
+                width: 40%;
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+    .ges-casestudy-main-heading-block {
+        margin-bottom: 2.5rem !important;
+    }
+}
+

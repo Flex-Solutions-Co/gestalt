@@ -8,7 +8,7 @@ import {
     useInnerBlocksProps,
     InspectorControls
 } from '@wordpress/block-editor';
-import { useSelect, useDispatch } from '@wordpress/data';
+import { useSelect, useDispatch, dispatch } from '@wordpress/data';
 import { useRef, useEffect } from '@wordpress/element';
 import {
     TextControl,
@@ -17,7 +17,7 @@ import {
     TextareaControl
 } from '@wordpress/components';
 import { createBlock } from '@wordpress/blocks';
-import { Splide, SplideTrack } from '@splidejs/react-splide';
+// import { Splide, SplideTrack } from '@splidejs/react-splide';
 
 /**
  * external dependencies
@@ -31,28 +31,9 @@ const MY_TEMPLATE = [
 ]
 
 export const sliderSetting = {
-    perPage: 2,
-    perMove: 1,
-    gap: '12px',
-    arrows: false,
-    pagination: false,
-    drag: true,
-    slideFocus: false,
-    padding: { left: '7%', right: '7%' },
-    breakpoints: {
-        600: {
-            gap: '18px',
-        },
-        781: {
-            gap: '50px',
-            perPage: 1,
-            padding: { left: '35px', right: '35px' },
-        },
-        1860: {
-            padding: { left: '5%', right: '5%' },
-        }
-    }
-}
+    slidesPerView: 2.5,
+    spaceBetween: 12,
+};
 
 const Edit = (props) => {
     const { attributes, setAttributes, clientId } = props;
@@ -61,12 +42,6 @@ const Edit = (props) => {
     const blockProps = useBlockProps({
         className: classnames('ges-verticle--slider-section')
     });
-
-    if (cover !== '') {
-		return (
-			<img src={cover} width="1728" height="826" />
-		)
-	}
 
     const innerBlocksProps = useInnerBlocksProps(
         blockProps,
@@ -93,24 +68,21 @@ const Edit = (props) => {
         replaceInnerBlocks(clientId, innerBlocks, false);
     }
 
-
-    const addStyleinProgress = () => {
-        var bar = document.querySelector('.case-study-progress-bar');
-        const splidePagiantionItems = sliderRef?.current?.splide;
-        const end = splidePagiantionItems.Components.Controller.getEnd() + 1;
-        var rate = Math.min((splidePagiantionItems?.index + 1) / end, 1);
-        bar.style.width = String(100 * rate) + '%';
+    const slideNavBlock = (clientId) => {
+        dispatch("core/block-editor").selectBlock(clientId);
     };
 
-    useEffect(() => {
-        addStyleinProgress();
-    }, []);
+    if (cover !== '') {
+        return (
+            <img src={cover} width="1728" height="826" />
+        )
+    }
 
     return (
         <>
             <InspectorControls>
                 <PanelBody title="Slide Settings" initialOpen={true}>
-                    <Button variant="secondary" className='btn-add-new-slider' onClick={addNewSlideHandler}>Add New Slide</Button>
+                    {/* <Button variant="secondary" className='btn-add-new-slider' onClick={addNewSlideHandler}>Add New Slide</Button> */}
                     <TextControl
                         label="Case Study Heading"
                         value={heading}
@@ -123,7 +95,32 @@ const Edit = (props) => {
                     />
                 </PanelBody>
             </InspectorControls>
-            <div {...blockProps}>
+
+            <div {...blockProps} data-settings={JSON.stringify(sliderSetting)} >
+
+                <div className="navigation-slide">
+                    <div className="navigation-scroll">
+                        {block.innerBlocks.map((innerBlock, index) => {
+                            let activeBtn = index === 0 ? "active-btn" : "";
+
+                            return (
+                                <button
+                                    className="slide-index-btn"
+                                    onClick={() => slideNavBlock(innerBlock.clientId)}
+                                >{`Slide ${index + 1}`}</button>
+                            );
+                        })}
+                    </div>
+                    <div className="add-new-slide">
+                        <button
+                            className="add-slide-btn"
+                            onClick={() => addNewSlideHandler()}
+                        >
+                            Add Slide
+                        </button>
+                    </div>
+                </div>
+
                 <div className='ges-verticle-container'>
                     {(heading !== '' || linkText !== '') &&
                         <div className='ges-casestudy-main-heading-block'>
@@ -131,23 +128,18 @@ const Edit = (props) => {
                                 <h2 className='ges-casestudy-heading'>{heading}</h2>}
                             {description &&
                                 <p className='ges-description'>{description}</p>}
-                        </div>}
-                    <Splide className="ges-verticle__slider"
-                        hasTrack={false}
-                        options={sliderSetting}
-                        ref={sliderRef}
-                        data-settings={JSON.stringify(sliderSetting)}
-                        onMoved={() => {
-                            addStyleinProgress();
-                        }}
-                    >
-                        <SplideTrack {...innerBlocksProps}>
-                            {innerBlocksProps.children}
-                        </SplideTrack>
-                        <div class="case-study-progress">
-                            <div class="case-study-progress-bar"></div>
                         </div>
-                    </Splide>
+                    }
+
+                    <div className="swiper-container">
+                        <div className="swiper ges-verticle__slider">
+                            <div className="swiper-wrapper">{innerBlocksProps.children}</div>
+                            <div className="swiper-scrol-top">
+                                <div className="swiper-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

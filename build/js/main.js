@@ -3816,30 +3816,19 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @splidejs/splide */ "./node_modules/@splidejs/splide/dist/js/splide.esm.js");
+/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../js/swiper */ "./src/js/swiper.js");
 
-document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector('.ges-verticle__slider')) {
-    let sliderSelector = document.querySelectorAll(".ges-verticle__slider");
-    var bar = document.querySelector('.case-study-progress-bar');
-    for (var i = 0; i < sliderSelector.length; i++) {
-      let slideEle = sliderSelector[i];
-      let dataSettings = slideEle.getAttribute("data-settings");
-      let dataSettingsObj = JSON.parse(dataSettings);
-      dataSettingsObj.autoplay = true;
-      // dataSettingsObj.type = 'loop';
-      dataSettingsObj.rewind = true;
-      dataSettingsObj.interval = 4000;
-      dataSettingsObj.speed = 1200;
-      if (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"]) {
-        let caseStudySlider = new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](slideEle, dataSettingsObj);
-        caseStudySlider.on('mounted move', function () {
-          var end = caseStudySlider.Components.Controller.getEnd() + 1;
-          var rate = Math.min((caseStudySlider.index + 1) / end, 1);
-          bar.style.width = String(100 * rate) + '%';
-        });
-        caseStudySlider.mount();
-      }
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector(".swiper")) {
+    let sliderSelector = document.querySelectorAll(".swiper");
+    let sliderSettingEle = document.querySelector(".ges-verticle--slider-section");
+    if (sliderSettingEle) {
+      let dataSettings = sliderSettingEle.getAttribute("data-settings");
+      const sliderSettings = dataSettings ? JSON.parse(dataSettings) : {};
+      sliderSelector.forEach(function (sliderEle) {
+        var scrollBar = sliderEle.querySelector(".swiper-scrollbar");
+        (0,_js_swiper__WEBPACK_IMPORTED_MODULE_0__.initSliderCase)(sliderEle, scrollBar, sliderSettings);
+      });
     }
   }
 });
@@ -3942,33 +3931,97 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @splidejs/splide */ "./node_modules/@splidejs/splide/dist/js/splide.esm.js");
+/* harmony import */ var _js_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../js/swiper */ "./src/js/swiper.js");
 
-document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector('.ges-testimonials__slider')) {
-    let sliderSelector = document.querySelectorAll(".ges-testimonials__slider");
-    var bar = document.querySelector('.my-slider-progress-bar');
-    for (var i = 0; i < sliderSelector.length; i++) {
-      let slideEle = sliderSelector[i];
-      let dataSettings = slideEle.getAttribute("data-settings");
-      let dataSettingsObj = JSON.parse(dataSettings);
-      dataSettingsObj.autoplay = true;
-      dataSettingsObj.rewind = true;
-      dataSettingsObj.interval = 4000;
-      dataSettingsObj.speed = 1200;
-      console.log(dataSettingsObj);
-      if (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"]) {
-        let splideInstance = new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](slideEle, dataSettingsObj);
-        splideInstance.on('mounted move', function () {
-          var end = splideInstance.Components.Controller.getEnd() + 1;
-          var rate = Math.min((splideInstance.index + 1) / end, 1);
-          bar.style.width = String(100 * rate) + '%';
-        });
-        splideInstance.mount();
-      }
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector(".swiper")) {
+    let sliderSelector = document.querySelectorAll(".swiper");
+    let sliderSettingEle = document.querySelector(".ges-testimonials--slider-section");
+    if (sliderSettingEle) {
+      let dataSettings = sliderSettingEle.getAttribute("data-settings");
+      const sliderSettings = dataSettings ? JSON.parse(dataSettings) : {};
+      sliderSelector.forEach(function (sliderEle) {
+        var scrollBar = sliderEle.querySelector(".swiper-scrollbar");
+        (0,_js_swiper__WEBPACK_IMPORTED_MODULE_0__.initSlider)(sliderEle, scrollBar, sliderSettings);
+      });
     }
   }
 });
+
+/***/ }),
+
+/***/ "./src/js/swiper.js":
+/*!**************************!*\
+  !*** ./src/js/swiper.js ***!
+  \**************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initSlider: function() { return /* binding */ initSlider; },
+/* harmony export */   initSliderCase: function() { return /* binding */ initSliderCase; }
+/* harmony export */ });
+function initSlider(slideEle, scrollbarEle, sliderSettings) {
+  if (scrollbarEle) {
+    sliderSettings = {
+      speed: 1200,
+      slidesPerView: 3.5,
+      spaceBetween: 80
+    };
+    sliderSettings.scrollbar = {
+      el: ".swiper-scrollbar",
+      draggable: true
+    };
+    sliderSettings.breakpoints = {
+      1024: {
+        spaceBetween: 40
+      },
+      640: {
+        slidesPerView: 2.2,
+        spaceBetween: 40
+      },
+      320: {
+        slidesPerView: 1.2,
+        spaceBetween: 18
+      }
+    };
+    sliderSettings.autoplay = {
+      delay: 4000,
+      disableOnInteraction: false
+    };
+  }
+  const swiper = new Swiper(slideEle, sliderSettings);
+}
+function initSliderCase(slideEle, scrollbarEle, sliderSettings) {
+  if (scrollbarEle) {
+    sliderSettings = {
+      speed: 1200,
+      slidesPerView: 2.5
+    };
+    sliderSettings.scrollbar = {
+      el: ".swiper-scrollbar",
+      draggable: true
+    };
+    sliderSettings.breakpoints = {
+      1024: {
+        spaceBetween: 12
+      },
+      640: {
+        slidesPerView: 1.5,
+        spaceBetween: 50
+      },
+      320: {
+        slidesPerView: 1.1,
+        spaceBetween: 18
+      }
+    };
+    sliderSettings.autoplay = {
+      delay: 4000,
+      disableOnInteraction: false
+    };
+  }
+  const swiper = new Swiper(slideEle, sliderSettings);
+}
 
 /***/ })
 
@@ -4035,11 +4088,13 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_casestudyslider_view__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/casestudyslider/view */ "./src/blocks/casestudyslider/view.js");
-/* harmony import */ var _blocks_testimonials_slider_view__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/testimonials-slider/view */ "./src/blocks/testimonials-slider/view.js");
-/* harmony import */ var _blocks_courseslider_view__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/courseslider/view */ "./src/blocks/courseslider/view.js");
-/* harmony import */ var _blocks_mediaandcontentslider_view__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/mediaandcontentslider/view */ "./src/blocks/mediaandcontentslider/view.js");
-/* harmony import */ var _blocks_blogreadmoreslider_view__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/blogreadmoreslider/view */ "./src/blocks/blogreadmoreslider/view.js");
+/* harmony import */ var _blocks_courseslider_view__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/courseslider/view */ "./src/blocks/courseslider/view.js");
+/* harmony import */ var _blocks_mediaandcontentslider_view__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/mediaandcontentslider/view */ "./src/blocks/mediaandcontentslider/view.js");
+/* harmony import */ var _blocks_blogreadmoreslider_view__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/blogreadmoreslider/view */ "./src/blocks/blogreadmoreslider/view.js");
+/* harmony import */ var _blocks_testimonials_slider_view__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/testimonials-slider/view */ "./src/blocks/testimonials-slider/view.js");
+/* harmony import */ var _blocks_casestudyslider_view__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/casestudyslider/view */ "./src/blocks/casestudyslider/view.js");
+// import "../blocks/casestudyslider/view";
+// import "../blocks/testimonials-slider/view";
 
 
 
