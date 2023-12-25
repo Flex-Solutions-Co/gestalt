@@ -50,12 +50,6 @@ const Edit = (props) => {
     const sliderRef = useRef();
     const [page, setPage] = useState("");
 
-    if (cover !== '') {
-		return (
-			<img src={cover} width="1728" height="826" />
-		)
-	}
-
     const addNewSlideHandler = () => {
         let innerBlocks = JSON.parse(JSON.stringify(block.innerBlocks));
         innerBlocks.push(createBlock('gestalt/mediaandcontentslide', {}));
@@ -98,6 +92,12 @@ const Edit = (props) => {
         const sliderInstance = sliderRef.current;
         sliderInstance.go(action);
     }
+
+    if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
+		)
+	}
 
     return (
         <>

@@ -25,15 +25,27 @@
     "viewMoreLink": {
       "type": "string"
     },
+    "recordId": {
+      "type": "string",
+      "default": ""
+    },
     "cover": {
       "type": "string",
       "default": ""
     }
+  },
+  "providesContext": {
+    "gestalt/recordId": "recordId"
   },
   "viewScript": [
     "swiper-script"
   ],
   "style": [
     "swiper-css"
-  ]
+  ],
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  }
 }

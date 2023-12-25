@@ -16,8 +16,10 @@
   ],
   "version": "1.0.0",
   "supports": {
-    "html": false,
     "align": true
   },
+  "usesContext": [
+    "gestalt/recordId"
+  ],
   "textdomain": "gestalt"
 }
