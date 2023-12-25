@@ -1,0 +1,7 @@
+.wp-block-gestalt-casestudyslide {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

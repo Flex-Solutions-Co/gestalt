@@ -9,7 +9,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import json from './block.json';
 import Edit from './edit';
 import save from './save';
-import casestudysliderimage from './case-study-slider.jpg';
+import carousel from './case-study-slider.jpg';
 // Destructure the json file to get the name of the block
 // For more information on how this works, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 const { name } = json;
@@ -19,7 +19,7 @@ const { name } = json;
 registerBlockType( name, {
 	example: {
 		attributes: {
-			cover: casestudysliderimage,
+			cover: carousel,
 		},
 		viewportWidth: 1728,
 	},

@@ -1,1 +1,1 @@
-import Splide from '@splidejs/splide';
+import Splide from "@splidejs/splide";

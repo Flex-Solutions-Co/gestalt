@@ -1,18 +1,18 @@
-/******/ (function() { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js ***!
   \*************************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Splide: function() { return /* binding */ Splide2; },
-/* harmony export */   SplideSlide: function() { return /* binding */ SplideSlide; },
-/* harmony export */   SplideTrack: function() { return /* binding */ SplideTrack; }
+/* harmony export */   Splide: () => (/* binding */ Splide2),
+/* harmony export */   SplideSlide: () => (/* binding */ SplideSlide),
+/* harmony export */   SplideTrack: () => (/* binding */ SplideTrack)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -2803,12 +2803,12 @@ var SplideSlide = ({ children: children2, className, ...props }) => {
 /*!***********************************************!*\
   !*** ./src/blocks/blogreadmoreslider/edit.js ***!
   \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ Edit; }
+/* harmony export */   "default": () => (/* binding */ Edit)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -3008,7 +3008,7 @@ function Edit(props) {
 /*!************************************************!*\
   !*** ./src/blocks/blogreadmoreslider/index.js ***!
   \************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3047,32 +3047,24 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************!*\
   !*** ./src/blocks/casestudyslide/edit.js ***!
   \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/core-data */ "@wordpress/core-data");
-/* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_5__);
 
 /**
  * WordPress dependencies
  */
 
-
-
-
-
-// import { SplideSlide } from '@splidejs/react-splide';
 
 const ALLOWED_MEDIA_TYPES = ['image'];
 const ALLOWED_BLOCKS = ['core/heading', 'core/paragraph', 'core/image', 'core/group', 'core/read-more'];
@@ -3090,13 +3082,25 @@ const MY_TEMPLATE = [['core/group', {
   className: 'ges-read-more right-arrow',
   placeholder: 'View Work'
 }]]]];
-const Edit = props => {
+const Edit = ({
+  context,
+  clientId
+}) => {
   // const { attributes, setAttributes, isSelected } = props;
   // const { mediaId, mediaSrc, mediaAlt } = attributes;
 
+  const activeClientId = context["gestalt/recordId"];
+  console.log(context["gestalt/recordId"]);
+  console.log(clientId);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: "ges-verticle-slide swiper-slide"
+    className: `ges-verticle-slide swiper-slide ${activeClientId === clientId ? "active" : ""}`,
+    renderAppender: false
   });
+
+  // const blockProps = useBlockProps({
+  // 	className: "",
+  // });
+
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
@@ -3106,7 +3110,7 @@ const Edit = props => {
     templateLock: "all"
   })));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -3114,7 +3118,7 @@ const Edit = props => {
 /*!********************************************!*\
   !*** ./src/blocks/casestudyslide/index.js ***!
   \********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3153,10 +3157,13 @@ const {
 /*!*******************************************!*\
   !*** ./src/blocks/casestudyslide/save.js ***!
   \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -3183,7 +3190,7 @@ const Save = ({
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -3191,12 +3198,13 @@ const Save = ({
 /*!********************************************!*\
   !*** ./src/blocks/casestudyslider/edit.js ***!
   \********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   sliderSetting: function() { return /* binding */ sliderSetting; }
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   sliderSetting: () => (/* binding */ sliderSetting)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -3245,9 +3253,9 @@ const Edit = props => {
   const {
     heading,
     description,
-    cover
+    cover,
+    recordId
   } = attributes;
-  const sliderRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useRef)();
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: classnames__WEBPACK_IMPORTED_MODULE_7___default()('ges-verticle--slider-section')
   });
@@ -3259,7 +3267,7 @@ const Edit = props => {
     orientation: "horizontal"
   });
   const block = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => {
-    return select('core/block-editor').getBlock(clientId);
+    return select("core/block-editor").getBlock(clientId);
   }, []); //Get Block by ID
 
   const {
@@ -3268,13 +3276,108 @@ const Edit = props => {
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)('core/block-editor'); //Dispatch for inner blocks
 
   const addNewSlideHandler = () => {
-    let innerBlocks = JSON.parse(JSON.stringify(block.innerBlocks));
-    innerBlocks.push((0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__.createBlock)('gestalt/casestudyslide', {}));
-    replaceInnerBlocks(clientId, innerBlocks, false);
+    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__.createBlock)("gestalt/casestudyslide", {});
+    const newIndex = innerBlocks?.length + 1;
+    const {
+      insertBlock
+    } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)("core/block-editor");
+    insertBlock(newBlock, newIndex, clientId, true);
+  };
+  const removeBlockHandler = (clientId, index) => {
+    const {
+      removeBlock
+    } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)("core/block-editor");
+    if (block.innerBlocks.length > 0) {
+      const isLastBlock = index === block.innerBlocks.length - 1;
+      removeBlock(clientId, true);
+      if (isLastBlock && block.innerBlocks.length > 1) {
+        // If it's the last block, select the previous block
+        let selectPrevBlockClientId = block.innerBlocks[index - 1].clientId;
+        slideNavBlock(selectPrevBlockClientId);
+      } else if (!isLastBlock) {
+        // If it's not the last block, select the next block
+        let selectNextBlockClientId = block.innerBlocks[index + 1].clientId;
+        slideNavBlock(selectNextBlockClientId);
+      }
+    }
   };
   const slideNavBlock = clientId => {
     (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)("core/block-editor").selectBlock(clientId);
+    if (recordId !== clientId) {
+      setAttributes({
+        recordId: clientId
+      });
+    }
   };
+  const innerBlocks = block?.innerBlocks;
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
+    if (innerBlocks?.length > 0) {
+      const defaultClientId = innerBlocks[0]?.clientId;
+      if (recordId !== defaultClientId) {
+        setAttributes({
+          recordId: defaultClientId
+        });
+      }
+    }
+  }, []);
+  const selectedBlock = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select("core/block-editor").getSelectedBlock());
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
+    if (selectedBlock && selectedBlock?.name === "gestalt/testimonials-slide") {
+      if (recordId !== selectedBlock?.clientId) {
+        setAttributes({
+          recordId: selectedBlock.clientId
+        });
+      }
+    }
+  }, [selectedBlock]);
+  const PlusIcon = () => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 512 512",
+      fill: "#00306b",
+      width: "20px",
+      height: "20px"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M256 0C114.833 0 0 114.833 0 256s114.833 256 256 256 256-114.853 256-256S397.167 0 256 0zm0 472.341c-119.275 0-216.341-97.046-216.341-216.341S136.725 39.659 256 39.659 472.341 136.705 472.341 256 375.295 472.341 256 472.341z",
+      fill: "#00306b"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M355.148 234.386H275.83v-79.318c0-10.946-8.864-19.83-19.83-19.83s-19.83 8.884-19.83 19.83v79.318h-79.318c-10.966 0-19.83 8.884-19.83 19.83s8.864 19.83 19.83 19.83h79.318v79.318c0 10.946 8.864 19.83 19.83 19.83s19.83-8.884 19.83-19.83v-79.318h79.318c10.966 0 19.83-8.884 19.83-19.83s-8.864-19.83-19.83-19.83z",
+      fill: "#00306b"
+    }));
+  };
+  const CloseIcon = () => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "https://www.w3.org/2000/svg",
+      viewBox: "0 0 320 512",
+      width: "10",
+      height: "10"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m207.6 256 107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z",
+      fill: "#fff"
+    }));
+  };
+  function SlideTab() {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "navigation-slide"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "slider__tabs"
+    }, block.innerBlocks.map((innerBlock, index) => {
+      let activeCls = innerBlock.clientId == recordId ? "active" : "";
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "tab__btn",
+        key: `slideItem_${innerBlock.clientId}`
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+        className: `tab__select ${activeCls}`,
+        onClick: () => slideNavBlock(innerBlock.clientId)
+      }, `Slide ${index + 1}`), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "tab__remove",
+        onClick: () => removeBlockHandler(innerBlock.clientId, index)
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(CloseIcon, null)));
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      className: "tab__add",
+      onClick: () => addNewSlideHandler()
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(PlusIcon, null))));
+  }
   if (cover !== '') {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: cover,
@@ -3282,7 +3385,9 @@ const Edit = props => {
       height: "826"
     });
   }
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `ges-main-block ${blockProps.className}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     title: "Slide Settings",
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
@@ -3297,25 +3402,10 @@ const Edit = props => {
     onChange: newDescription => setAttributes({
       description: newDescription
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(SlideTab, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps,
     "data-settings": JSON.stringify(sliderSetting)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "navigation-slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "navigation-scroll"
-  }, block.innerBlocks.map((innerBlock, index) => {
-    let activeBtn = index === 0 ? "active-btn" : "";
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-      className: "slide-index-btn",
-      onClick: () => slideNavBlock(innerBlock.clientId)
-    }, `Slide ${index + 1}`);
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "add-new-slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "add-slide-btn",
-    onClick: () => addNewSlideHandler()
-  }, "Add Slide"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-verticle-container"
   }, (heading !== '' || linkText !== '') && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-casestudy-main-heading-block"
@@ -3335,7 +3425,7 @@ const Edit = props => {
     className: "swiper-scrollbar"
   })))))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -3343,7 +3433,7 @@ const Edit = props => {
 /*!*********************************************!*\
   !*** ./src/blocks/casestudyslider/index.js ***!
   \*********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3389,10 +3479,13 @@ const {
 /*!********************************************!*\
   !*** ./src/blocks/casestudyslider/save.js ***!
   \********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -3448,7 +3541,7 @@ const Save = ({
     className: "swiper-scrollbar"
   }))))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -3456,10 +3549,13 @@ const Save = ({
 /*!****************************************!*\
   !*** ./src/blocks/courseslide/edit.js ***!
   \****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -3641,7 +3737,7 @@ const Edit = props => {
     className: "ges-dummy-text"
   }, "Please select Images."));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -3649,7 +3745,7 @@ const Edit = props => {
 /*!*****************************************!*\
   !*** ./src/blocks/courseslide/index.js ***!
   \*****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3688,10 +3784,13 @@ const {
 /*!****************************************!*\
   !*** ./src/blocks/courseslide/save.js ***!
   \****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -3732,7 +3831,7 @@ const Save = ({
     alt: "Hero Banner Image"
   }))))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -3740,12 +3839,13 @@ const Save = ({
 /*!*****************************************!*\
   !*** ./src/blocks/courseslider/edit.js ***!
   \*****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   sliderSetting: function() { return /* binding */ sliderSetting; }
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   sliderSetting: () => (/* binding */ sliderSetting)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -3796,13 +3896,6 @@ const Edit = props => {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: "media--slider"
   });
-  if (cover !== '') {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: cover,
-      width: "1728",
-      height: "826"
-    });
-  }
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
     template: MY_TEMPLATE,
     allowedBlocks: ["gestalt/courseslide"],
@@ -3824,6 +3917,13 @@ const Edit = props => {
     innerBlocks.push((0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__.createBlock)('gestalt/courseslide', {}));
     replaceInnerBlocks(clientId, innerBlocks, false);
   };
+  if (cover !== '') {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: cover,
+      width: "1728",
+      height: "826"
+    });
+  }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Slide Settings",
     initialOpen: true
@@ -3841,7 +3941,7 @@ const Edit = props => {
     ...innerBlocksProps
   }, innerBlocksProps.children))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -3849,7 +3949,7 @@ const Edit = props => {
 /*!******************************************!*\
   !*** ./src/blocks/courseslider/index.js ***!
   \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3896,10 +3996,13 @@ const {
 /*!*****************************************!*\
   !*** ./src/blocks/courseslider/save.js ***!
   \*****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -3933,7 +4036,7 @@ const Save = ({
     ...innerBlocksProps
   }, innerBlocksProps.children)));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -3941,10 +4044,13 @@ const Save = ({
 /*!************************************************!*\
   !*** ./src/blocks/hero-banner-section/edit.js ***!
   \************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -3987,13 +4093,6 @@ const Edit = props => {
     className: "ges-media-slide-section",
     renderAppender: false
   });
-  if (cover !== '') {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: cover,
-      width: "1728",
-      height: "826"
-    });
-  }
   const imageRemoveHandler = () => {
     setAttributes({
       desktopMediaId: undefined,
@@ -4079,6 +4178,13 @@ const Edit = props => {
       onClick: mbimageRemoveHandler
     })));
   };
+  if (cover !== '') {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: cover,
+      width: "1728",
+      height: "826"
+    });
+  }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Media Settings",
     initialOpen: true
@@ -4130,7 +4236,7 @@ const Edit = props => {
     alt: "Hero Banner Image"
   }))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Please select banner image.")));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -4138,7 +4244,7 @@ const Edit = props => {
 /*!*************************************************!*\
   !*** ./src/blocks/hero-banner-section/index.js ***!
   \*************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -4156,6 +4262,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -4184,10 +4291,13 @@ const {
 /*!************************************************!*\
   !*** ./src/blocks/hero-banner-section/save.js ***!
   \************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -4226,7 +4336,7 @@ const Save = ({
     alt: "Flowers"
   })))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -4234,10 +4344,13 @@ const Save = ({
 /*!*************************************************!*\
   !*** ./src/blocks/mediaandcontentslide/edit.js ***!
   \*************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -4269,7 +4382,7 @@ const Edit = props => {
     templateLock: "all"
   }))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -4277,7 +4390,7 @@ const Edit = props => {
 /*!**************************************************!*\
   !*** ./src/blocks/mediaandcontentslide/index.js ***!
   \**************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -4316,10 +4429,13 @@ const {
 /*!*************************************************!*\
   !*** ./src/blocks/mediaandcontentslide/save.js ***!
   \*************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -4346,7 +4462,7 @@ const Save = ({
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null)));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -4354,12 +4470,13 @@ const Save = ({
 /*!**************************************************!*\
   !*** ./src/blocks/mediaandcontentslider/edit.js ***!
   \**************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   sliderSetting: function() { return /* binding */ sliderSetting; }
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   sliderSetting: () => (/* binding */ sliderSetting)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -4420,13 +4537,6 @@ const Edit = props => {
   } = attributes;
   const sliderRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useRef)();
   const [page, setPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)("");
-  if (cover !== '') {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: cover,
-      width: "1728",
-      height: "826"
-    });
-  }
   const addNewSlideHandler = () => {
     let innerBlocks = JSON.parse(JSON.stringify(block.innerBlocks));
     innerBlocks.push((0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__.createBlock)('gestalt/mediaandcontentslide', {}));
@@ -4463,6 +4573,13 @@ const Edit = props => {
   function sliderMove(action) {
     const sliderInstance = sliderRef.current;
     sliderInstance.go(action);
+  }
+  if (cover !== '') {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: cover,
+      width: "1728",
+      height: "826"
+    });
   }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     title: "Slide Settings",
@@ -4539,7 +4656,7 @@ const Edit = props => {
     className: "ges-description"
   }, description)))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -4547,7 +4664,7 @@ const Edit = props => {
 /*!***************************************************!*\
   !*** ./src/blocks/mediaandcontentslider/index.js ***!
   \***************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -4594,10 +4711,13 @@ const {
 /*!**************************************************!*\
   !*** ./src/blocks/mediaandcontentslider/save.js ***!
   \**************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -4685,7 +4805,7 @@ const Save = ({
     className: "ges-description"
   }, description))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -4693,27 +4813,28 @@ const Save = ({
 /*!***********************************************!*\
   !*** ./src/blocks/testimonials-slide/edit.js ***!
   \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
 
 /**
  * WordPress dependencies
  */
 
 
-
 const ALLOWED_BLOCKS = ["core/heading", "core/paragraph"];
 const MY_TEMPLATE = [["core/heading", {
-  level: 3,
+  level: 1,
   content: "Lorem Ipsum is simply dummy text.",
   className: "ges-main-heading"
 }], ["core/paragraph", {
@@ -4726,9 +4847,13 @@ const MY_TEMPLATE = [["core/heading", {
   content: "Lorem Ipsum is simply dummy text of the printing and typesetting.",
   className: "ges-testimonial-position"
 }]];
-const Edit = props => {
+const Edit = ({
+  context,
+  clientId
+}) => {
+  const activeClientId = context["gestalt/recordId"];
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: "ges-testimonials-slide-wrapper swiper-slide",
+    className: `ges-testimonials-slide-wrapper ${activeClientId === clientId ? "active" : ""}`,
     renderAppender: false
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -4739,7 +4864,7 @@ const Edit = props => {
     templateLock: "all"
   }));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -4747,7 +4872,7 @@ const Edit = props => {
 /*!************************************************!*\
   !*** ./src/blocks/testimonials-slide/index.js ***!
   \************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -4786,22 +4911,23 @@ const {
 /*!***********************************************!*\
   !*** ./src/blocks/testimonials-slide/save.js ***!
   \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
 
 /**
  * WordPress dependencies
  */
-
 
 
 const Save = ({
@@ -4814,7 +4940,7 @@ const Save = ({
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -4822,12 +4948,13 @@ const Save = ({
 /*!************************************************!*\
   !*** ./src/blocks/testimonials-slider/edit.js ***!
   \************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   sliderSetting: function() { return /* binding */ sliderSetting; }
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   sliderSetting: () => (/* binding */ sliderSetting)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -4835,18 +4962,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_7__);
 
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -4873,10 +5003,11 @@ const Edit = props => {
     heading,
     linkText,
     viewMoreLink,
+    recordId,
     cover
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: classnames__WEBPACK_IMPORTED_MODULE_6___default()("ges-testimonials--slider-section")
+    className: classnames__WEBPACK_IMPORTED_MODULE_7___default()("ges-testimonials--slider-section")
   });
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
     template: MY_TEMPLATE,
@@ -4885,23 +5016,118 @@ const Edit = props => {
     renderAppender: false,
     orientation: "horizontal"
   });
-  const block = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => {
+  const block = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.useSelect)(select => {
     return select("core/block-editor").getBlock(clientId);
   }, []); //Get Block by ID
 
   const {
     replaceInnerBlocks,
     updateBlockAttributes
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)("core/block-editor"); //Dispatch for inner blocks
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.useDispatch)("core/block-editor"); //Dispatch for inner blocks
 
   const addNewSlideHandler = () => {
-    let innerBlocks = JSON.parse(JSON.stringify(block.innerBlocks));
-    innerBlocks.push((0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__.createBlock)("gestalt/testimonials-slide", {}));
-    replaceInnerBlocks(clientId, innerBlocks, false);
+    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__.createBlock)("gestalt/testimonials-slide", {});
+    const newIndex = innerBlocks?.length + 1;
+    const {
+      insertBlock
+    } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.dispatch)("core/block-editor");
+    insertBlock(newBlock, newIndex, clientId, true);
+  };
+  const removeBlockHandler = (clientId, index) => {
+    const {
+      removeBlock
+    } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.dispatch)("core/block-editor");
+    if (block.innerBlocks.length > 0) {
+      const isLastBlock = index === block.innerBlocks.length - 1;
+      removeBlock(clientId, true);
+      if (isLastBlock && block.innerBlocks.length > 1) {
+        // If it's the last block, select the previous block
+        let selectPrevBlockClientId = block.innerBlocks[index - 1].clientId;
+        slideNavBlock(selectPrevBlockClientId);
+      } else if (!isLastBlock) {
+        // If it's not the last block, select the next block
+        let selectNextBlockClientId = block.innerBlocks[index + 1].clientId;
+        slideNavBlock(selectNextBlockClientId);
+      }
+    }
   };
   const slideNavBlock = clientId => {
-    (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)("core/block-editor").selectBlock(clientId);
+    (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.dispatch)("core/block-editor").selectBlock(clientId);
+    if (recordId !== clientId) {
+      setAttributes({
+        recordId: clientId
+      });
+    }
   };
+  const innerBlocks = block?.innerBlocks;
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+    if (innerBlocks?.length > 0) {
+      const defaultClientId = innerBlocks[0]?.clientId;
+      if (recordId !== defaultClientId) {
+        setAttributes({
+          recordId: defaultClientId
+        });
+      }
+    }
+  }, []);
+  const selectedBlock = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.useSelect)(select => select("core/block-editor").getSelectedBlock());
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+    if (selectedBlock && selectedBlock?.name === "gestalt/testimonials-slide") {
+      if (recordId !== selectedBlock?.clientId) {
+        setAttributes({
+          recordId: selectedBlock.clientId
+        });
+      }
+    }
+  }, [selectedBlock]);
+  const PlusIcon = () => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 512 512",
+      fill: "#00306b",
+      width: "20px",
+      height: "20px"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M256 0C114.833 0 0 114.833 0 256s114.833 256 256 256 256-114.853 256-256S397.167 0 256 0zm0 472.341c-119.275 0-216.341-97.046-216.341-216.341S136.725 39.659 256 39.659 472.341 136.705 472.341 256 375.295 472.341 256 472.341z",
+      fill: "#00306b"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M355.148 234.386H275.83v-79.318c0-10.946-8.864-19.83-19.83-19.83s-19.83 8.884-19.83 19.83v79.318h-79.318c-10.966 0-19.83 8.884-19.83 19.83s8.864 19.83 19.83 19.83h79.318v79.318c0 10.946 8.864 19.83 19.83 19.83s19.83-8.884 19.83-19.83v-79.318h79.318c10.966 0 19.83-8.884 19.83-19.83s-8.864-19.83-19.83-19.83z",
+      fill: "#00306b"
+    }));
+  };
+  const CloseIcon = () => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "https://www.w3.org/2000/svg",
+      viewBox: "0 0 320 512",
+      width: "10",
+      height: "10"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m207.6 256 107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z",
+      fill: "#fff"
+    }));
+  };
+  function SlideTab() {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "navigation-slide"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "slider__tabs"
+    }, block.innerBlocks.map((innerBlock, index) => {
+      let activeCls = innerBlock.clientId == recordId ? "active" : "";
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "tab__btn",
+        key: `slideItem_${innerBlock.clientId}`
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+        className: `tab__select ${activeCls}`,
+        onClick: () => slideNavBlock(innerBlock.clientId)
+      }, `Slide ${index + 1}`), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "tab__remove",
+        onClick: () => removeBlockHandler(innerBlock.clientId, index)
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(CloseIcon, null)));
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      className: "tab__add",
+      onClick: () => addNewSlideHandler()
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(PlusIcon, null))));
+  }
   if (cover !== '') {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: cover,
@@ -4909,45 +5135,33 @@ const Edit = props => {
       height: "826"
     });
   }
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `ges-main-block ${blockProps.className}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     title: "Slide Settings",
     initialOpen: true
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
     label: "Testimonials Heading",
     value: heading,
     onChange: newHeading => setAttributes({
       heading: newHeading
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
     label: "View More Text",
     value: linkText,
     onChange: newLinkText => setAttributes({
       linkText: newLinkText
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
     label: "View More Link",
     value: viewMoreLink,
     onChange: newViewMoreLink => setAttributes({
       viewMoreLink: newViewMoreLink
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(SlideTab, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps,
     "data-settings": JSON.stringify(sliderSetting)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "navigation-slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "navigation-scroll"
-  }, block.innerBlocks.map((innerBlock, index) => {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-      className: "slide-index-btn",
-      onClick: () => slideNavBlock(innerBlock.clientId)
-    }, `Slide ${index + 1}`);
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "add-new-slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "add-slide-btn",
-    onClick: () => addNewSlideHandler()
-  }, "Add Slide"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-testimonials-container container"
   }, (heading !== "" || linkText !== "") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ges-testimonials-main-heading-block"
@@ -4968,7 +5182,7 @@ const Edit = props => {
     className: "swiper-scrollbar"
   })))))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -4976,7 +5190,7 @@ const Edit = props => {
 /*!*************************************************!*\
   !*** ./src/blocks/testimonials-slider/index.js ***!
   \*************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -5023,10 +5237,13 @@ const {
 /*!************************************************!*\
   !*** ./src/blocks/testimonials-slider/save.js ***!
   \************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -5075,7 +5292,7 @@ const Save = ({
   }, linkText)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "swiper-container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper testiSwiper"
+    className: "swiper ges-testimonial__slider"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "swiper-wrapper"
   }, innerBlocksProps.children), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5084,7 +5301,7 @@ const Save = ({
     className: "swiper-scrollbar"
   }))))));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -5092,10 +5309,13 @@ const Save = ({
 /*!****************************************!*\
   !*** ./src/blocks/videoplayer/edit.js ***!
   \****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -5122,21 +5342,16 @@ const Edit = props => {
     isSelected
   } = props;
   const {
+    cover
+  } = attributes;
+  const {
     addVideoUrl,
     poster,
     isSelfHosted,
     lightBoxVideo,
     lightBoxVideoMediaId,
-    posterMediaId,
-    cover
+    posterMediaId
   } = attributes;
-  if (cover !== '') {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: cover,
-      width: "1728",
-      height: "826"
-    });
-  }
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: "video-player-section"
   });
@@ -5269,6 +5484,13 @@ const Edit = props => {
       className: "video_wrapper"
     }, children);
   };
+  if (cover !== '') {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: cover,
+      width: "1728",
+      height: "826"
+    });
+  }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Media Settings",
     initialOpen: true
@@ -5367,7 +5589,7 @@ const Edit = props => {
     height: poster?.media?.height
   }))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Please select Poster Image and Video")));
 };
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ }),
 
@@ -5375,7 +5597,7 @@ const Edit = props => {
 /*!*****************************************!*\
   !*** ./src/blocks/videoplayer/index.js ***!
   \*****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -5393,6 +5615,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -5421,10 +5644,13 @@ const {
 /*!****************************************!*\
   !*** ./src/blocks/videoplayer/save.js ***!
   \****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -5488,7 +5714,7 @@ const Save = ({
     height: poster?.media?.height
   }))) : null);
 };
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -5496,12 +5722,12 @@ const Save = ({
 /*!*********************************************!*\
   !*** ./src/blocks/videoplayer/videoicon.js ***!
   \*********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   VideoIcon: function() { return /* binding */ VideoIcon; }
+/* harmony export */   VideoIcon: () => (/* binding */ VideoIcon)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -5528,43 +5754,34 @@ const VideoIcon = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wo
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_editor_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/editor.scss */ "./src/styles/editor.scss");
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
-/* harmony import */ var _blocks_courseslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/courseslider */ "./src/blocks/courseslider/index.js");
-/* harmony import */ var _blocks_courseslide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/courseslide */ "./src/blocks/courseslide/index.js");
-/* harmony import */ var _blocks_hero_banner_section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/hero-banner-section */ "./src/blocks/hero-banner-section/index.js");
-/* harmony import */ var _blocks_mediaandcontentslide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/mediaandcontentslide */ "./src/blocks/mediaandcontentslide/index.js");
-/* harmony import */ var _blocks_mediaandcontentslider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/mediaandcontentslider */ "./src/blocks/mediaandcontentslider/index.js");
-/* harmony import */ var _blocks_videoplayer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/videoplayer */ "./src/blocks/videoplayer/index.js");
-/* harmony import */ var _blocks_blogreadmoreslider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/blogreadmoreslider */ "./src/blocks/blogreadmoreslider/index.js");
-/* harmony import */ var _blocks_testimonials_slide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/testimonials-slide */ "./src/blocks/testimonials-slide/index.js");
-/* harmony import */ var _blocks_testimonials_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/testimonials-slider */ "./src/blocks/testimonials-slider/index.js");
-/* harmony import */ var _blocks_casestudyslide__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/casestudyslide */ "./src/blocks/casestudyslide/index.js");
-/* harmony import */ var _blocks_casestudyslider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/casestudyslider */ "./src/blocks/casestudyslider/index.js");
+/* harmony import */ var _blocks_casestudyslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/casestudyslider */ "./src/blocks/casestudyslider/index.js");
+/* harmony import */ var _blocks_casestudyslide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/casestudyslide */ "./src/blocks/casestudyslide/index.js");
+/* harmony import */ var _blocks_testimonials_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/testimonials-slider */ "./src/blocks/testimonials-slider/index.js");
+/* harmony import */ var _blocks_testimonials_slide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/testimonials-slide */ "./src/blocks/testimonials-slide/index.js");
+/* harmony import */ var _blocks_courseslider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/courseslider */ "./src/blocks/courseslider/index.js");
+/* harmony import */ var _blocks_courseslide__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/courseslide */ "./src/blocks/courseslide/index.js");
+/* harmony import */ var _blocks_hero_banner_section__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/hero-banner-section */ "./src/blocks/hero-banner-section/index.js");
+/* harmony import */ var _blocks_mediaandcontentslide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/mediaandcontentslide */ "./src/blocks/mediaandcontentslide/index.js");
+/* harmony import */ var _blocks_mediaandcontentslider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/mediaandcontentslider */ "./src/blocks/mediaandcontentslider/index.js");
+/* harmony import */ var _blocks_videoplayer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/videoplayer */ "./src/blocks/videoplayer/index.js");
+/* harmony import */ var _blocks_blogreadmoreslider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/blogreadmoreslider */ "./src/blocks/blogreadmoreslider/index.js");
 //stylesheets
 
 
 
 //blocks
-// import './blocks/casestudyslider';
-// import './blocks/casestudyslide';
-
-// import './blocks/testimonials-slider';
-// import './blocks/testimonials-slide';
 
 
 
 
 
 
-
-
-
-// --------------------------
 
 
 
@@ -5577,7 +5794,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./node_modules/classnames/index.js ***!
   \******************************************/
-/***/ (function(module, exports) {
+/***/ ((module, exports) => {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	Copyright (c) 2018 Jed Watson.
@@ -5646,7 +5863,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /*!********************************!*\
   !*** ./src/styles/editor.scss ***!
   \********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -5659,7 +5876,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************!*\
   !*** ./src/styles/style.scss ***!
   \*******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -5672,7 +5889,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************!*\
   !*** ./src/blocks/blogreadmoreslider/blogreadmore.jpg ***!
   \********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 module.exports = __webpack_require__.p + "images/blogreadmore.38446fbe.jpg";
@@ -5683,7 +5900,7 @@ module.exports = __webpack_require__.p + "images/blogreadmore.38446fbe.jpg";
 /*!**********************************************************!*\
   !*** ./src/blocks/casestudyslider/case-study-slider.jpg ***!
   \**********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 module.exports = __webpack_require__.p + "images/case-study-slider.238b7d2d.jpg";
@@ -5694,7 +5911,7 @@ module.exports = __webpack_require__.p + "images/case-study-slider.238b7d2d.jpg"
 /*!*************************************************!*\
   !*** ./src/blocks/courseslider/courseslide.jpg ***!
   \*************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 module.exports = __webpack_require__.p + "images/courseslide.22f1be05.jpg";
@@ -5705,7 +5922,7 @@ module.exports = __webpack_require__.p + "images/courseslide.22f1be05.jpg";
 /*!*********************************************************!*\
   !*** ./src/blocks/hero-banner-section/banner-image.jpg ***!
   \*********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 module.exports = __webpack_require__.p + "images/banner-image.721a10df.jpg";
@@ -5716,7 +5933,7 @@ module.exports = __webpack_require__.p + "images/banner-image.721a10df.jpg";
 /*!***********************************************************************!*\
   !*** ./src/blocks/mediaandcontentslider/media-and-content-slider.jpg ***!
   \***********************************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 module.exports = __webpack_require__.p + "images/media-and-content-slider.0dc7e645.jpg";
@@ -5727,7 +5944,7 @@ module.exports = __webpack_require__.p + "images/media-and-content-slider.0dc7e6
 /*!***************************************************************!*\
   !*** ./src/blocks/testimonials-slider/testimonial-slider.jpg ***!
   \***************************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 module.exports = __webpack_require__.p + "images/testimonial-slider.529433e5.jpg";
@@ -5738,7 +5955,7 @@ module.exports = __webpack_require__.p + "images/testimonial-slider.529433e5.jpg
 /*!**************************************************!*\
   !*** ./src/blocks/videoplayer/video-section.jpg ***!
   \**************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 module.exports = __webpack_require__.p + "images/video-section.3057253a.jpg";
@@ -5749,7 +5966,7 @@ module.exports = __webpack_require__.p + "images/video-section.3057253a.jpg";
 /*!************************!*\
   !*** external "React" ***!
   \************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["React"];
@@ -5760,7 +5977,7 @@ module.exports = window["React"];
 /*!*************************************!*\
   !*** external ["wp","blockEditor"] ***!
   \*************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["blockEditor"];
@@ -5771,7 +5988,7 @@ module.exports = window["wp"]["blockEditor"];
 /*!********************************!*\
   !*** external ["wp","blocks"] ***!
   \********************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["blocks"];
@@ -5782,7 +5999,7 @@ module.exports = window["wp"]["blocks"];
 /*!************************************!*\
   !*** external ["wp","components"] ***!
   \************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["components"];
@@ -5793,7 +6010,7 @@ module.exports = window["wp"]["components"];
 /*!**********************************!*\
   !*** external ["wp","coreData"] ***!
   \**********************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["coreData"];
@@ -5804,7 +6021,7 @@ module.exports = window["wp"]["coreData"];
 /*!******************************!*\
   !*** external ["wp","data"] ***!
   \******************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["data"];
@@ -5815,7 +6032,7 @@ module.exports = window["wp"]["data"];
 /*!**********************************!*\
   !*** external ["wp","editPost"] ***!
   \**********************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["editPost"];
@@ -5826,7 +6043,7 @@ module.exports = window["wp"]["editPost"];
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
   \*********************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["element"];
@@ -5837,7 +6054,7 @@ module.exports = window["wp"]["element"];
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
   \******************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = window["wp"]["i18n"];
@@ -5848,7 +6065,7 @@ module.exports = window["wp"]["i18n"];
 /*!**************************************************!*\
   !*** ./src/blocks/blogreadmoreslider/block.json ***!
   \**************************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"gestalt/blogreadmoreslider","version":"0.1.0","title":"Blog Read More Slider","category":"gestalt-blocks","icon":"slides","description":"A Gutenberg block to show Blog read more in slider view.","usesContext":["postId","postType"],"attributes":{"perPage":{"type":"number","default":5},"blogMainHeading":{"type":"string","default":""},"allBlogText":{"type":"string","default":""},"allBlogUrl":{"type":"string","default":""},"cover":{"type":"string","default":""}},"supports":{"align":true},"viewScript":["splidejs"],"textdomain":"gestalt","render":"file:./render.php"}');
@@ -5859,10 +6076,10 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!**********************************************!*\
   !*** ./src/blocks/casestudyslide/block.json ***!
   \**********************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslide","title":"Casestudy slide","icon":"slides","parent":["gestalt/casestudyslider"],"description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slide","image slider","case study"],"version":"1.0.0","supports":{"html":false,"align":true},"textdomain":"gestalt"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslide","title":"Casestudy slide","icon":"slides","parent":["gestalt/casestudyslider"],"description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slide","image slider","case study"],"version":"1.0.0","supports":{"align":true},"usesContext":["gestalt/recordId"],"textdomain":"gestalt"}');
 
 /***/ }),
 
@@ -5870,10 +6087,10 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!***********************************************!*\
   !*** ./src/blocks/casestudyslider/block.json ***!
   \***********************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslider","title":"Casestudyslider","icon":"slides","description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slider","vertical image slider","case study slide"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"description":{"type":"string"},"cover":{"type":"string","default":""}},"viewScript":["swiper-script"],"style":["swiper-css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/casestudyslider","title":"Casestudyslider","icon":"slides","description":"The gutenberg block to show case study slider view.","category":"gestalt-blocks","keywords":["slider","vertical image slider","case study slide"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"description":{"type":"string"},"cover":{"type":"string","default":""},"recordId":{"type":"string","default":""}},"providesContext":{"gestalt/recordId":"recordId"},"viewScript":["swiper-script"],"style":["swiper-css"]}');
 
 /***/ }),
 
@@ -5881,7 +6098,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!*******************************************!*\
   !*** ./src/blocks/courseslide/block.json ***!
   \*******************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/courseslide","title":"Course Slide","icon":"format-gallery","parent":["gestalt/courseslider"],"description":"The gutenberg block to show images slider view.","category":"gestalt-blocks","keywords":["slide","image"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"desktopMediaId":{"type":"string"},"desktopMediaSrc":{"type":"string"},"mobileMediaId":{"type":"string"},"mobileMediaSrc":{"type":"string"}}}');
@@ -5892,7 +6109,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!********************************************!*\
   !*** ./src/blocks/courseslider/block.json ***!
   \********************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/courseslider","title":"Course Slider","icon":"slides","description":"The gutenberg block to show images slider view.","category":"gestalt-blocks","keywords":["slider","image"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"block_id":{"type":"string","default":""},"cover":{"type":"string","default":""}},"viewScript":["splidejs"],"example":{"attributes":{"preview":true}}}');
@@ -5903,7 +6120,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!***************************************************!*\
   !*** ./src/blocks/hero-banner-section/block.json ***!
   \***************************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/hero-banner-section","title":"Hero Banner Section","icon":"format-image","description":"Displaying page/post banner image.","category":"gestalt-blocks","keywords":["herosection","image"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"desktopMediaId":{"type":"string"},"desktopMediaSrc":{"type":"string"},"mobileMediaId":{"type":"string"},"mobileMediaSrc":{"type":"string"},"cover":{"type":"string","default":""}},"example":{"attributes":{"preview":true}}}');
@@ -5914,7 +6131,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!****************************************************!*\
   !*** ./src/blocks/mediaandcontentslide/block.json ***!
   \****************************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/mediaandcontentslide","title":"Media And Content Slide","icon":"slides","parent":["gestalt/mediaandcontentslider"],"description":"The gutenberg block to show media and contents slider view.","category":"gestalt-blocks","keywords":["slide","image slider","media"],"version":"1.0.0","supports":{"html":false,"align":true},"textdomain":"gestalt"}');
@@ -5925,7 +6142,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!*****************************************************!*\
   !*** ./src/blocks/mediaandcontentslider/block.json ***!
   \*****************************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/mediaandcontentslider","title":"Media and content slide","icon":"slides","description":"The gutenberg block to show media and contents slider view.","category":"gestalt-blocks","keywords":["slider","image slider","media"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"description":{"type":"string"},"cover":{"type":"string","default":""}},"viewScript":["splidejs"]}');
@@ -5936,10 +6153,10 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!**************************************************!*\
   !*** ./src/blocks/testimonials-slide/block.json ***!
   \**************************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slide","title":"Testimonials slide","icon":"slides","parent":["gestalt/testimonials-slider"],"description":"The given block provide testimonial slider information","category":"gestalt-blocks","keywords":["slide","testimonials"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slide","title":"Testimonials Slide","icon":"slides","parent":["gestalt/testimonials-slider"],"description":"The given block provide testimonial slider information","category":"gestalt-blocks","keywords":["slide","testimonials"],"version":"1.0.0","supports":{"align":true},"usesContext":["gestalt/recordId"],"textdomain":"gestalt"}');
 
 /***/ }),
 
@@ -5947,10 +6164,10 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!***************************************************!*\
   !*** ./src/blocks/testimonials-slider/block.json ***!
   \***************************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slider","title":"Testimonials Slider","icon":"slides","description":"The given block provide testimonial slider information.","category":"gestalt-blocks","keywords":["slider","testimonials"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"linkText":{"type":"string"},"viewMoreLink":{"type":"string"},"cover":{"type":"string","default":""}},"viewScript":["swiper-script"],"style":["swiper-css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/testimonials-slider","title":"Testimonials Slider","icon":"slides","description":"The given block provide testimonial slider information.","category":"gestalt-blocks","keywords":["slider","testimonials"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"heading":{"type":"string"},"linkText":{"type":"string"},"viewMoreLink":{"type":"string"},"recordId":{"type":"string","default":""},"cover":{"type":"string","default":""}},"providesContext":{"gestalt/recordId":"recordId"},"viewScript":["swiper-script"],"style":["swiper-css"],"example":{"attributes":{"preview":true}}}');
 
 /***/ }),
 
@@ -5958,7 +6175,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /*!*******************************************!*\
   !*** ./src/blocks/videoplayer/block.json ***!
   \*******************************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 "use strict";
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gestalt/videoplayer","title":"Video Player","icon":"format-video","description":"The gutenberg block to show video view.","category":"gestalt-blocks","keywords":["video"],"version":"1.0.0","supports":{"align":true},"textdomain":"gestalt","attributes":{"addVideoUrl":{"type":"string","default":""},"isSelfHosted":{"type":"boolean","default":false},"poster":{"type":"object","default":{}},"posterMediaId":{"type":"string"},"lightBoxVideoMediaId":{"type":"string"},"lightBoxVideo":{"type":"object","default":{}},"cover":{"type":"string","default":""}},"style":["file:./glightbox.min.css","glightbox-style"],"viewScript":["lightbox-script","glightbox-style"]}');
@@ -5996,9 +6213,9 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = function(result, chunkIds, fn, priority) {
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
 /******/ 			if(chunkIds) {
 /******/ 				priority = priority || 0;
 /******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
@@ -6007,12 +6224,10 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			}
 /******/ 			var notFulfilled = Infinity;
 /******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var chunkIds = deferred[i][0];
-/******/ 				var fn = deferred[i][1];
-/******/ 				var priority = deferred[i][2];
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
 /******/ 				var fulfilled = true;
 /******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every(function(key) { return __webpack_require__.O[key](chunkIds[j]); })) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
 /******/ 						chunkIds.splice(j--, 1);
 /******/ 					} else {
 /******/ 						fulfilled = false;
@@ -6027,34 +6242,34 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			}
 /******/ 			return result;
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
+/******/ 		__webpack_require__.n = (module) => {
 /******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 		__webpack_require__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
 /******/ 			if (typeof globalThis === 'object') return globalThis;
 /******/ 			try {
@@ -6063,26 +6278,26 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 				if (typeof window === 'object') return window;
 /******/ 			}
 /******/ 		})();
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
+/******/ 		__webpack_require__.r = (exports) => {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		var scriptUrl;
 /******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
 /******/ 		var document = __webpack_require__.g.document;
@@ -6102,10 +6317,10 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl;
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// no baseURI
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
@@ -6126,17 +6341,15 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		__webpack_require__.O.j = function(chunkId) { return installedChunks[chunkId] === 0; };
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
-/******/ 			var chunkIds = data[0];
-/******/ 			var moreModules = data[1];
-/******/ 			var runtime = data[2];
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
 /******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some(function(id) { return installedChunks[id] !== 0; })) {
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
 /******/ 				for(moduleId in moreModules) {
 /******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
@@ -6155,17 +6368,17 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkbuild"] = self["webpackChunkbuild"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkbuild"] = globalThis["webpackChunkbuild"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], function() { return __webpack_require__("./src/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -1,8 +1,8 @@
 import { initSlider } from "../../js/swiper";
 
 document.addEventListener("DOMContentLoaded", function () {
-	if (document.querySelector(".swiper")) {
-		let sliderSelector = document.querySelectorAll(".swiper");
+	if (document.querySelector(".ges-testimonial__slider")) {
+		let sliderSelector = document.querySelectorAll(".ges-testimonial__slider");
 		let sliderSettingEle = document.querySelector(".ges-testimonials--slider-section");
 		if ( sliderSettingEle ) {
 			let dataSettings = sliderSettingEle.getAttribute("data-settings");
@@ -12,8 +12,5 @@ document.addEventListener("DOMContentLoaded", function () {
 				initSlider(sliderEle, scrollBar, sliderSettings);
 			});
 		}
-	
-
-
 	}
 });

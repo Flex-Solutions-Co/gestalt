@@ -35,12 +35,6 @@ const Edit = (props) => {
 		renderAppender: false,
 	});
 
-	if (cover !== '') {
-		return (
-			<img src={cover} width="1728" height="826" />
-		)
-	}
-
 	const imageRemoveHandler = () => {
 		setAttributes({ desktopMediaId: undefined, desktopMediaSrc: undefined });
 	}
@@ -106,6 +100,12 @@ const Edit = (props) => {
 					</div>
 				}
 			</div>
+		)
+	}
+
+	if (cover !== '') {
+		return (
+			<img src={cover} width="1728" height="826" />
 		)
 	}
 

@@ -1,32 +1,46 @@
 .ges-testimonials-slide-wrapper {
     max-width: 500px;
-    margin: auto;
+    margin-left: 0;
 }
+
+.ges-main-block {
+    &.is-selected {
+        border: 2px dotted #808080;
+    }
+}
+
+.ges-testimonials--slider-section {
+    .swiper-container {
+        .swiper-wrapper {
+            padding-top: 3.5rem;
+        }
+    }
+}
+
 .btn-add-slider {
     margin-bottom: 1.5rem;
 }
+
 .navigation-scroll {
     overflow: auto;
     white-space: nowrap;
 }
-.swiper-slide{
+
+.swiper-slide {
     display: none;
-    &.has-child-selected{
+
+    &.has-child-selected {
         display: block;
     }
-    &.is-selected{
+
+    &.is-selected {
         display: block;
     }
-}
-.slide-index-btn {
-    background: #fde8e5;
-    border: 1px solid black;
-    padding: 10px 20px;
-    margin: 10px 6px;
 }
 
 .add-new-slide {
     margin-top: 10px;
+
     .add-slide-btn {
         background: #007cba;
         color: white;
@@ -34,6 +48,97 @@
         padding: 10px 20px;
     }
 }
-.ges-testimonials-main-heading-block{
+
+.ges-testimonials-main-heading-block {
     padding: 0px !important;
+}
+
+.navigation-slide {
+    display: flex;
+}
+
+.slider__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    gap: 5px;
+
+    .tab {
+        &__btn {
+            position: relative;
+
+            &:hover {
+                .tab__remove {
+                    display: flex;
+                }
+            }
+        }
+
+        &__select {
+            outline: none;
+            padding: 14px 20px;
+            font-size: 1rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: all 0.5s;
+            border: 1px solid #fde8e5;
+            border-radius: 5px;
+            min-width: 100px;
+            background-color: transparent;
+
+            &:hover:not(.active) {
+                background-color: var(--wp--preset--color--light-pink);
+            }
+
+            &.active {
+                background-color: var(--wp--preset--color--light-pink);
+            }
+        }
+
+        &__add {
+            cursor: pointer;
+            padding: 11px 16px 11px 16px;
+            background-color: #007cba;
+            outline: 0;
+            border: 0;
+            min-width: 70px;
+            border-radius: 5px;
+
+            svg {
+                transition: all 0.3s;
+
+                path {
+                    fill: #fff;
+                }
+            }
+
+            &:hover {
+                svg {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        &__remove {
+            cursor: pointer;
+            position: absolute;
+            right: 0px;
+            top: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background-color: #ff0000cc;
+            z-index: 10;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
 }

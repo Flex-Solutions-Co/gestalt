@@ -50,7 +50,6 @@ function gestalt_auto_register_block_types() {
 
 add_action( 'init', 'gestalt_auto_register_block_types' );
 
-// -----------
 
 add_action( 'enqueue_block_editor_assets', 'enqueue_scripts' );
 function enqueue_scripts() {
@@ -96,6 +95,17 @@ function enqueue_scripts() {
 			$dependency_array['version'],
 		);
 
+			// Enqueue the block index.js file
+		// wp_enqueue_script(
+		//   'swiper', // unique handle
+		//   "https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js",
+		//   [], 
+		//   $dependency_array['version'],
+		//   array(
+		// 	"in_footer" => true,
+		//   )
+		// );
+
 	}
 }
 
@@ -118,6 +128,8 @@ function enqueue_scripts_frontend() {
 		wp_register_script( 'lightbox-script', $glightbox, array(), false, true);
 		wp_register_style( 'swiper-css', $swipercssuri );
 		wp_register_script( 'swiper-script', $swiperjsuri, array(), false, true);
+		
+		
 	}
 }
 

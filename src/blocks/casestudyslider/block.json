@@ -26,7 +26,14 @@
         "cover":{
 			"type": "string",
 			"default": ""
-		}
+		},
+        "recordId": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "providesContext": {
+        "gestalt/recordId": "recordId"
     },
     "viewScript": ["swiper-script"],
     "style": ["swiper-css"]

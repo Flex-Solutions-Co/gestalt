@@ -46,7 +46,7 @@
 
 @media only screen and (max-width: 1440px) {
     .ges-testimonials--slider-section {
-        .swiper-container{
+        .swiper-container {
             .swiper-wrapper {
                 padding-bottom: 8.125rem;
             }
@@ -74,22 +74,26 @@
 
         .ges-testimonials-main-heading-block {
             padding-top: 9.5rem;
+
             .ges-testimonials-heading {
                 margin-bottom: 0.625rem;
             }
         }
     }
 }
+
 @media only screen and (max-width: 640px) {
     .ges-testimonials--slider-section {
         .swiper-container {
             margin-left: -35px;
             margin-right: -35px;
+
             .swiper-scrollbar {
                 width: 89%;
                 left: 50%;
                 transform: translateX(-50%);
             }
+
             .swiper {
                 padding-left: 35px;
                 padding-right: 35px;
@@ -97,6 +101,7 @@
         }
     }
 }
+
 @media only screen and (max-width: 480px) {
     .ges-testimonials--slider-section {
         .swiper-container {

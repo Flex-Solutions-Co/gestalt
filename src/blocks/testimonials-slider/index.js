@@ -17,12 +17,12 @@ const { name } = json;
 
 // Register the block
 registerBlockType(name, {
-  example: {
+    example: {
 		attributes: {
 			cover: testimonialSlider,
 		},
 		viewportWidth: 1728,
 	},
-  edit: Edit,
-  save,
+    edit: Edit,
+    save,
 });

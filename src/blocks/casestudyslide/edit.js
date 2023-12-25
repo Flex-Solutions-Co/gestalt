@@ -5,21 +5,7 @@ import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
 	useBlockProps,
-	InspectorControls,
-	MediaUpload,
-	MediaUploadCheck
 } from '@wordpress/block-editor';
-
-import {
-	TextControl,
-	PanelBody,
-	Button,
-	Icon
-} from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
-import { store as coreStore } from '@wordpress/core-data';
-// import { SplideSlide } from '@splidejs/react-splide';
-
 
 const ALLOWED_MEDIA_TYPES = ['image'];
 const ALLOWED_BLOCKS = ['core/heading', 'core/paragraph', 'core/image', 'core/group', 'core/read-more'];
@@ -67,14 +53,26 @@ const MY_TEMPLATE = [
 ];
 
 
-const Edit = (props) => {
+const Edit = ({ context, clientId }) => {
 
 	// const { attributes, setAttributes, isSelected } = props;
 	// const { mediaId, mediaSrc, mediaAlt } = attributes;
 
+	const activeClientId = context["gestalt/recordId"];
+
+	console.log(context["gestalt/recordId"]);
+	console.log(clientId);
+
 	const blockProps = useBlockProps({
-		className: "ges-verticle-slide swiper-slide",
-	});
+		className: `ges-verticle-slide swiper-slide ${
+		  activeClientId === clientId ? "active" : ""
+		}`,
+		renderAppender: false,
+	  });
+
+	// const blockProps = useBlockProps({
+	// 	className: "",
+	// });
 
 	return (
 		<>
